@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Article.
+    -->
+    <changeSet id="20150118210618" author="jhipster">
+        <createTable tableName="T_ARTICLE">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(255)"/>
+            <column name="body" type="varchar(255)"/>
+            <column name="date" type="date">
+                <constraints nullable="false" />
+            </column>
+            <column name="pinned" type="bit"/>
+        </createTable>
+        
+        <createTable tableName="T_ARTICLE_T_PEOPLE">
+            <column name="peoples_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="articles_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="articles_id, peoples_id" tableName="T_ARTICLE_T_PEOPLE"/>
+
+        <addForeignKeyConstraint baseColumnNames="peoples_id"
+                                 baseTableName="T_ARTICLE_T_PEOPLE"
+                                 constraintName="fk_article_people_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_PEOPLE"/>
+
+        <addForeignKeyConstraint baseColumnNames="articles_id"
+                                 baseTableName="T_ARTICLE_T_PEOPLE"
+                                 constraintName="fk_people_article_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_ARTICLE"/>
+        
+        <createTable tableName="T_ARTICLE_T_HASHTAG">
+            <column name="hashtags_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="articles_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="articles_id, hashtags_id" tableName="T_ARTICLE_T_HASHTAG"/>
+
+        <addForeignKeyConstraint baseColumnNames="hashtags_id"
+                                 baseTableName="T_ARTICLE_T_HASHTAG"
+                                 constraintName="fk_article_hashtag_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_HASHTAG"/>
+
+        <addForeignKeyConstraint baseColumnNames="articles_id"
+                                 baseTableName="T_ARTICLE_T_HASHTAG"
+                                 constraintName="fk_hashtag_article_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_ARTICLE"/>
+        
+    </changeSet>
+</databaseChangeLog>

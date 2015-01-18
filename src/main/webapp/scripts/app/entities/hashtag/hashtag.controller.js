@@ -1,0 +1,45 @@
+'use strict';
+
+angular.module('miagebdxApp')
+    .controller('HashtagController', function ($scope, Hashtag, Article) {
+        $scope.hashtags = [];
+        $scope.articles = Article.query();
+        $scope.loadAll = function() {
+            Hashtag.query(function(result) {
+               $scope.hashtags = result;
+            });
+        };
+        $scope.loadAll();
+
+        $scope.create = function () {
+            Hashtag.save($scope.hashtag,
+                function () {
+                    $scope.loadAll();
+                    $('#saveHashtagModal').modal('hide');
+                    $scope.clear();
+                });
+        };
+
+        $scope.update = function (id) {
+            $scope.hashtag = Hashtag.get({id: id});
+            $('#saveHashtagModal').modal('show');
+        };
+
+        $scope.delete = function (id) {
+            $scope.hashtag = Hashtag.get({id: id});
+            $('#deleteHashtagConfirmation').modal('show');
+        };
+
+        $scope.confirmDelete = function (id) {
+            Hashtag.delete({id: id},
+                function () {
+                    $scope.loadAll();
+                    $('#deleteHashtagConfirmation').modal('hide');
+                    $scope.clear();
+                });
+        };
+
+        $scope.clear = function () {
+            $scope.hashtag = {name: null, description: null, id: null};
+        };
+    });

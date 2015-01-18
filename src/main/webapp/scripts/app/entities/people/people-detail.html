@@ -1,0 +1,70 @@
+
+<div>
+    <h2><span translate="miagebdxApp.people.detail.title">People</span> {{people.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.people.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{people.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.people.email">Email</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{people.email}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.people.telephone">Telephone</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{people.telephone}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.people.location">Location</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{people.location}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.people.website">Website</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{people.website}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.people.details">Details</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{people.details}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="people"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

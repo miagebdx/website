@@ -1,0 +1,26 @@
+{
+    "miagebdxApp": {
+        "event" : {
+            "home": {
+                "title": "Events",
+                "createLabel": "Créer un nouveau Event",
+                "createOrEditLabel": "Créer ou éditer un Event"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Event {{ id }} ?"
+            },
+            "detail": {
+                "title": "Event"
+            },
+            "title": "Title",
+            "description": "Description",
+            "beginDate": "BeginDate",
+            "endDate": "EndDate",
+            "pinned": "Pinned",
+            "location": "Location",
+            "people": "people",
+            "partner": "partner"
+        }
+    }
+}
+

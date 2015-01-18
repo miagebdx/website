@@ -1,0 +1,21 @@
+{
+    "miagebdxApp": {
+        "hashtag" : {
+            "home": {
+                "title": "Hashtags",
+                "createLabel": "Créer un nouveau Hashtag",
+                "createOrEditLabel": "Créer ou éditer un Hashtag"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Hashtag {{ id }} ?"
+            },
+            "detail": {
+                "title": "Hashtag"
+            },
+            "name": "Name",
+            "description": "Description",
+            "article": "article"
+        }
+    }
+}
+

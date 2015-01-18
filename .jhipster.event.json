@@ -1,0 +1,71 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "otherEntityName": "people",
+            "relationshipType": "many-to-many",
+            "otherEntityNameCapitalized": "People",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 2,
+            "otherEntityName": "partner",
+            "relationshipType": "many-to-many",
+            "otherEntityNameCapitalized": "Partner",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Title",
+            "fieldNameUnderscored": "title"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "beginDate",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "BeginDate",
+            "fieldNameUnderscored": "begin_date"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "endDate",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "EndDate",
+            "fieldNameUnderscored": "end_date"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "pinned",
+            "fieldType": "Boolean",
+            "fieldNameCapitalized": "Pinned",
+            "fieldNameUnderscored": "pinned"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "location",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Location",
+            "fieldNameUnderscored": "location"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": true,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "changelogDate": "20150118210841"
+}

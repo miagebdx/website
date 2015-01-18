@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="miagebdxApp.article.detail.title">Article</span> {{article.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.article.title">Title</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.title}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.article.body">Body</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.body}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.article.date">Date</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.date}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="miagebdxApp.article.pinned">Pinned</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{article.pinned}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="article"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

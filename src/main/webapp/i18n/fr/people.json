@@ -1,0 +1,26 @@
+{
+    "miagebdxApp": {
+        "people" : {
+            "home": {
+                "title": "Peoples",
+                "createLabel": "Créer un nouveau People",
+                "createOrEditLabel": "Créer ou éditer un People"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le People {{ id }} ?"
+            },
+            "detail": {
+                "title": "People"
+            },
+            "name": "Name",
+            "email": "Email",
+            "telephone": "Telephone",
+            "location": "Location",
+            "website": "Website",
+            "details": "Details",
+            "event": "event",
+            "article": "article"
+        }
+    }
+}
+

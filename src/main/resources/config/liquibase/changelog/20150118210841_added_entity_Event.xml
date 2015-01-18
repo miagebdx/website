@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Event.
+    -->
+    <changeSet id="20150118210841" author="jhipster">
+        <createTable tableName="T_EVENT">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="varchar(255)"/>
+            <column name="description" type="varchar(255)"/>
+            <column name="begin_date" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="end_date" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="pinned" type="bit"/>
+            <column name="location" type="varchar(255)"/>
+        </createTable>
+        <dropDefaultValue tableName="T_EVENT" columnName="begin_date" columnDataType="datetime"/>
+
+        <dropDefaultValue tableName="T_EVENT" columnName="end_date" columnDataType="datetime"/>
+
+        
+        <createTable tableName="T_EVENT_T_PEOPLE">
+            <column name="peoples_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="events_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="events_id, peoples_id" tableName="T_EVENT_T_PEOPLE"/>
+
+        <addForeignKeyConstraint baseColumnNames="peoples_id"
+                                 baseTableName="T_EVENT_T_PEOPLE"
+                                 constraintName="fk_event_people_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_PEOPLE"/>
+
+        <addForeignKeyConstraint baseColumnNames="events_id"
+                                 baseTableName="T_EVENT_T_PEOPLE"
+                                 constraintName="fk_people_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_EVENT"/>
+        
+        <createTable tableName="T_EVENT_T_PARTNER">
+            <column name="partners_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="events_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="events_id, partners_id" tableName="T_EVENT_T_PARTNER"/>
+
+        <addForeignKeyConstraint baseColumnNames="partners_id"
+                                 baseTableName="T_EVENT_T_PARTNER"
+                                 constraintName="fk_event_partner_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_PARTNER"/>
+
+        <addForeignKeyConstraint baseColumnNames="events_id"
+                                 baseTableName="T_EVENT_T_PARTNER"
+                                 constraintName="fk_partner_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_EVENT"/>
+        
+    </changeSet>
+</databaseChangeLog>

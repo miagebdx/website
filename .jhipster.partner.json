@@ -1,0 +1,69 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "otherEntityName": "event",
+            "relationshipType": "many-to-many",
+            "otherEntityNameCapitalized": "Event",
+            "ownerSide": false
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "location",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Location",
+            "fieldNameUnderscored": "location"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "website",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Website",
+            "fieldNameUnderscored": "website"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Email",
+            "fieldNameUnderscored": "email"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "logo",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Logo",
+            "fieldNameUnderscored": "logo"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "telephone",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Telephone",
+            "fieldNameUnderscored": "telephone"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "changelogDate": "20150118210402"
+}
