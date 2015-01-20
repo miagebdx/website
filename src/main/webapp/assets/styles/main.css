@@ -7915,7 +7915,7 @@ body {
   padding: 0.2em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000331}}
+/*@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000331}}
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 300px;
@@ -7932,7 +7932,7 @@ body {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
-}
+}*/
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000348}}
 .error {
@@ -7990,3 +7990,40 @@ ul#strength {
 }
 
 /* end Password strength bar style */
+
+
+.thing-form {
+    margin: 20px 0;
+}
+
+#banner {
+    border-bottom: none;
+    margin-top: -20px;
+}
+
+#banner h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.hero-unit {
+    position: relative;
+    padding: 30px 15px;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: #2a8bb9;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.carousel{
+    overflow:hidden;
+    height:270px;
+}

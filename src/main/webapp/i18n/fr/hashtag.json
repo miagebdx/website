@@ -12,9 +12,9 @@
             "detail": {
                 "title": "Hashtag"
             },
-            "name": "Name",
+            "name": "Nom",
             "description": "Description",
-            "article": "article"
+            "article": "Article"
         }
     }
 }

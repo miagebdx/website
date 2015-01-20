@@ -6,4 +6,18 @@ angular.module('miagebdxApp')
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;
         });
+
+        $scope.myInterval = 4000;
+
+        $scope.slides = [
+            {
+                image: '../../assets/images/001.jpg'
+            },
+            {
+                image: '../../assets/images/002.jpg'
+            },
+            {
+                image: '../../assets/images/003.jpg'
+            }
+        ];
     });

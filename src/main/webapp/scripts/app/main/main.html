@@ -1,5 +1,21 @@
 <div ng-cloak>
-    <div class="row">
+    <header id="banner">
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" height="200px" style="margin:auto;">
+            </slide>
+        </carousel>
+    </header>
+
+    <div class="container" >
+        <div class="col-md-6" align="center">
+            <img class="img-responsive" src="../assets/images/miage-logo.png">
+        </div>
+        <div class="col-md-6" align="center">
+            <img class="img-responsive" src="../assets/images/logo_fr.svg">
+        </div>
+    </div>
+    <!--<div class="row">
         <div class="col-md-4">
             <span class="hipster img-responsive img-rounded"></span>
         </div>
@@ -38,5 +54,5 @@
              <span translate="main.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" translate="main.github">Github</a>!
             </p>
         </div>
-    </div>
+    </div>-->
 </div>

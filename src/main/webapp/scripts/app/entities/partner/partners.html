@@ -1,10 +1,12 @@
-<div>
+<header class="hero-unit" id="banner">
+    <h1 translate="miagebdxApp.partner.home.title">Partner</h1>
 
-    <h2 translate="miagebdxApp.partner.home.title">Partner</h2>
-
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#savePartnerModal" ng-click="clear()">
+    <button class="btn btn-success btn-default" data-toggle="modal" data-target="#savePartnerModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.partner.home.createLabel">Create a new Partner</span>
     </button>
+</header>
+
+<div class="container">
     <div class="modal fade" id="savePartnerModal" tabindex="-1" role="dialog" aria-labelledby="myPartnerLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -104,46 +106,46 @@
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th translate="miagebdxApp.partner.name">Name</th>
-                    <th translate="miagebdxApp.partner.location">Location</th>
-                    <th translate="miagebdxApp.partner.description">Description</th>
-                    <th translate="miagebdxApp.partner.website">Website</th>
-                    <th translate="miagebdxApp.partner.email">Email</th>
-                    <th translate="miagebdxApp.partner.logo">Logo</th>
-                    <th translate="miagebdxApp.partner.telephone">Telephone</th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th>ID</th>
+                <th translate="miagebdxApp.partner.name">Name</th>
+                <th translate="miagebdxApp.partner.location">Location</th>
+                <th translate="miagebdxApp.partner.description">Description</th>
+                <th translate="miagebdxApp.partner.website">Website</th>
+                <th translate="miagebdxApp.partner.email">Email</th>
+                <th translate="miagebdxApp.partner.logo">Logo</th>
+                <th translate="miagebdxApp.partner.telephone">Telephone</th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="partner in partners">
-                    <td><a ui-sref="partnerDetails({id:partner.id})">{{partner.id}}</a></td>
-                    <td>{{partner.name}}</td>
-                    <td>{{partner.location}}</td>
-                    <td>{{partner.description}}</td>
-                    <td>{{partner.website}}</td>
-                    <td>{{partner.email}}</td>
-                    <td>{{partner.logo}}</td>
-                    <td>{{partner.telephone}}</td>
-                    <td>
-                        <button type="submit"
-                                ui-sref="partnerDetail({id:partner.id})"
-                                class="btn btn-info">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="update(partner.id)"
-                                class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="delete(partner.id)"
-                                class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                        </button>
-                    </td>
-                </tr>
+            <tr ng-repeat="partner in partners">
+                <td><a ui-sref="partnerDetails({id:partner.id})">{{partner.id}}</a></td>
+                <td>{{partner.name}}</td>
+                <td>{{partner.location}}</td>
+                <td>{{partner.description}}</td>
+                <td>{{partner.website}}</td>
+                <td>{{partner.email}}</td>
+                <td>{{partner.logo}}</td>
+                <td>{{partner.telephone}}</td>
+                <td>
+                    <button type="submit"
+                            ui-sref="partnerDetail({id:partner.id})"
+                            class="btn btn-info">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                    <button type="submit"
+                            ng-click="update(partner.id)"
+                            class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                    </button>
+                    <button type="submit"
+                            ng-click="delete(partner.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                    </button>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

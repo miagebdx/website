@@ -2,24 +2,24 @@
     "miagebdxApp": {
         "event" : {
             "home": {
-                "title": "Events",
-                "createLabel": "Créer un nouveau Event",
-                "createOrEditLabel": "Créer ou éditer un Event"
+                "title": "Evénements",
+                "createLabel": "Créer un nouveau évenement",
+                "createOrEditLabel": "Créer ou éditer un evénement"
             },
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Event {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer l'évenement {{ id }} ?"
             },
             "detail": {
-                "title": "Event"
+                "title": "Evenement"
             },
             "title": "Title",
             "description": "Description",
-            "beginDate": "BeginDate",
-            "endDate": "EndDate",
-            "pinned": "Pinned",
-            "location": "Location",
-            "people": "people",
-            "partner": "partner"
+            "beginDate": "Date du début",
+            "endDate": "Date de fin",
+            "pinned": "Epinglé",
+            "location": "Lieu",
+            "people": "Référent(s)",
+            "partner": "Partenaire(s)"
         }
     }
 }

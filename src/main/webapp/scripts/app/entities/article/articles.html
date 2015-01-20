@@ -1,10 +1,11 @@
-<div>
-
-    <h2 translate="miagebdxApp.article.home.title">Article</h2>
-
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveArticleModal" ng-click="clear()">
+<header class="hero-unit" id="banner">
+        <h1 translate="miagebdxApp.article.home.title">Article</h1>
+    <button class="btn btn-success btn-default" data-toggle="modal" data-target="#saveArticleModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.article.home.createLabel">Create a new Article</span>
     </button>
+</header>
+
+<div class="container">
     <div class="modal fade" id="saveArticleModal" tabindex="-1" role="dialog" aria-labelledby="myArticleLabel"
          aria-hidden="true">
         <div class="modal-dialog">

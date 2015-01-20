@@ -2,24 +2,24 @@
     "miagebdxApp": {
         "people" : {
             "home": {
-                "title": "Peoples",
-                "createLabel": "Créer un nouveau People",
-                "createOrEditLabel": "Créer ou éditer un People"
+                "title": "Personnes",
+                "createLabel": "Créer une nouvelle personne",
+                "createOrEditLabel": "Créer ou éditer une personne"
             },
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le People {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer la personne {{ id }} ?"
             },
             "detail": {
-                "title": "People"
+                "title": "Personnes"
             },
-            "name": "Name",
+            "name": "Nom",
             "email": "Email",
             "telephone": "Telephone",
-            "location": "Location",
-            "website": "Website",
-            "details": "Details",
-            "event": "event",
-            "article": "article"
+            "location": "Lieu",
+            "website": "Site internet",
+            "details": "Détails",
+            "event": "Evènement",
+            "article": "Article"
         }
     }
 }

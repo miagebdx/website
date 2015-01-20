@@ -1,10 +1,13 @@
-<div>
+<header class="hero-unit" id="banner">
+    <h1 translate="miagebdxApp.hashtag.home.title">Hashtag</h1>
 
-    <h2 translate="miagebdxApp.hashtag.home.title">Hashtag</h2>
-
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveHashtagModal" ng-click="clear()">
+    <button class="btn btn-success btn-default" data-toggle="modal" data-target="#saveHashtagModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.hashtag.home.createLabel">Create a new Hashtag</span>
     </button>
+</header>
+
+<div class="container">
+
     <div class="modal fade" id="saveHashtagModal" tabindex="-1" role="dialog" aria-labelledby="myHashtagLabel"
          aria-hidden="true">
         <div class="modal-dialog">

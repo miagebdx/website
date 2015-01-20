@@ -1,6 +1,6 @@
 {
     "global": {
-        "title": "miagebdx",
+        "title": "MIAGE Bordeaux",
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "menu": {
             "home": "Home",
@@ -88,5 +88,5 @@
             "title": "Confirm delete operation"
         }
     },
-    "footer": "This is your footer"
+    "footer": "<a href='https://github.com/miagebdx/'>MiageBdx Team</a>"
 }

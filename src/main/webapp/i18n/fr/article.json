@@ -12,11 +12,11 @@
             "detail": {
                 "title": "Article"
             },
-            "title": "Title",
-            "body": "Body",
+            "title": "Titre",
+            "body": "Corps",
             "date": "Date",
-            "pinned": "Pinned",
-            "people": "people",
+            "pinned": "Epinglé",
+            "people": "Référent(s)",
             "hashtag": "hashtag"
         }
     }
