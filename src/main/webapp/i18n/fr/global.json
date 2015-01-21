@@ -6,11 +6,11 @@
             "home": "Accueil",
             "entities": {
                 "main": "Entités",
-                "people": "People",
-                "partner": "Partner",
-                "hashtag": "Hashtag",
-                "article": "Article",
-                "event": "Event",
+                "people": "Annuaire",
+                "partner": "Partenaires",
+                "hashtag": "Dossier",
+                "article": "Articles",
+                "event": "Evenements",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

@@ -15,7 +15,7 @@ public interface ArticleRepository extends JpaRepository<Article,Long>{
     @Query("select article from Article article left join fetch article.peoples left join fetch article.hashtags where article.id =:id")
     Article findOneWithEagerRelationships(@Param("id") Long id);
 
-    @Query("select article from Article article left join fetch article.peoples left join fetch article.hashtags")
+    @Query("select distinct article from Article article left join fetch article.peoples left join fetch article.hashtags")
     List<Article> findAll();
 
 }

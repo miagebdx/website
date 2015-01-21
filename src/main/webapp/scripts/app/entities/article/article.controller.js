@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('ArticleController', function ($scope, Article, People, Hashtag) {
+    .controller('ArticleController', function ($scope, Article, People, Hashtag, Principal) {
         $scope.articles = [];
         $scope.peoples = People.query();
         $scope.hashtags = Hashtag.query();
@@ -11,6 +11,8 @@ angular.module('miagebdxApp')
             });
         };
         $scope.loadAll();
+
+        $scope.isInRole = Principal.isInRole;
 
         $scope.create = function () {
             Article.save($scope.article,

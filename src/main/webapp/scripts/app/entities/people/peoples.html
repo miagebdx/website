@@ -1,148 +1,143 @@
 <header class="hero-unit" id="banner">
-<h1 translate="miagebdxApp.people.home.title">People</h1>
-
-<button class="btn btn-success btn-default" data-toggle="modal" data-target="#savePeopleModal" ng-click="clear()">
-    <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.people.home.createLabel">Create a new People</span>
-</button>
-
-    </header>
-
+    <h1 translate="miagebdxApp.people.home.title">People</h1>
+    <button ng-show="isInRole('ROLE_ADMIN')" class="btn btn-success btn-default" data-toggle="modal" data-target="#savePeopleModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.people.home.createLabel">Create a new People</span>
+    </button>
+</header>
+<br>
 <div class="container">
-
-
-    <div class="modal fade" id="savePeopleModal" tabindex="-1" role="dialog" aria-labelledby="myPeopleLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" role="form" novalidate
-                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
-                      ng-submit="create()">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" id="myPeopleLabel" translate="miagebdxApp.people.home.createOrEditLabel">Create or edit a People</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>ID</label>
-                            <input type="text" class="form-control" name="id"
-                                   ng-model="people.id" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label translate="miagebdxApp.people.name">Name</label>
-                            <input type="text" class="form-control"
-                                   ng-model="people.name">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.people.email">Email</label>
-                            <input type="text" class="form-control"
-                                   ng-model="people.email">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.people.telephone">Telephone</label>
-                            <input type="text" class="form-control"
-                                   ng-model="people.telephone">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.people.location">Location</label>
-                            <input type="text" class="form-control"
-                                   ng-model="people.location">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.people.website">Website</label>
-                            <input type="text" class="form-control"
-                                   ng-model="people.website">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.people.details">Details</label>
-                            <input type="text" class="form-control"
-                                   ng-model="people.details">
-                        </div>
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="deletePeopleConfirmation">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" ng-submit="confirmDelete(people.id)">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p translate="miagebdxApp.people.delete.question" translate-values="{id: '{{people.id}}'}">Are you sure you want to delete People {{people.id}}?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th translate="miagebdxApp.people.name">Name</th>
-                    <th translate="miagebdxApp.people.email">Email</th>
-                    <th translate="miagebdxApp.people.telephone">Telephone</th>
-                    <th translate="miagebdxApp.people.location">Location</th>
-                    <th translate="miagebdxApp.people.website">Website</th>
-                    <th translate="miagebdxApp.people.details">Details</th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th>ID</th>
+                <th translate="miagebdxApp.people.name">Name</th>
+                <th translate="miagebdxApp.people.email">Email</th>
+                <th translate="miagebdxApp.people.telephone">Telephone</th>
+                <th translate="miagebdxApp.people.location">Location</th>
+                <th translate="miagebdxApp.people.website">Website</th>
+                <th translate="miagebdxApp.people.details">Details</th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="people in peoples">
-                    <td><a ui-sref="peopleDetails({id:people.id})">{{people.id}}</a></td>
-                    <td>{{people.name}}</td>
-                    <td>{{people.email}}</td>
-                    <td>{{people.telephone}}</td>
-                    <td>{{people.location}}</td>
-                    <td>{{people.website}}</td>
-                    <td>{{people.details}}</td>
-                    <td>
-                        <button type="submit"
-                                ui-sref="peopleDetail({id:people.id})"
-                                class="btn btn-info">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="update(people.id)"
-                                class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="delete(people.id)"
-                                class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                        </button>
-                    </td>
-                </tr>
+            <tr ng-repeat="people in peoples">
+                <td><a ui-sref="peopleDetails({id:people.id})">{{people.id}}</a></td>
+                <td>{{people.name}}</td>
+                <td>{{people.email}}</td>
+                <td>{{people.telephone}}</td>
+                <td>{{people.location}}</td>
+                <td>{{people.website}}</td>
+                <td>{{people.details}}</td>
+                <td>
+                    <button type="submit"
+                            ui-sref="peopleDetail({id:people.id})"
+                            class="btn btn-info">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="update(people.id)"
+                            class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="delete(people.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                    </button>
+                </td>
+            </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<div class="modal fade" id="savePeopleModal" tabindex="-1" role="dialog" aria-labelledby="myPeopleLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" role="form" novalidate
+                  class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                  ng-submit="create()">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" id="myPeopleLabel" translate="miagebdxApp.people.home.createOrEditLabel">Create or edit a People</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control" name="id"
+                               ng-model="people.id" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label translate="miagebdxApp.people.name">Name</label>
+                        <input type="text" class="form-control"
+                               ng-model="people.name">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.people.email">Email</label>
+                        <input type="text" class="form-control"
+                               ng-model="people.email">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.people.telephone">Telephone</label>
+                        <input type="text" class="form-control"
+                               ng-model="people.telephone">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.people.location">Location</label>
+                        <input type="text" class="form-control"
+                               ng-model="people.location">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.people.website">Website</label>
+                        <input type="text" class="form-control"
+                               ng-model="people.website">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.people.details">Details</label>
+                        <input type="text" class="form-control"
+                               ng-model="people.details">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deletePeopleConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" ng-submit="confirmDelete(people.id)">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                </div>
+                <div class="modal-body">
+                    <p translate="miagebdxApp.people.delete.question" translate-values="{id: '{{people.id}}'}">Are you sure you want to delete People {{people.id}}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

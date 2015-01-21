@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('PartnerController', function ($scope, Partner, Event) {
+    .controller('PartnerController', function ($scope, Partner, Event, Principal) {
         $scope.partners = [];
         $scope.events = Event.query();
         $scope.loadAll = function() {
@@ -10,6 +10,7 @@ angular.module('miagebdxApp')
             });
         };
         $scope.loadAll();
+        $scope.isInRole = Principal.isInRole;
 
         $scope.create = function () {
             Partner.save($scope.partner,

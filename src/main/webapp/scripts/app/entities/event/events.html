@@ -1,153 +1,153 @@
 <header class="hero-unit" id="banner">
-        <h1 translate="miagebdxApp.event.home.title">Event</h1>
-    <button class="btn btn-success btn-default" data-toggle="modal" data-target="#saveEventModal" ng-click="clear()">
+    <h1 translate="miagebdxApp.event.home.title">Event</h1>
+    <button  ng-show="isInRole('ROLE_ADMIN')" class="btn btn-success btn-default" data-toggle="modal" data-target="#saveEventModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.event.home.createLabel">Create a new Event</span>
     </button>
 </header>
+<br>
 <div class="container">
-    <div class="modal fade" id="saveEventModal" tabindex="-1" role="dialog" aria-labelledby="myEventLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" role="form" novalidate
-                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
-                      ng-submit="create()">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" id="myEventLabel" translate="miagebdxApp.event.home.createOrEditLabel">Create or edit a Event</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>ID</label>
-                            <input type="text" class="form-control" name="id"
-                                   ng-model="event.id" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label translate="miagebdxApp.event.title">Title</label>
-                            <input type="text" class="form-control"
-                                   ng-model="event.title">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.event.description">Description</label>
-                            <input type="text" class="form-control"
-                                   ng-model="event.description">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.event.beginDate">BeginDate</label>
-                            <input type="datetime-local" class="form-control"
-                                   ng-model="event.beginDate" ng-model-options="{timezone: 'UTC'}">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.event.endDate">EndDate</label>
-                            <input type="datetime-local" class="form-control"
-                                   ng-model="event.endDate" ng-model-options="{timezone: 'UTC'}">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.event.pinned">Pinned</label>
-                            <input type="checkbox" class="form-control"
-                                   ng-model="event.pinned">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.event.location">Location</label>
-                            <input type="text" class="form-control"
-                                   ng-model="event.location">
-                        </div>
-
-                         <div class="form-group">
-                             <label translate="miagebdxApp.event.people">people</label>
-                             <select class="form-control" multiple ng-model="event.peoples" ng-options="people as people.name for people in peoples track by people.id">
-                             </select>
-                         </div>
-                         <div class="form-group">
-                             <label translate="miagebdxApp.event.partner">partner</label>
-                             <select class="form-control" multiple ng-model="event.partners" ng-options="partner as partner.name for partner in partners track by partner.id">
-                             </select>
-                         </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="deleteEventConfirmation">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" ng-submit="confirmDelete(event.id)">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p translate="miagebdxApp.event.delete.question" translate-values="{id: '{{event.id}}'}">Are you sure you want to delete Event {{event.id}}?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th translate="miagebdxApp.event.title">Title</th>
-                    <th translate="miagebdxApp.event.description">Description</th>
-                    <th translate="miagebdxApp.event.beginDate">BeginDate</th>
-                    <th translate="miagebdxApp.event.endDate">EndDate</th>
-                    <th translate="miagebdxApp.event.pinned">Pinned</th>
-                    <th translate="miagebdxApp.event.location">Location</th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th>ID</th>
+                <th translate="miagebdxApp.event.title">Title</th>
+                <th translate="miagebdxApp.event.description">Description</th>
+                <th translate="miagebdxApp.event.beginDate">BeginDate</th>
+                <th translate="miagebdxApp.event.endDate">EndDate</th>
+                <th translate="miagebdxApp.event.pinned">Pinned</th>
+                <th translate="miagebdxApp.event.location">Location</th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="event in events">
-                    <td><a ui-sref="eventDetails({id:event.id})">{{event.id}}</a></td>
-                    <td>{{event.title}}</td>
-                    <td>{{event.description}}</td>
-                    <td>{{event.beginDate}}</td>
-                    <td>{{event.endDate}}</td>
-                    <td>{{event.pinned}}</td>
-                    <td>{{event.location}}</td>
-                    <td>
-                        <button type="submit"
-                                ui-sref="eventDetail({id:event.id})"
-                                class="btn btn-info">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="update(event.id)"
-                                class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="delete(event.id)"
-                                class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                        </button>
-                    </td>
-                </tr>
+            <tr ng-repeat="event in events">
+                <td><a ui-sref="eventDetails({id:event.id})">{{event.id}}</a></td>
+                <td>{{event.title}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.beginDate}}</td>
+                <td>{{event.endDate}}</td>
+                <td>{{event.pinned}}</td>
+                <td>{{event.location}}</td>
+                <td>
+                    <button type="submit"
+                            ui-sref="eventDetail({id:event.id})"
+                            class="btn btn-info">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="update(event.id)"
+                            class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="delete(event.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                    </button>
+                </td>
+            </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<div class="modal fade" id="saveEventModal" tabindex="-1" role="dialog" aria-labelledby="myEventLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" role="form" novalidate
+                  class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                  ng-submit="create()">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" id="myEventLabel" translate="miagebdxApp.event.home.createOrEditLabel">Create or edit a Event</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control" name="id"
+                               ng-model="event.id" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.title">Title</label>
+                        <input type="text" class="form-control"
+                               ng-model="event.title">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.description">Description</label>
+                        <input type="text" class="form-control"
+                               ng-model="event.description">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.beginDate">BeginDate</label>
+                        <input type="datetime-local" class="form-control"
+                               ng-model="event.beginDate" ng-model-options="{timezone: 'UTC'}">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.endDate">EndDate</label>
+                        <input type="datetime-local" class="form-control"
+                               ng-model="event.endDate" ng-model-options="{timezone: 'UTC'}">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.pinned">Pinned</label>
+                        <input type="checkbox" class="form-control"
+                               ng-model="event.pinned">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.location">Location</label>
+                        <input type="text" class="form-control"
+                               ng-model="event.location">
+                    </div>
+
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.people">people</label>
+                        <select class="form-control" multiple ng-model="event.peoples" ng-options="people as people.name for people in peoples track by people.id">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.event.partner">partner</label>
+                        <select class="form-control" multiple ng-model="event.partners" ng-options="partner as partner.name for partner in partners track by partner.id">
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteEventConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" ng-submit="confirmDelete(event.id)">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                </div>
+                <div class="modal-body">
+                    <p translate="miagebdxApp.event.delete.question" translate-values="{id: '{{event.id}}'}">Are you sure you want to delete Event {{event.id}}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

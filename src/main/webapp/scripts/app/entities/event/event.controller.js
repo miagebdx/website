@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('EventController', function ($scope, Event, People, Partner) {
+    .controller('EventController', function ($scope, Event, People, Partner, Principal) {
         $scope.events = [];
         $scope.peoples = People.query();
         $scope.partners = Partner.query();
@@ -11,6 +11,8 @@ angular.module('miagebdxApp')
             });
         };
         $scope.loadAll();
+
+        $scope.isInRole = Principal.isInRole;
 
         $scope.create = function () {
             Event.save($scope.event,

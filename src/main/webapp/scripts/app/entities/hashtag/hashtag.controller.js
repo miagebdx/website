@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('HashtagController', function ($scope, Hashtag, Article) {
+    .controller('HashtagController', function ($scope, Hashtag, Article, Principal) {
         $scope.hashtags = [];
         $scope.articles = Article.query();
         $scope.loadAll = function() {
@@ -10,6 +10,8 @@ angular.module('miagebdxApp')
             });
         };
         $scope.loadAll();
+
+        $scope.isInRole = Principal.isInRole;
 
         $scope.create = function () {
             Hashtag.save($scope.hashtag,

@@ -1,10 +1,49 @@
 <header class="hero-unit" id="banner">
     <h1 translate="miagebdxApp.hashtag.home.title">Hashtag</h1>
 
-    <button class="btn btn-success btn-default" data-toggle="modal" data-target="#saveHashtagModal" ng-click="clear()">
+    <button ng-show="isInRole('ROLE_ADMIN')" class="btn btn-success btn-default" data-toggle="modal" data-target="#saveHashtagModal" ng-click="clear()">
         <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.hashtag.home.createLabel">Create a new Hashtag</span>
     </button>
 </header>
+<br>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th translate="miagebdxApp.hashtag.name">Name</th>
+                <th translate="miagebdxApp.hashtag.description">Description</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="hashtag in hashtags">
+                <td><a ui-sref="hashtagDetails({id:hashtag.id})">{{hashtag.id}}</a></td>
+                <td>{{hashtag.name}}</td>
+                <td>{{hashtag.description}}</td>
+                <td>
+                    <button type="submit"
+                            ui-sref="hashtagDetail({id:hashtag.id})"
+                            class="btn btn-info">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="update(hashtag.id)"
+                            class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="delete(hashtag.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <div class="modal fade" id="saveHashtagModal" tabindex="-1" role="dialog" aria-labelledby="myHashtagLabel"
      aria-hidden="true">
@@ -75,86 +114,3 @@
         </div>
     </div>
 </div>
-
-<div class="container">
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th translate="miagebdxApp.hashtag.name">Name</th>
-                <th translate="miagebdxApp.hashtag.description">Description</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="hashtag in hashtags">
-                <td><a ui-sref="hashtagDetails({id:hashtag.id})">{{hashtag.id}}</a></td>
-                <td>{{hashtag.name}}</td>
-                <td>{{hashtag.description}}</td>
-                <td>
-                    <button type="submit"
-                            ui-sref="hashtagDetail({id:hashtag.id})"
-                            class="btn btn-info">
-                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                    </button>
-                    <button type="submit"
-                            ng-click="update(hashtag.id)"
-                            class="btn btn-primary">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                    </button>
-                    <button type="submit"
-                            ng-click="delete(hashtag.id)"
-                            class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-</div>
-
-
-
-
-
-<!--
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th translate="miagebdxApp.hashtag.name">Name</th>
-            <th translate="miagebdxApp.hashtag.description">Description</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="hashtag in hashtags">
-            <td><a ui-sref="hashtagDetails({id:hashtag.id})">{{hashtag.id}}</a></td>
-            <td>{{hashtag.name}}</td>
-            <td>{{hashtag.description}}</td>
-            <td>
-                <button type="submit"
-                        ui-sref="hashtagDetail({id:hashtag.id})"
-                        class="btn btn-info">
-                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                </button>
-                <button type="submit"
-                        ng-click="update(hashtag.id)"
-                        class="btn btn-primary">
-                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                </button>
-                <button type="submit"
-                        ng-click="delete(hashtag.id)"
-                        class="btn btn-danger">
-                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                </button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    </div>
-    -->

@@ -7,7 +7,7 @@ angular.module('miagebdxApp')
                 parent: 'entity',
                 url: '/people',
                 data: {
-                    roles: ['ROLE_USER']
+                    roles: []
                 },
                 views: {
                     'content@': {
@@ -26,7 +26,7 @@ angular.module('miagebdxApp')
                 parent: 'entity',
                 url: '/people/:id',
                 data: {
-                    roles: ['ROLE_USER']
+                    roles: []
                 },
                 views: {
                     'content@': {
