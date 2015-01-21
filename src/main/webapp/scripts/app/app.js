@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
-    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster','ui.bootstrap'])
+    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster','ui.bootstrap','ngSanitize','angular.filter'])
 
     .run(function ($rootScope, $location, $http, $state, $translate, Auth, Principal, Language) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {

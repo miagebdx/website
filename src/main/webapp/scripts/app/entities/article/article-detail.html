@@ -1,6 +1,22 @@
+<header class="hero-unit" id="banner">
+    <h1>{{article.title}}</h1>
+</header>
 
-<div>
-    <h2><span translate="miagebdxApp.article.detail.title">Article</span> {{article.id}}</h2>
+<br>
+<div class="container">
+    <div markdown="article.body"></div>
+    {{article.date}} - {{article.pinned}}
+    <hr>
+    <button type="submit"
+            ui-sref="article"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
+
+
+
+<!--<h2><span translate="miagebdxApp.article.detail.title">Article</span> {{article.id}}</h2>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -45,10 +61,4 @@
             </tbody>
         </table>
     </div>
-
-    <button type="submit"
-            ui-sref="article"
-            class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-    </button>
-</div>
+    -->

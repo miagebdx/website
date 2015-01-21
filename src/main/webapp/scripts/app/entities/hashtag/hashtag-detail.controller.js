@@ -8,5 +8,8 @@ angular.module('miagebdxApp')
               $scope.hashtag = result;
             });
         };
+
+
+        $scope.loadAll();
         $scope.load($stateParams.id);
     });

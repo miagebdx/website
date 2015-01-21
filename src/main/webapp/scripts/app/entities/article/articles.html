@@ -4,137 +4,129 @@
         <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.article.home.createLabel">Create a new Article</span>
     </button>
 </header>
+<div class="modal fade" id="saveArticleModal" tabindex="-1" role="dialog" aria-labelledby="myArticleLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" role="form" novalidate
+                  class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                  ng-submit="create()">
 
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" id="myArticleLabel" translate="miagebdxApp.article.home.createOrEditLabel">Create or edit a Article</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control" name="id"
+                               ng-model="article.id" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label translate="miagebdxApp.article.title">Title</label>
+                        <input type="text" class="form-control"
+                               ng-model="article.title">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.article.body">Body</label>
+                        <input type="text" class="form-control"
+                               ng-model="article.body">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.article.date">Date</label>
+                        <input type="date" class="form-control"
+                               ng-model="article.date">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.article.pinned">Pinned</label>
+                        <input type="checkbox" class="form-control"
+                               ng-model="article.pinned">
+                    </div>
+
+                    <div class="form-group">
+                        <label translate="miagebdxApp.article.people">people</label>
+                        <select class="form-control" multiple ng-model="article.peoples" ng-options="people as people.name for people in peoples track by people.id">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.article.hashtag">hashtag</label>
+                        <select class="form-control" multiple ng-model="article.hashtags" ng-options="hashtag as hashtag.name for hashtag in hashtags track by hashtag.id">
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteArticleConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" ng-submit="confirmDelete(article.id)">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                </div>
+                <div class="modal-body">
+                    <p translate="miagebdxApp.article.delete.question" translate-values="{id: '{{article.id}}'}">Are you sure you want to delete Article {{article.id}}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
 <div class="container">
-    <div class="modal fade" id="saveArticleModal" tabindex="-1" role="dialog" aria-labelledby="myArticleLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" role="form" novalidate
-                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
-                      ng-submit="create()">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" id="myArticleLabel" translate="miagebdxApp.article.home.createOrEditLabel">Create or edit a Article</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>ID</label>
-                            <input type="text" class="form-control" name="id"
-                                   ng-model="article.id" readonly>
-                        </div>
-
-                        <div class="form-group">
-                            <label translate="miagebdxApp.article.title">Title</label>
-                            <input type="text" class="form-control"
-                                   ng-model="article.title">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.article.body">Body</label>
-                            <input type="text" class="form-control"
-                                   ng-model="article.body">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.article.date">Date</label>
-                            <input type="date" class="form-control"
-                                   ng-model="article.date">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.article.pinned">Pinned</label>
-                            <input type="checkbox" class="form-control"
-                                   ng-model="article.pinned">
-                        </div>
-
-                         <div class="form-group">
-                             <label translate="miagebdxApp.article.people">people</label>
-                             <select class="form-control" multiple ng-model="article.peoples" ng-options="people as people.name for people in peoples track by people.id">
-                             </select>
-                         </div>
-                         <div class="form-group">
-                             <label translate="miagebdxApp.article.hashtag">hashtag</label>
-                             <select class="form-control" multiple ng-model="article.hashtags" ng-options="hashtag as hashtag.name for hashtag in hashtags track by hashtag.id">
-                             </select>
-                         </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
-                        </button>
-                    </div>
-                </form>
+    <div class="col-md-6" ng-repeat="article in articles | unique: 'id'" >
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a ui-sref="articleDetails({id:article.id})">{{article.id}}</a> - {{article.title}}</h3>
+            </div>
+            <div class="panel-body">
+                <div markdown="article.body"></div>
+                {{article.date}} - {{article.pinned}}
+                <hr>
+                <p class="label label-default" type="submit"
+                   ui-sref="hashtagDetail({id:hashtag.id})"
+                   ng-repeat="hashtag in article.hashtags">{{hashtag.name}}</p>
+                <p class="label label-primary" type="submit"
+                   ui-sref="peopleDetail({id:people.id})"
+                   ng-repeat="people in article.peoples">{{people.name}} </p>
+                <hr>
+                <button type="submit"
+                        ui-sref="articleDetail({id:article.id})"
+                        class="btn btn-info">
+                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                </button>
+                <button type="submit"
+                        ng-click="update(article.id)"
+                        class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                </button>
+                <button type="submit"
+                        ng-click="delete(article.id)"
+                        class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                </button>
             </div>
         </div>
-    </div>
-
-    <div class="modal fade" id="deleteArticleConfirmation">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" ng-submit="confirmDelete(article.id)">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p translate="miagebdxApp.article.delete.question" translate-values="{id: '{{article.id}}'}">Are you sure you want to delete Article {{article.id}}?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th translate="miagebdxApp.article.title">Title</th>
-                    <th translate="miagebdxApp.article.body">Body</th>
-                    <th translate="miagebdxApp.article.date">Date</th>
-                    <th translate="miagebdxApp.article.pinned">Pinned</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="article in articles">
-                    <td><a ui-sref="articleDetails({id:article.id})">{{article.id}}</a></td>
-                    <td>{{article.title}}</td>
-                    <td>{{article.body}}</td>
-                    <td>{{article.date}}</td>
-                    <td>{{article.pinned}}</td>
-                    <td>
-                        <button type="submit"
-                                ui-sref="articleDetail({id:article.id})"
-                                class="btn btn-info">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="update(article.id)"
-                                class="btn btn-primary">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                        </button>
-                        <button type="submit"
-                                ng-click="delete(article.id)"
-                                class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </div>

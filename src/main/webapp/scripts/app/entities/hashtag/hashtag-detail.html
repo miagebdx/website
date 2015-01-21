@@ -1,34 +1,9 @@
-
-<div>
-    <h2><span translate="miagebdxApp.hashtag.detail.title">Hashtag</span> {{hashtag.id}}</h2>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th translate="entity.detail.field">Field</th>
-                    <th translate="entity.detail.value">Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.hashtag.name">Name</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{hashtag.name}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.hashtag.description">Description</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{hashtag.description}}" readonly>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<header class="hero-unit" id="banner">
+    <h1>{{hashtag.name}}</h1>
+    <p class="label label-default">{{hashtag.description}}</p>
+</header>
+<br>
+<div class="container">
 
     <button type="submit"
             ui-sref="hashtag"
