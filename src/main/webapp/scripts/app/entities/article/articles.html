@@ -23,8 +23,8 @@
                 <span translate="miagebdxApp.article.people"></span>
             </h3>
             <ul class="list-inline">
-                <li>
-                    <span class="label label-primary">Tous</span>
+                <li ng-repeat="people in peoples">
+                    <span ng-click="filterPeople(people)" class="label label-primary">{{people.name}}</span>
                 </li>
             </ul>
         </aside>

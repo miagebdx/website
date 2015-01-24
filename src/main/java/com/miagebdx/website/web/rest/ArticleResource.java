@@ -75,8 +75,20 @@ public class ArticleResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public List<Article> getByHashtags(@PathVariable Long id) {
-        log.debug("REST request to get Article : {}", id);
+        log.debug("REST request to get all Article by Hashtag : {}", id);
         return articleRepository.findByHashtag(id);
+    }
+
+    /**
+     * GET  /articles/:id -> get all articles by hashtag id
+     */
+    @RequestMapping(value = "/articles/people/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Article> getByPeople(@PathVariable Long id) {
+        log.debug("REST request to get all Article by people : {}", id);
+        return articleRepository.findByPeople(id);
     }
 
     /**
