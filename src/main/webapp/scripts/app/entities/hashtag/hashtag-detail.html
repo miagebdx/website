@@ -1,43 +1,53 @@
 <header class="hero-unit" id="banner">
     <h1>{{hashtag.name}}</h1>
-    <p class="label label-default">{{hashtag.description}}</p>
 </header>
 <br>
 <div class="container">
-        <section id="content" ng-repeat="article in articles | unique: 'id'">
-            <article>
-                <header>
-                    <h2>
-                        <span><a class="title" ui-sref="articleDetails({id:article.id})">{{article.title}}</a></span>
-                        <span>(#{{article.id}})</span>
-                    </h2>
-                    <ul class="list-inline">
-                        <li type="submit"
-                            ui-sref="hashtagDetail({id:hashtag.id})"
-                            ng-repeat="hashtag in article.hashtags">
-                            <span class="label label-default">{{hashtag.name}}</span>
-                        </li>
-                    </ul>
-                    <ul class="list-inline">
-                        <li  type="submit"
-                             ui-sref="peopleDetail({id:people.id})"
-                             ng-repeat="people in article.peoples">
-                            <span class="label label-primary">{{people.name}}</span> </li>
-                    </ul>
+    <div class="row">
+        <div class="col-md-4">
+            <aside id="article">
+                {{hashtag.description}}
+            </aside>
+        </div>
+        <div class="col-md-8">
+            <section id="content" ng-repeat="article in articles | unique: 'id'">
+                <article>
+                    <header>
+                        <h2>
+                            <span><a class="title" ui-sref="articleDetails({id:article.id})">{{article.title}}</a></span>
+                            <span>(#{{article.id}})</span>
+                        </h2>
+                        <ul class="list-inline">
+                            <li type="submit"
+                                ui-sref="hashtagDetail({id:hashtag.id})"
+                                ng-repeat="hashtag in article.hashtags">
+                                <span class="label label-default">{{hashtag.name}}</span>
+                            </li>
+                        </ul>
+                        <ul class="list-inline">
+                            <li  type="submit"
+                                 ui-sref="peopleDetail({id:people.id})"
+                                 ng-repeat="people in article.peoples">
+                                <span class="label label-primary">{{people.name}}</span> </li>
+                        </ul>
+                        <hr>
+                    </header>
+                    <div markdown="article.body"></div>
                     <hr>
-                </header>
-                <div markdown="article.body"></div>
-                <hr>
-                <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
-                <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
-                <b>{{article.date}}</b>
-                <button type="submit"
-                        ui-sref="articleDetail({id:article.id})"
-                        class="btn btn-link">
-                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                </button>
+                    <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
+                    <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
+                    <b>{{article.date}}</b>
+                    <button type="submit"
+                            ui-sref="articleDetail({id:article.id})"
+                            class="btn btn-link">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
                 </article>
             </section>
+        </div>
+
+    </div>
+
 
     <button type="submit"
             onClick="javascript:window.history.go(-1)"

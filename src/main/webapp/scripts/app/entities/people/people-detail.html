@@ -1,70 +1,69 @@
-
-<div>
-    <h2><span translate="miagebdxApp.people.detail.title">People</span> {{people.id}}</h2>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th translate="entity.detail.field">Field</th>
-                    <th translate="entity.detail.value">Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.people.name">Name</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{people.name}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.people.email">Email</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{people.email}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.people.telephone">Telephone</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{people.telephone}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.people.location">Location</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{people.location}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.people.website">Website</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{people.website}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.people.details">Details</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{people.details}}" readonly>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<header class="hero-unit" id="banner">
+    <h1>{{people.name}}</h1>
+    <button  ng-show="isInRole('ROLE_ADMIN')" class="btn btn-success btn-default" data-toggle="modal" data-target="#saveArticleModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.article.home.createLabel">Create a new Article</span>
+    </button>
+</header>
+<br>
+<div class="container">
+    <div class="col-md-4">
+        <aside id="article">
+            <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
+            <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
+            <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
+            <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
+            <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
+            <hr>
+            <b>{{people.details}}</b>
+        </aside>
     </div>
+    <div class="col-md-8">
+        <h2>Les articles :</h2>
+        <section id="content" ng-repeat="article in articles | unique: 'id'">
+            <article>
+                <header>
+                    <h2>
+                        <span><a class="title" ui-sref="articleDetail({id:article.id})">{{article.title}}</a></span>
+                        <span>(#{{article.id}})</span>
+                    </h2>
+                    <ul class="list-inline">
+                        <li type="submit"
+                            ui-sref="hashtagDetail({id:hashtag.id})"
+                            ng-repeat="hashtag in article.hashtags">
+                            <span class="label label-default">{{hashtag.name}}</span>
+                        </li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li  type="submit"
+                             ui-sref="peopleDetail({id:people.id})"
+                             ng-repeat="people in article.peoples">
+                            <span class="label label-primary">{{people.name}}</span> </li>
+                    </ul>
+                    <hr>
+                </header>
+                <div markdown="article.body"></div>
+                <hr>
+                <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
+                <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
+                <b>{{article.date}}</b>
 
+
+                <div class="button-bar pull-right">
+                    <button type="submit"
+                            ui-sref="articleDetail({id:article.id})"
+                            class="btn btn-link">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                </div>
+
+            </article>
+        </section>
+    </div>
+    <div class="col-md-12">
     <button type="submit"
             onClick="javascript:window.history.go(-1)"
             class="btn btn-info">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
     </button>
+    </div>
 </div>
