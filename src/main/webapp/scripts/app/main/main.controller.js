@@ -1,7 +1,17 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('MainController', function ($scope, Principal) {
+    .controller('MainController', function ($scope, Principal, Article) {
+
+        $scope.articles = [];
+
+        $scope.loadAll = function() {
+            Article.query(function(result) {
+                $scope.articles = result;
+            });
+        };
+        $scope.loadAll();
+
         Principal.identity().then(function(account) {
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;

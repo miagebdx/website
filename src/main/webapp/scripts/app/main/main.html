@@ -1,13 +1,7 @@
-<div ng-cloak>
-    <header id="banner">
-        <carousel interval="myInterval">
-            <slide ng-repeat="slide in slides" active="slide.active">
-                <img ng-src="{{slide.image}}" height="200px" style="margin:auto;">
-            </slide>
-        </carousel>
-    </header>
+<header class="hero-unit" id="banner">
 
-    <div class="container" >
+
+    <div class="container">
         <div class="col-md-6" align="center">
             <img class="img-responsive" src="../assets/images/miage-logo.png">
         </div>
@@ -15,44 +9,70 @@
             <img class="img-responsive" src="../assets/images/logo_fr.svg">
         </div>
     </div>
-    <!--<div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1 translate="main.title">Welcome, Java Hipster!</h1>
-            <p class="lead" translate="main.subtitle">This is your homepage</p>
 
-            <div ng-switch="isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true"
-                     translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
-                    You are logged in as user "Admin".
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated">
-                    If you want to <a href="#/login">authenticate</a>, you can try the default login="admin" and
-                    password="admin".
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register">
-                    Don't have an account? <a href=\"#/register\">Register</a>
-                </div>
-            </div>
-
-            <p translate="main.question">
-                If you have any question on JHipster:
-            </p>
-
-            <ul>
-                <li><a href="http://jhipster.github.io/" target="_blank" translate="main.link.homepage">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" translate="main.link.stackoverflow">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" translate="main.link.bugtracker">JHipster bug tracker</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank"  translate="main.link.contact">contact @java_hipster on Twitter</a></li>
-            </ul>
-
-            <p>
-             <span translate="main.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" translate="main.github">Github</a>!
-            </p>
-        </div>
-    </div>-->
+</header>
+<div ng-cloak>
+    <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}" height="200px" style="margin:auto;">
+        </slide>
+    </carousel>
 </div>
+<div class="container">
+    <div class="col-md-6">
+        <h1>Les articles épinglés</h1>
+        <section id="content" ng-repeat="article in articles | unique: 'id'">
+            <article>
+                <header>
+                    <h2>
+                        <span><a class="title" ui-sref="articleDetails({id:article.id})">{{article.title}}</a></span>
+                        <span>(#{{article.id}})</span>
+                    </h2>
+                    <ul class="list-inline">
+                        <li type="submit"
+                            ui-sref="hashtagDetail({id:hashtag.id})"
+                            ng-repeat="hashtag in article.hashtags">
+                            <span class="label label-default">{{hashtag.name}}</span>
+                        </li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li  type="submit"
+                             ui-sref="peopleDetail({id:people.id})"
+                             ng-repeat="people in article.peoples">
+                            <span class="label label-primary">{{people.name}}</span> </li>
+                    </ul>
+                    <hr>
+                </header>
+                <div markdown="article.body"></div>
+                <hr>
+                <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
+                <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
+                <b>{{article.date}}</b>
+
+
+                <div class="button-bar pull-right">
+                    <button type="submit"
+                            ui-sref="articleDetail({id:article.id})"
+                            class="btn btn-link">
+                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="update(article.id)"
+                            class="btn btn-link">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                    </button>
+                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                            ng-click="delete(article.id)"
+                            class="btn btn-link">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                    </button>
+                </div>
+
+            </article>
+        </section>
+    </div>
+</div>
+
+
+
+

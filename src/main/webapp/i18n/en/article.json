@@ -16,8 +16,8 @@
             "body": "Body",
             "date": "Date",
             "pinned": "Pinned",
-            "people": "people",
-            "hashtag": "hashtag"
+            "people": "People",
+            "hashtag": "Hashtag"
         }
     }
 }
