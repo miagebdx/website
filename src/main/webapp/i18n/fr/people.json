@@ -18,8 +18,8 @@
             "location": "Lieu",
             "website": "Site internet",
             "details": "Détails",
-            "event": "Evènement",
-            "article": "Article"
+            "event": "Les évenements",
+            "article": "Les articles"
         }
     }
 }

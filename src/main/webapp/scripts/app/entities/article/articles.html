@@ -39,6 +39,7 @@
                         <span>(#{{article.id}})</span>
                     </h2>
                     <ul class="list-inline">
+                        <li class="glyphicon glyphicon-user"></li>
                         <li  type="submit"
                              ui-sref="peopleDetail({id:people.id})"
                              ng-repeat="people in article.peoples">
@@ -111,8 +112,8 @@
                     </div>
                     <div class="form-group">
                         <label translate="miagebdxApp.article.body">Body</label>
-                        <input type="text" class="form-control"
-                               ng-model="article.body">
+                        <textarea type="text" class="form-control"
+                               ng-model="article.body"/>
                     </div>
                     <div class="form-group">
                         <label translate="miagebdxApp.article.date">Date</label>

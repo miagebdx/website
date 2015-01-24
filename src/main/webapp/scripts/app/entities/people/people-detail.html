@@ -18,7 +18,7 @@
         </aside>
     </div>
     <div class="col-md-8">
-        <h2>Les articles :</h2>
+        <h2 translate="miagebdxApp.people.article"> </h2>
         <section id="content" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned">
             <article>
                 <header>
@@ -27,6 +27,7 @@
                         <span>(#{{article.id}})</span>
                     </h2>
                     <ul class="list-inline">
+                        <li class="glyphicon glyphicon-user"></li>
                         <li  type="submit"
                              ui-sref="peopleDetail({id:people.id})"
                              ng-repeat="people in article.peoples">
