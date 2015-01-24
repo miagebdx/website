@@ -8,6 +8,7 @@
             <article>
                 <header>
                     <ul class="list-inline">
+                        <li><i class="glyphicon glyphicon-tags"></i> </li>
                         <li type="submit"
                             ui-sref="hashtagDetail({id:hashtag.id})"
                             ng-repeat="hashtag in article.hashtags">
@@ -15,6 +16,7 @@
                         </li>
                     </ul>
                     <ul class="list-inline">
+                        <li class="glyphicon glyphicon-userz"></li>
                         <li  type="submit"
                              ui-sref="peopleDetail({id:people.id})"
                              ng-repeat="people in article.peoples">

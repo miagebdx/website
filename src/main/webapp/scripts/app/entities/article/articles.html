@@ -31,7 +31,7 @@
         </aside>
     </div>
     <div class="col-md-8">
-        <section id="content" ng-repeat="article in articles | unique: 'id'">
+        <section id="content" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned">
             <article>
                 <header>
                     <h2>
@@ -39,72 +39,48 @@
                         <span>(#{{article.id}})</span>
                     </h2>
                     <ul class="list-inline">
-                    <li type="submit"
-                       ui-sref="hashtagDetail({id:hashtag.id})"
-                       ng-repeat="hashtag in article.hashtags">
-                        <span class="label label-default">{{hashtag.name}}</span>
-                    </li>
-                    </ul>
-                    <ul class="list-inline">
-                    <li  type="submit"
-                       ui-sref="peopleDetail({id:people.id})"
-                       ng-repeat="people in article.peoples">
-                        <span class="label label-primary">{{people.name}}</span> </li>
+                        <li  type="submit"
+                             ui-sref="peopleDetail({id:people.id})"
+                             ng-repeat="people in article.peoples">
+                            <span class="label label-primary">{{people.name}}</span> </li>
+                        <li><b>{{article.date}}</b></li>
                     </ul>
                     <hr>
                 </header>
                 <div markdown="article.body"></div>
                 <hr>
-                <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
-                <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
-                <b>{{article.date}}</b>
 
-
-                <div class="button-bar pull-right">
-                    <button type="submit"
-                            ui-sref="articleDetail({id:article.id})"
-                            class="btn btn-link">
+                <ul class="list-inline">
+                    <li>
+                        <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
+                        <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
+                    </li>
+                    <li>
+                        <i class="glyphicon glyphicon-tags"></i>
+                    </li>
+                    <li type="submit"
+                        ui-sref="hashtagDetail({id:hashtag.id})"
+                        ng-repeat="hashtag in article.hashtags">
+                        <span class="label label-default">{{hashtag.name}}</span>
+                    </li>
+                    <li type="submit"
+                        ui-sref="articleDetail({id:article.id})"
+                        class="btn btn-link pull-right">
                         <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="update(article.id)"
-                            class="btn btn-link">
+                    </li>
+                    <li ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                        ng-click="update(article.id)"
+                        class="btn btn-link pull-right">
                         <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="delete(article.id)"
-                            class="btn btn-link">
+                    </li>
+                    <li ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                        ng-click="delete(article.id)"
+                        class="btn btn-link pull-right">
                         <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                    </button>
-                </div>
-
+                    </li>
+                </ul>
             </article>
         </section>
-    </div>
-    <div class="col-md-12 text-center">
-        <ul class="pagination">
-
-            <li class="active">
-                <a href="#">1</a>
-            </li>
-
-            <li class="">
-                <a rel="next">2</a>
-            </li>
-
-            <li class="">
-                <a href="">3</a>
-            </li>
-
-            <li class="disabled">
-                <a href="#">...</a>
-            </li>
-
-            <li>
-                <a href="" rel="next">Suivante ›</a>
-            </li>
-
-        </ul>
     </div>
 </div>
 
