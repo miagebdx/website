@@ -6,49 +6,34 @@
 </header>
 <br>
 <div class="container">
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th translate="miagebdxApp.people.name">Name</th>
-                <th translate="miagebdxApp.people.email">Email</th>
-                <th translate="miagebdxApp.people.telephone">Telephone</th>
-                <th translate="miagebdxApp.people.location">Location</th>
-                <th translate="miagebdxApp.people.website">Website</th>
-                <th translate="miagebdxApp.people.details">Details</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="people in peoples">
-                <td><a ui-sref="peopleDetails({id:people.id})">{{people.id}}</a></td>
-                <td>{{people.name}}</td>
-                <td>{{people.email}}</td>
-                <td>{{people.telephone}}</td>
-                <td>{{people.location}}</td>
-                <td>{{people.website}}</td>
-                <td>{{people.details}}</td>
-                <td>
-                    <button type="submit"
-                            ui-sref="peopleDetail({id:people.id})"
-                            class="btn btn-info">
-                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="update(people.id)"
-                            class="btn btn-primary">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="delete(people.id)"
-                            class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="col-md-4" ng-repeat="people in peoples">
+        <aside id="article">
+           <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
+            <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
+            <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
+            <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
+            <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
+            <hr>
+            <b>{{people.details}}</b>
+            <hr>
+            <div class="button-bar">
+            <button type="submit"
+                    ui-sref="peopleDetail({id:people.id})"
+                    class="btn btn-link">
+                <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+            </button>
+            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                    ng-click="update(people.id)"
+                    class="btn btn-link">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+            </button>
+            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                    ng-click="delete(people.id)"
+                    class="btn btn-link">
+                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+            </button>
+            </div>
+        </aside>
     </div>
 </div>
 
