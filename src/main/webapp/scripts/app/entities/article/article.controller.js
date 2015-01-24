@@ -1,24 +1,17 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('ArticleController', function ($scope, Article, ArticleHashtag, ArticlePeople, People, Hashtag, Principal) {
+    .controller('ArticleController', function ($scope, Article, People, Hashtag, Principal) {
         $scope.articles = [];
         $scope.peoples = People.query();
         $scope.hashtags = Hashtag.query();
+
         $scope.loadAll = function() {
             Article.query(function(result) {
                $scope.articles = result;
             });
         };
         $scope.loadAll();
-
-        $scope.filterHashtag = function(hashtag){
-            $scope.articles = ArticleHashtag.get({id: hashtag.id});
-        };
-
-        $scope.filterPeople = function(people){
-            $scope.articles = ArticlePeople.get({id: people.id});
-        };
 
         $scope.isInRole = Principal.isInRole;
 

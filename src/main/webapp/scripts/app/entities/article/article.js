@@ -40,5 +40,6 @@ angular.module('miagebdxApp')
                         return $translate.refresh();
                     }]
                 }
-            });
+            })
+
     });

@@ -14,7 +14,7 @@
                 </h3>
                 <ul class="list-inline">
                     <li ng-repeat="hashtag in hashtags">
-                        <span ng-click="filterHashtag(hashtag)" class="label label-primary">{{hashtag.name}}</span>
+                        <span ui-sref="hashtagDetail({id: hashtag.id})" class="label label-primary">{{hashtag.name}}</span>
                     </li>
                 </ul>
 
@@ -24,7 +24,7 @@
             </h3>
             <ul class="list-inline">
                 <li ng-repeat="people in peoples">
-                    <span ng-click="filterPeople(people)" class="label label-primary">{{people.name}}</span>
+                    <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
                 </li>
             </ul>
         </aside>
@@ -34,7 +34,7 @@
             <article>
                 <header>
                     <h2>
-                        <span><a class="title" ui-sref="articleDetails({id:article.id})">{{article.title}}</a></span>
+                        <span><a class="title" ui-sref="articleDetail({id:article.id})">{{article.title}}</a></span>
                         <span>(#{{article.id}})</span>
                     </h2>
                     <ul class="list-inline">
