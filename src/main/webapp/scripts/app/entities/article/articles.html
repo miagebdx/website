@@ -13,8 +13,8 @@
                     <span translate="miagebdxApp.article.hashtag"></span>
                 </h3>
                 <ul class="list-inline">
-                    <li>
-                        <span class="label label-primary">Tous</span>
+                    <li ng-repeat="hashtag in hashtags">
+                        <span ng-click="filterHashtag(hashtag)" class="label label-primary">{{hashtag.name}}</span>
                     </li>
                 </ul>
 

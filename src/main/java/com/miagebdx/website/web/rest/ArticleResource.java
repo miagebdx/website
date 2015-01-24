@@ -68,6 +68,18 @@ public class ArticleResource {
     }
 
     /**
+     * GET  /articles/:id -> get all articles by hashtag id
+     */
+    @RequestMapping(value = "/articles/hashtag/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Article> getByHashtags(@PathVariable Long id) {
+        log.debug("REST request to get Article : {}", id);
+        return articleRepository.findByHashtag(id);
+    }
+
+    /**
      * DELETE  /articles/:id -> delete the "id" article.
      */
     @RequestMapping(value = "/articles/{id}",
