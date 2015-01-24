@@ -24,4 +24,13 @@ angular.module('miagebdxApp')
                 });
             }
         };
+    })
+    .directive('mb-maps', function () {
+       return {
+           restrict: 'AE',
+           template: '<div id="map">aaaa</div>',
+           link: function () {
+
+           }
+       }
     });

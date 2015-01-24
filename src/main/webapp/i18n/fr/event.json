@@ -3,7 +3,7 @@
         "event" : {
             "home": {
                 "title": "Evénements",
-                "createLabel": "Créer un nouveau évenement",
+                "createLabel": "Créer un nouvel évenement",
                 "createOrEditLabel": "Créer ou éditer un evénement"
             },
             "delete": {
@@ -19,7 +19,9 @@
             "pinned": "Epinglé",
             "location": "Lieu",
             "people": "Référent(s)",
-            "partner": "Partenaire(s)"
+            "partner": "Partenaire(s)",
+            "search": "Recherchez un évenement par sont titre",
+            "createdAt": "créer le"
         }
     }
 }
