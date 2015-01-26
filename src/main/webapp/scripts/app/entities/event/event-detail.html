@@ -1,70 +1,28 @@
-
-<div>
-    <h2><span translate="miagebdxApp.event.detail.title">Event</span> {{event.id}}</h2>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th translate="entity.detail.field">Field</th>
-                    <th translate="entity.detail.value">Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.event.title">Title</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{event.title}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.event.description">Description</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{event.description}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.event.beginDate">BeginDate</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{event.beginDate}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.event.endDate">EndDate</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{event.endDate}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.event.pinned">Pinned</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{event.pinned}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="miagebdxApp.event.location">Location</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{event.location}}" readonly>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
+<div class="container">
     <button type="submit"
             ui-sref="event"
-            class="btn btn-info">
+            class="btn btn-link">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
     </button>
+
+
+    <div class="jumbotron" style="color: #2a8bb9;">
+        <h2><span translate="miagebdxApp.event.detail.title"></span> {{event.title}}</h2>
+
+        <h3>
+            <small>{{ event.beginDate }}</small>
+            <small>{{ event.endDate }}</small>
+        </h3>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="lead">
+                {{event.description}}
+            </p>
+        </div>
+        <div class="col-md-12">
+            <div id="map-canvas" style="height: 300px; width:100%; margin: 0; padding: 0;"></div>
+        </div>
+    </div>
 </div>

@@ -19,7 +19,9 @@
             "pinned": "Pinned",
             "location": "Location",
             "people": "people",
-            "partner": "partner"
+            "partner": "partner",
+            "search": "Seek event by ttle",
+            "createdAt": "created at"
         }
     }
 }

@@ -6,52 +6,65 @@
 </header>
 <br>
 <div class="container">
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th translate="miagebdxApp.event.title">Title</th>
-                <th translate="miagebdxApp.event.description">Description</th>
-                <th translate="miagebdxApp.event.beginDate">BeginDate</th>
-                <th translate="miagebdxApp.event.endDate">EndDate</th>
-                <th translate="miagebdxApp.event.pinned">Pinned</th>
-                <th translate="miagebdxApp.event.location">Location</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="event in events">
-                <td><a ui-sref="eventDetails({id:event.id})">{{event.id}}</a></td>
-                <td>{{event.title}}</td>
-                <td>{{event.description}}</td>
-                <td>{{event.beginDate}}</td>
-                <td>{{event.endDate}}</td>
-                <td>{{event.pinned}}</td>
-                <td>{{event.location}}</td>
-                <td>
-                    <button type="submit"
-                            ui-sref="eventDetail({id:event.id})"
-                            class="btn btn-info">
-                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="update(event.id)"
-                            class="btn btn-primary">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="delete(event.id)"
-                            class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="row" >
+        <div class="col-md-12" ng-show="isInRole('ROLE_ADMIN')">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="searchEventTitle">
+                        <span translate="miagebdxApp.event.search">Search Event</span>
+                    </label>
+                    <input type="text" class="form-control" id="searchEventTitle" ng-model="search.title">
+                </div>
+            </form>
+            <hr/>
+        </div>
+        <div class="col-md-12">
+            <section id="content" ng-repeat="event in events | filter:search">
+                <article>
+                    <header>
+                        <h2>
+                            <span>
+                                <a class="title" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
+                            </span>
+
+                            <small class="pull-right">
+                                <span translate="miagebdxApp.event.createdAt"></span>
+                                {{ event.beginDate }}
+                            </small>
+                        </h2>
+                    </header>
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ event.description }}
+                        </div>
+                        <div class="col-md-6">
+                            <div class="button-bar pull-right">
+                                <button type="submit"
+                                        ui-sref="eventDetail({id:event.id})"
+                                        class="btn btn-link">
+                                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                                </button>
+                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                        ng-click="updateEvent(event.id)"
+                                        class="btn btn-link">
+                                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                                </button>
+                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                        ng-click="deleteEvent(event.id)"
+                                        class="btn btn-link">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
     </div>
 </div>
 
+<!-- Popup de saving -->
 <div class="modal fade" id="saveEventModal" tabindex="-1" role="dialog" aria-labelledby="myEventLabel"
      aria-hidden="true">
     <div class="modal-dialog">
@@ -67,29 +80,23 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>ID</label>
-                        <input type="text" class="form-control" name="id"
-                               ng-model="event.id" readonly>
-                    </div>
-
-                    <div class="form-group">
                         <label translate="miagebdxApp.event.title">Title</label>
                         <input type="text" class="form-control"
                                ng-model="event.title">
                     </div>
                     <div class="form-group">
                         <label translate="miagebdxApp.event.description">Description</label>
-                        <input type="text" class="form-control"
-                               ng-model="event.description">
+                        <textarea class="form-control" ng-model="event.description">
+                        </textarea>
                     </div>
                     <div class="form-group">
                         <label translate="miagebdxApp.event.beginDate">BeginDate</label>
-                        <input type="datetime-local" class="form-control"
+                        <input type="date" class="form-control"
                                ng-model="event.beginDate" ng-model-options="{timezone: 'UTC'}">
                     </div>
                     <div class="form-group">
                         <label translate="miagebdxApp.event.endDate">EndDate</label>
-                        <input type="datetime-local" class="form-control"
+                        <input type="date" class="form-control"
                                ng-model="event.endDate" ng-model-options="{timezone: 'UTC'}">
                     </div>
                     <div class="form-group">
@@ -100,7 +107,7 @@
                     <div class="form-group">
                         <label translate="miagebdxApp.event.location">Location</label>
                         <input type="text" class="form-control"
-                               ng-model="event.location">
+                               ng-model="event.location" id="autocomplete">
                     </div>
 
                     <div class="form-group">
@@ -127,6 +134,7 @@
         </div>
     </div>
 </div>
+<!-- Popup de deleting -->
 <div class="modal fade" id="deleteEventConfirmation">
     <div class="modal-dialog">
         <div class="modal-content">
