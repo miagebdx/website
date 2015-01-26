@@ -28,36 +28,53 @@
                             </span>
 
                             <small class="pull-right">
+                                    <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
+                                    <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
                                 <span translate="miagebdxApp.event.createdAt"></span>
                                 {{ event.beginDate }}
                             </small>
                         </h2>
                     </header>
-                    <div class="row">
-                        <div class="col-md-6">
-                            {{ event.description }}
-                        </div>
-                        <div class="col-md-6">
-                            <div class="button-bar pull-right">
-                                <button type="submit"
-                                        ui-sref="eventDetail({id:event.id})"
-                                        class="btn btn-link">
-                                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                                </button>
-                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                        ng-click="updateEvent(event.id)"
-                                        class="btn btn-link">
-                                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                                </button>
-                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                        ng-click="deleteEvent(event.id)"
-                                        class="btn btn-link">
-                                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                                </button>
-                            </div>
 
-                        </div>
+                            {{ event.description }}
+
+                        <br>
+                        <hR>
+
+                    <div class="button-bar pull-right">
+                        <button type="submit"
+                                ui-sref="eventDetail({id:event.id})"
+                                class="btn btn-link">
+                            <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="updateEvent(event.id)"
+                                class="btn btn-link">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="deleteEvent(event.id)"
+                                class="btn btn-link">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
                     </div>
+                     <ul class="list-inline">
+                         <li><i class="glyphicon glyphicon-user"></i></li>
+                            <li ng-repeat="people in event.peoples">
+                                <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
+                            </li>
+                        </ul>
+                    <ul class="list-inline">
+                        <li><i class="glyphicon glyphicon-briefcase"></i></li>
+                        <li ng-repeat="partner in event.partners">
+                            <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
+                        </li>
+                    </ul>
+
+
+
+
+
                 </article>
             </section>
         </div>

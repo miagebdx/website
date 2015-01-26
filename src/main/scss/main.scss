@@ -5,7 +5,7 @@ body {
     color: #333;
 }
 
-.development {
+/*.development {
     position: absolute;
     width: 149px;
     height: 149px;
@@ -16,7 +16,7 @@ body {
     background-image: url("../images/development_ribbon.png");
     background-position: center center;
     background-repeat: no-repeat;
-}
+}*/
 
 .browserupgrade {
     margin: 0.2em 0;
@@ -28,14 +28,6 @@ body {
 .error {
     color: white;
     background-color: red;
-}
-
-.hipster {
-    display: inline-block;
-    width: 347px;
-    height: 497px;
-    background: url("../images/hipster.png") no-repeat center top;
-    background-size: contain;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */

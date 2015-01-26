@@ -1,11 +1,16 @@
 <header class="hero-unit" id="banner">
     <h1>{{people.name}}</h1>
-    <button  ng-show="isInRole('ROLE_ADMIN')" class="btn btn-success btn-default" data-toggle="modal" data-target="#saveArticleModal" ng-click="clear()">
-        <span class="glyphicon glyphicon-flash"></span> <span translate="miagebdxApp.article.home.createLabel">Create a new Article</span>
-    </button>
 </header>
-<br>
+
 <div class="container">
+    <button type="submit"
+            onClick="javascript:window.history.go(-1)"
+            class="btn btn-link">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+    <div class="row">
+
+
     <div class="col-md-4">
         <aside id="article">
             <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
@@ -55,17 +60,53 @@
                     <li type="submit"
                         ui-sref="articleDetail({id:article.id})"
                         class="btn btn-link pull-right">
-                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
                     </li>
                 </ul>
             </article>
         </section>
+        <h2 translate="miagebdxApp.people.event"> </h2>
+        <section id="content" ng-repeat="event in events">
+            <article>
+                <header>
+                    <h2>
+                            <span>
+                                <a class="title" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
+                            </span>
+
+                        <small class="pull-right">
+                            <span translate="miagebdxApp.event.createdAt"></span>
+                            {{ event.beginDate }}
+                        </small>
+                    </h2>
+                </header>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ event.description }}
+                    </div>
+                    <div class="col-md-6">
+                        <div class="button-bar pull-right">
+                            <button type="submit"
+                                    ui-sref="eventDetail({id:event.id})"
+                                    class="btn btn-link">
+                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                            </button>
+                            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                    ng-click="updateEvent(event.id)"
+                                    class="btn btn-link">
+                                <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                            </button>
+                            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                    ng-click="deleteEvent(event.id)"
+                                    class="btn btn-link">
+                                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+        </section>
     </div>
-    <div class="col-md-12">
-        <button type="submit"
-                onClick="javascript:window.history.go(-1)"
-                class="btn btn-info">
-            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-        </button>
-    </div>
+</div>
 </div>

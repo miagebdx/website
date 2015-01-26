@@ -59,7 +59,60 @@
                 </ul>
             </article>
         </section>
+
     </div>
+
+<div class="col-md-6">
+    <h1 translate="main.event"></h1>
+    <section id="content" ng-repeat="event in events | unique : 'id'" ng-show="event.pinned">
+        <article>
+            <header>
+                <h2>
+                            <span>
+                                <a class="title" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
+                            </span>
+
+                    <small class="pull-right">
+                        <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
+                        <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
+                        <span translate="miagebdxApp.event.createdAt"></span>
+                        {{ event.beginDate }}
+                    </small>
+                </h2>
+            </header>
+
+            {{ event.description }}
+
+            <br>
+            <hR>
+
+            <div class="button-bar pull-right">
+                <button type="submit"
+                        ui-sref="eventDetail({id:event.id})"
+                        class="btn btn-link">
+                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                </button>
+            </div>
+            <ul class="list-inline">
+                <li><i class="glyphicon glyphicon-user"></i></li>
+                <li ng-repeat="people in event.peoples">
+                    <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li><i class="glyphicon glyphicon-briefcase"></i></li>
+                <li ng-repeat="partner in event.partners">
+                    <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
+                </li>
+            </ul>
+
+
+
+
+
+        </article>
+    </section>
+</div>
 </div>
 
 

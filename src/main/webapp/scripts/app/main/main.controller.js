@@ -1,13 +1,16 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('MainController', function ($scope, Principal, Article) {
+    .controller('MainController', function ($scope, Principal, Article, Event) {
 
         $scope.articles = [];
 
         $scope.loadAll = function() {
             Article.query(function(result) {
                 $scope.articles = result;
+            });
+            Event.query(function(result) {
+                $scope.events = result;
             });
         };
         $scope.loadAll();

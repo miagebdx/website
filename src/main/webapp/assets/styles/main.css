@@ -6,20 +6,18 @@ body {
   color: #333;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\000038}}
-.development {
-  position: absolute;
-  width: 149px;
-  height: 149px;
-  top: 0;
-  left: 0;
-  border: 0;
-  z-index: 1000;
-  background-image: url("../images/development_ribbon.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
+/*.development {
+    position: absolute;
+    width: 149px;
+    height: 149px;
+    top: 0;
+    left: 0;
+    border: 0;
+    z-index: 1000;
+    background-image: url("../images/development_ribbon.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+}*/
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000321}}
 .browserupgrade {
   margin: 0.2em 0;
@@ -34,31 +32,22 @@ body {
   background-color: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000333}}
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url("../images/hipster.png") no-repeat center top;
-  background-size: contain;
-}
-
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000341}}
   .hipster {
     background: url("../images/hipster2x.png") no-repeat center top;
     background-size: contain;
   }
 }
 /* make sure browsers use the pointer cursor for anchors, even with no href */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000348}}
 a:hover {
   cursor: pointer;
 }
 
 /* start Password strength bar style */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000354}}
 ul#strength {
   display: inline;
   list-style: none;
@@ -68,12 +57,12 @@ ul#strength {
   vertical-align: 2px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000363}}
 .point:last {
   margin: 0 !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000366}}
 .point {
   background: #DDD;
   border-radius: 2px;
@@ -84,25 +73,25 @@ ul#strength {
 }
 
 /* end Password strength bar style */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000376}}
 .thing-form {
   margin: 20px 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000380}}
 #banner {
   border-bottom: none;
   margin-top: -20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000385}}
 #banner h1 {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\0000391}}
 .hero-unit {
   position: relative;
   padding: 30px 15px;
@@ -112,7 +101,7 @@ ul#strength {
   background: #2a8bb9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003100}}
 .footer {
   text-align: center;
   padding: 30px 0;
@@ -120,13 +109,13 @@ ul#strength {
   border-top: 1px solid #E5E5E5;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003107}}
 .carousel {
   overflow: hidden;
   height: 270px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003113}}
 aside#article, section#content, .block {
   background-color: #f7f7f7;
   padding: 10px 12px 20px;
@@ -135,28 +124,28 @@ aside#article, section#content, .block {
   word-wrap: break-word;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003122}}
 aside#article .well, section#content .well, .block .well, .well {
   background-color: #fcfcfc;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003127}}
 aside#article h1, aside#article h2, section#content h1, section#content h2,
 .block h1, .block h2 {
   color: #2a8bb9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003133}}
 aside#article h2, section#content h2, .block h2 {
   font-size: 1.6em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003137}}
 aside#article h3, section#content h3, .block h3 {
   font-size: 1.3em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\00003141}}
 aside#article h3 {
   padding-bottom: 0.6em;
   border-bottom: 1px solid darkgrey;

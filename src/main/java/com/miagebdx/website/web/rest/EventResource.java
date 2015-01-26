@@ -49,6 +49,29 @@ public class EventResource {
         log.debug("REST request to get all Events");
         return eventRepository.findAll();
     }
+    /**
+     * GET  /events/people/:id -> get all the events by people.
+     */
+    @RequestMapping(value = "/events/people/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Event> getByPeople(@PathVariable Long id) {
+        log.debug("REST request to get all Events by people");
+        return eventRepository.findByPeople(id);
+    }
+
+    /**
+     * GET  /events/partner/:id -> get all the events by people.
+     */
+    @RequestMapping(value = "/events/partner/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Event> getByPartner(@PathVariable Long id) {
+        log.debug("REST request to get all Events by partner");
+        return eventRepository.findByPartner(id);
+    }
 
     /**
      * GET  /events/:id -> get the "id" event.
