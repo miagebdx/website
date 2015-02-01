@@ -95,6 +95,7 @@ angular.module('miagebdxApp')
             Event.get({id: id}, function (resultEvent) {
                 $scope.event = resultEvent;
                 $('#saveEventModal').modal('show');
+
             });
 
 
