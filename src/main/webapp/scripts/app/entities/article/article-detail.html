@@ -9,8 +9,9 @@
             class="btn btn-link">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
     </button>
-        <section id="content">
-            <article>
+    <div class="list-group">
+        <aside id="content" ng-class="animation">
+            <article class="list-group-item" >
                 <header>
                     <ul class="list-inline">
                         <li><i class="glyphicon glyphicon-tags"></i> </li>
@@ -35,6 +36,8 @@
                 <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
                 <b>{{article.date}}</b>
             </article>
-        </section>
+        </aside>
+    </div>
+
 </div>
 

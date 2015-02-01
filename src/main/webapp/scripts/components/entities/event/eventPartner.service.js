@@ -6,7 +6,13 @@ angular.module('miagebdxApp')
             'query': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
-                isArray: true
+                isArray: true,
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    data.beginDate = new Date(data.beginDate);
+                    data.endDate = new Date(data.endDate);
+                    return data;
+                }
             }
         });
     });

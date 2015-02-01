@@ -3,42 +3,13 @@
 
 
 angular.module('miagebdxApp')
-    .controller('ArticleController', function ($scope, Article, People, Hashtag, Principal) {
+    .controller('ArticleController', function ($scope, Animations,Article, People, Hashtag, Principal) {
 
 
         $scope.articles = [];
-        $scope.animation = "bouncy-scale-in";
+        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
         $scope.peoples = People.query();
         $scope.hashtags = Hashtag.query();
-        $scope.filteredItems = [];
-
-
-        $scope.addFilter= function(item,entity){
-            var f = $scope.filteredItems;
-            if(entity=="people"){
-                if (f.indexOf(item)>-1){
-                    f.splice(item)
-                }else{
-                    f.push(item);
-
-                }
-            }
-
-            if(entity=="hashtag"){
-                if (f.indexOf(item)>-1){
-                    f.splice(item)
-                }else{
-                    f.push(item);
-
-                }
-
-            }
-
-            console.log(f);
-
-            $scope.filteredItems = f;
-
-        };
 
 
         $scope.loadAll = function() {

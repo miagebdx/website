@@ -3,9 +3,14 @@
 </header>
 <br>
 <div class="container">
-<div class="col-md-4">
-    <aside id="article">
-        <h2 ui-sref="partnerDetail({id:partner.id})"><i class="glyphicon glyphicon-user" ></i> {{partner.name}}</h2>
+    <div class="col-md-12">
+        <form>
+            <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
+        </form>
+        <hr/>
+    </div>
+<div class="col-md-4 list-group">
+    <aside class="list-group-item">
         <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
         <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
         <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
@@ -15,9 +20,8 @@
     </aside>
 </div>
     <div class="col-md-8">
-        <h2 translate="miagebdxApp.partner.event"></h2>
-        <section id="content" ng-repeat="event in events | filter:search">
-            <article>
+        <aside id="article" class="list-group-item" ng-repeat="event in events | filter:search" ng-class="animation">
+
                 <header>
                     <h2>
                             <span>
@@ -55,7 +59,6 @@
 
                     </div>
                 </div>
-            </article>
-        </section>
+        </aside>
     </div>
     </div>

@@ -9,35 +9,30 @@
 <div class="container">
     <div class="table-responsive">
         <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th translate="miagebdxApp.hashtag.name">Name</th>
-                <th translate="miagebdxApp.hashtag.description">Description</th>
-                <th></th>
-            </tr>
-            </thead>
             <tbody>
-            <tr ng-repeat="hashtag in hashtags">
+            <tr ng-repeat="hashtag in hashtags" ng-class="animation">
                 <td><a ui-sref="hashtagDetails({id:hashtag.id})">{{hashtag.id}}</a></td>
                 <td>{{hashtag.name}}</td>
                 <td>{{hashtag.description}}</td>
                 <td>
-                    <button type="submit"
-                            ui-sref="hashtagDetail({id:hashtag.id})"
-                            class="btn btn-info">
-                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="update(hashtag.id)"
-                            class="btn btn-primary">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="delete(hashtag.id)"
-                            class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                    </button>
+                    <div class="pull-right btn-group">
+                        <button type="submit"
+                                ui-sref="hashtagDetail({id:hashtag.id})"
+                                class="btn btn-link">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="update(hashtag.id)"
+                                class="btn btn-link">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="delete(hashtag.id)"
+                                class="btn btn-link">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </div>
+
                 </td>
             </tr>
             </tbody>

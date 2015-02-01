@@ -3,17 +3,24 @@
 </header>
 
 <div class="container">
-    <button type="submit"
-            onClick="javascript:window.history.go(-1)"
-            class="btn btn-link">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-    </button>
+
     <div class="row">
+        <div class="col-md-12">
+            <form>
+                <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
+            </form>
+            <hr/>
+            <button type="submit"
+                    onClick="javascript:window.history.go(-1)"
+                    class="btn btn-link">
+                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+            </button>
+        </div>
 
 
-    <div class="col-md-4">
-        <aside id="article">
-            <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
+
+    <div class="col-md-4 list-group">
+        <aside id="content" class="list-group-item">
             <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
             <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
             <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
@@ -22,10 +29,8 @@
             <b>{{people.details}}</b>
         </aside>
     </div>
-    <div class="col-md-8">
-        <h2 translate="miagebdxApp.people.article"> </h2>
-        <section id="content" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned">
-            <article>
+    <div class="col-md-8 list-group ">
+        <aside id="article" class="list-group-item" ng-repeat="article in articles |filter:search| unique: 'id'" ng-class="animation">
                 <header>
                     <h2>
                         <span><a class="title" ui-sref="articleDetail({id:article.id})">{{article.title}}</a></span>
@@ -63,11 +68,9 @@
                         <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
                     </li>
                 </ul>
-            </article>
-        </section>
-        <h2 translate="miagebdxApp.people.event"> </h2>
-        <section id="content" ng-repeat="event in events">
-            <article>
+            </aside>
+            <aside  id="article" class="list-group-item"
+                    ng-repeat="event in events | filter:search"  ng-class="animation">
                 <header>
                     <h2>
                             <span>
@@ -106,7 +109,7 @@
                     </div>
                 </div>
             </article>
-        </section>
+        </aside>
     </div>
 </div>
 </div>

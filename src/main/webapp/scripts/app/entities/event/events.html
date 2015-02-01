@@ -7,20 +7,15 @@
 <br>
 <div class="container">
     <div class="row" >
-        <div class="col-md-12" ng-show="isInRole('ROLE_ADMIN')">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="searchEventTitle">
-                        <span translate="miagebdxApp.event.search">Search Event</span>
-                    </label>
-                    <input type="text" class="form-control" id="searchEventTitle" ng-model="search.title">
-                </div>
+        <div class="col-md-12">
+            <form>
+                <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
             </form>
             <hr/>
         </div>
         <div class="col-md-12">
-            <section id="content" ng-repeat="event in events | filter:search">
-                <article>
+            <div class="list-group" >
+                <aside id="article" class="list-group-item" ng-repeat="event in events | filter:search" ng-class="animation">
                     <header>
                         <h2>
                             <span>
@@ -77,7 +72,7 @@
 
 
 
-                </article>
+                </aside>
             </section>
         </div>
     </div>

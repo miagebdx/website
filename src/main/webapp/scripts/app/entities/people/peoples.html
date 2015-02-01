@@ -6,8 +6,14 @@
 </header>
 <br>
 <div class="container">
-    <div class="col-md-4" ng-repeat="people in peoples">
-        <aside id="article">
+    <div class="col-md-12">
+        <form>
+            <input class="textInput textInput-borderless textInput-jumbo" type="search.name" ng-model="search.name" placeholder="Type to search">
+        </form>
+        <hr/>
+    </div>
+    <div class="list-group" >
+        <aside class="col-md-6 list-group-item" id="article" ng-repeat="people in peoples | filter:search" ng-class="animation">
            <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
             <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
             <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>

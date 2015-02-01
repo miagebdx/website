@@ -165,4 +165,12 @@ aside#article h3 {
 }
 
 
+/* begin */
+/* Little hack in order to get the list of location displayed above the modal ! */
+.pac-container {
+    z-index: 10000 !important;
+}
+/* end */
+
+
 

@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('HashtagController', function ($scope, Hashtag, Article, Principal) {
+    .controller('HashtagController', function (Animations,$scope, Hashtag, Article, Principal) {
         $scope.hashtags = [];
         $scope.articles = Article.query();
+        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
         $scope.loadAll = function() {
             Hashtag.query(function(result) {
                $scope.hashtags = result;
