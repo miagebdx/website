@@ -15,11 +15,11 @@
         </slide>
     </carousel>
 </div>
+<br>
 <div class="container">
-    <div class="col-md-6">
-        <h1 translate="main.article"></h1>
-        <section id="content" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned">
-            <article>
+    <div class="col-md-12 list-group">
+        <aside id="article" class="list-group-item" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned" ng-class="animation">
+
                 <header>
                     <h2>
                         <span><a class="title" ui-sref="articleDetail({id:article.id})">{{article.title}}</a></span>
@@ -57,15 +57,9 @@
                         <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
                     </li>
                 </ul>
-            </article>
-        </section>
+        </aside>
 
-    </div>
-
-<div class="col-md-6">
-    <h1 translate="main.event"></h1>
-    <section id="content" ng-repeat="event in events | unique : 'id'" ng-show="event.pinned">
-        <article>
+    <aside id="article" ng-class="animation" class="list-group-item" ng-repeat="event in events | unique : 'id'" ng-show="event.pinned">
             <header>
                 <h2>
                             <span>
@@ -109,9 +103,7 @@
 
 
 
-
-        </article>
-    </section>
+    </aside>
 </div>
 </div>
 
