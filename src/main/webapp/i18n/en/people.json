@@ -18,8 +18,8 @@
             "location": "Location",
             "website": "Website",
             "details": "Details",
-            "event": "event",
-            "article": "article"
+            "event": "Events",
+            "article": "Articles"
         }
     }
 }
