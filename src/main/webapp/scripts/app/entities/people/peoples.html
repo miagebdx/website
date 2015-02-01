@@ -20,7 +20,7 @@
             <button type="submit"
                     ui-sref="peopleDetail({id:people.id})"
                     class="btn btn-link">
-                <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
             </button>
             <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
                     ng-click="update(people.id)"

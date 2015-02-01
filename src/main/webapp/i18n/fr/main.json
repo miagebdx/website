@@ -5,6 +5,7 @@
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
         },
-        "article": "Articles épinglés"
+        "article": "Articles épinglés",
+        "event" : "Evénements épinglés"
     }
 }

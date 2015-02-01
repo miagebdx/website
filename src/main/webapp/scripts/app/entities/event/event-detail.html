@@ -1,12 +1,12 @@
 <div class="container">
     <button type="submit"
-            ui-sref="event"
+            onclick="javascript:window.history.go(-1)"
             class="btn btn-link">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
     </button>
 
 
-    <div class="jumbotron" style="color: #2a8bb9;">
+    <header class="hero-unit" id="banner">
         <h2>
             <span translate="miagebdxApp.event.detail.title"></span>
             {{event.title}}
@@ -16,7 +16,7 @@
             <small>{{ event.endDate }}</small>
             <small>{{ event.location }}</small>
         </h3>
-    </div>
+    </header>
     <div class="row">
         <div class="col-md-12">
             <div markdown="event.description"></div>

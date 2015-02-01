@@ -5,6 +5,7 @@
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
-        "article": "Pinned articles"
+        "article": "Pinned articles",
+        "event": "Pinned events"
     }
 }

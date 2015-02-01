@@ -65,9 +65,9 @@
                         <span class="label label-default">{{hashtag.name}}</span>
                     </li>
                     <li type="submit"
-                        ui-sref="articleDetail({id:article.id})"
-                        class="btn btn-link pull-right">
-                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                            ui-sref="articleDetail({id:article.id})"
+                            class="btn btn-link pull-right">
+                        <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
                     </li>
                     <li ng-show="isInRole('ROLE_ADMIN')" type="submit"
                         ng-click="update(article.id)"

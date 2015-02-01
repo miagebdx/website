@@ -7,51 +7,34 @@
 </header>
 <br>
 <div class="container">
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th translate="miagebdxApp.partner.name">Name</th>
-                <th translate="miagebdxApp.partner.location">Location</th>
-                <th translate="miagebdxApp.partner.description">Description</th>
-                <th translate="miagebdxApp.partner.website">Website</th>
-                <th translate="miagebdxApp.partner.email">Email</th>
-                <th translate="miagebdxApp.partner.logo">Logo</th>
-                <th translate="miagebdxApp.partner.telephone">Telephone</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="partner in partners">
-                <td><a ui-sref="partnerDetails({id:partner.id})">{{partner.id}}</a></td>
-                <td>{{partner.name}}</td>
-                <td>{{partner.location}}</td>
-                <td>{{partner.description}}</td>
-                <td>{{partner.website}}</td>
-                <td>{{partner.email}}</td>
-                <td>{{partner.logo}}</td>
-                <td>{{partner.telephone}}</td>
-                <td>
-                    <button  type="submit"
-                             ui-sref="partnerDetail({id:partner.id})"
-                             class="btn btn-info">
-                        <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="update(partner.id)"
-                            class="btn btn-primary">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                            ng-click="delete(partner.id)"
-                            class="btn btn-danger">
-                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                    </button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="col-md-4" ng-repeat="partner in partners">
+        <aside id="article">
+            <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{partner.name}}</h2>
+            <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
+            <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
+            <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
+            <p><i class="glyphicon glyphicon-globe"></i> {{partner.website}}</p>
+            <hr>
+            <b>{{partner.description}}</b>
+            <hr>
+            <div class="button-bar">
+                <button type="submit"
+                        ui-sref="partnerDetail({id:partner.id})"
+                        class="btn btn-link">
+                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                </button>
+                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                        ng-click="update(partner.id)"
+                        class="btn btn-link">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                </button>
+                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                        ng-click="delete(partner.id)"
+                        class="btn btn-link">
+                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                </button>
+            </div>
+        </aside>
     </div>
 </div>
 
@@ -149,3 +132,51 @@
         </div>
     </div>
 </div>
+
+
+<!--<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th translate="miagebdxApp.partner.name">Name</th>
+            <th translate="miagebdxApp.partner.location">Location</th>
+            <th translate="miagebdxApp.partner.description">Description</th>
+            <th translate="miagebdxApp.partner.website">Website</th>
+            <th translate="miagebdxApp.partner.email">Email</th>
+            <th translate="miagebdxApp.partner.logo">Logo</th>
+            <th translate="miagebdxApp.partner.telephone">Telephone</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="partner in partners">
+            <td><a ui-sref="partnerDetails({id:partner.id})">{{partner.id}}</a></td>
+            <td>{{partner.name}}</td>
+            <td>{{partner.location}}</td>
+            <td>{{partner.description}}</td>
+            <td>{{partner.website}}</td>
+            <td>{{partner.email}}</td>
+            <td>{{partner.logo}}</td>
+            <td>{{partner.telephone}}</td>
+            <td>
+                <button  type="submit"
+                         ui-sref="partnerDetail({id:partner.id})"
+                         class="btn btn-info">
+                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                </button>
+                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                        ng-click="update(partner.id)"
+                        class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                </button>
+                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                        ng-click="delete(partner.id)"
+                        class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>-->
