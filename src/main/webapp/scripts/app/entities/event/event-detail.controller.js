@@ -9,7 +9,7 @@
  * @param position : Object : { lat: Float, lng: Float }
  * @return void
  */
-function initialize(id, position) {
+function initialize(id, position, title) {
     if(id && position){
         var mapOptions = {
             center: position,
@@ -25,7 +25,23 @@ function initialize(id, position) {
 
         var map = new google.maps.Map(document.getElementById(id),
             mapOptions);
+
+        var infowindow = new google.maps.InfoWindow({
+            content: '<div class="container">' +
+                        '<h1>' + title + '</h1>' +
+                     '</div>'
+        });
+
+        var marker = new google.maps.Marker({
+            position: position,
+            map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+        });
     }
+
 }
 
 
@@ -34,11 +50,15 @@ angular.module('miagebdxApp')
         $scope.event = {};
         $scope.load = function (id) {
             Event.get({id: id}, function(result) {
-              $scope.event = result;
+                $scope.event = result;
+
+                var loc = JSON.parse($scope.event.locationComplete);
+
+                if(loc){
+                    initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.event.title);
+                }
             });
         };
         $scope.load($stateParams.id);
 
-        /* Fake attribute for example purpose only.  */
-        initialize('map-canvas', { lat: -34.397, lng: 150.644});
     });

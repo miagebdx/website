@@ -61,6 +61,10 @@ public class EventResourceTest {
     private static final String DEFAULT_LOCATION = "SAMPLE_TEXT";
     private static final String UPDATED_LOCATION = "UPDATED_TEXT";
 
+    private static final String DEFAULT_LOCATIONCOMPLETE = "SAMPLE_TEXT";
+    private static final String UPDATED_LOCATIONCOMPLETE = "UPDATED_TEXT";
+
+
     @Inject
     private EventRepository eventRepository;
 
@@ -85,6 +89,7 @@ public class EventResourceTest {
         event.setEndDate(DEFAULT_END_DATE);
         event.setPinned(DEFAULT_PINNED);
         event.setLocation(DEFAULT_LOCATION);
+        event.setLocationComplete(DEFAULT_LOCATIONCOMPLETE);
     }
 
     @Test
@@ -109,6 +114,7 @@ public class EventResourceTest {
         assertThat(testEvent.getEndDate().toDateTime(DateTimeZone.UTC)).isEqualTo(DEFAULT_END_DATE);
         assertThat(testEvent.getPinned()).isEqualTo(DEFAULT_PINNED);
         assertThat(testEvent.getLocation()).isEqualTo(DEFAULT_LOCATION);
+        assertThat(testEvent.getLocationComplete()).isEqualTo(DEFAULT_LOCATIONCOMPLETE);
     }
 
     @Test
@@ -127,7 +133,8 @@ public class EventResourceTest {
                 .andExpect(jsonPath("$.[0].beginDate").value(DEFAULT_BEGIN_DATE_STR))
                 .andExpect(jsonPath("$.[0].endDate").value(DEFAULT_END_DATE_STR))
                 .andExpect(jsonPath("$.[0].pinned").value(DEFAULT_PINNED.booleanValue()))
-                .andExpect(jsonPath("$.[0].location").value(DEFAULT_LOCATION.toString()));
+                .andExpect(jsonPath("$.[0].location").value(DEFAULT_LOCATION.toString()))
+                .andExpect(jsonPath("$.[0].locationComplete").value(DEFAULT_LOCATIONCOMPLETE.toString()));
     }
 
     @Test
@@ -146,7 +153,8 @@ public class EventResourceTest {
             .andExpect(jsonPath("$.beginDate").value(DEFAULT_BEGIN_DATE_STR))
             .andExpect(jsonPath("$.endDate").value(DEFAULT_END_DATE_STR))
             .andExpect(jsonPath("$.pinned").value(DEFAULT_PINNED.booleanValue()))
-            .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()));
+            .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()))
+            .andExpect(jsonPath("$.locationComplete").value(DEFAULT_LOCATIONCOMPLETE.toString()));
     }
 
     @Test
@@ -170,6 +178,7 @@ public class EventResourceTest {
         event.setEndDate(UPDATED_END_DATE);
         event.setPinned(UPDATED_PINNED);
         event.setLocation(UPDATED_LOCATION);
+        event.setLocationComplete(UPDATED_LOCATIONCOMPLETE);
         restEventMockMvc.perform(post("/api/events")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(event)))
@@ -185,6 +194,7 @@ public class EventResourceTest {
         assertThat(testEvent.getEndDate().toDateTime(DateTimeZone.UTC)).isEqualTo(UPDATED_END_DATE);
         assertThat(testEvent.getPinned()).isEqualTo(UPDATED_PINNED);
         assertThat(testEvent.getLocation()).isEqualTo(UPDATED_LOCATION);
+        assertThat(testEvent.getLocationComplete()).isEqualTo(UPDATED_LOCATIONCOMPLETE);
     }
 
     @Test

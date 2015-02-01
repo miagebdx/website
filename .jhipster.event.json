@@ -59,6 +59,13 @@
             "fieldType": "String",
             "fieldNameCapitalized": "Location",
             "fieldNameUnderscored": "location"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "locationComplete",
+            "fieldType": "String",
+            "fieldNameCapitalized": "LocationComplete",
+            "fieldNameUnderscored": "location_complete"
         }
     ],
     "fieldsContainOwnerManyToMany": true,

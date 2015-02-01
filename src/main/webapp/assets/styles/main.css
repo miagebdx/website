@@ -1,4 +1,12 @@
 @charset "UTF-8";
+
+/* begin */
+/* Little hack in order to get the list of location displayed above the modal ! */
+.pac-container {
+    z-index: 10000 !important;
+}
+/* end */
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/main\.scss}line{font-family:\000032}}
 body {
   background: #fafafa;

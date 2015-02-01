@@ -7,19 +7,33 @@
 
 
     <div class="jumbotron" style="color: #2a8bb9;">
-        <h2><span translate="miagebdxApp.event.detail.title"></span> {{event.title}}</h2>
-
+        <h2>
+            <span translate="miagebdxApp.event.detail.title"></span>
+            {{event.title}}
+        </h2>
         <h3>
             <small>{{ event.beginDate }}</small>
             <small>{{ event.endDate }}</small>
+            <small>{{ event.location }}</small>
         </h3>
     </div>
-
     <div class="row">
         <div class="col-md-12">
-            <p class="lead">
-                {{event.description}}
-            </p>
+            <div markdown="event.description"></div>
+
+            <ul class="list-inline">
+                <li type="submit"
+                    ui-sref="hashtagDetail({id:hashtag.id})"
+                    ng-repeat="hashtag in event.hashtags">
+                    <span class="label label-default">{{hashtag.name}}</span>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li  type="submit"
+                     ui-sref="peopleDetail({id:people.id})"
+                     ng-repeat="people in event.peoples">
+                    <span class="label label-primary">{{people.name}}</span> </li>
+            </ul>
         </div>
         <div class="col-md-12">
             <div id="map-canvas" style="height: 300px; width:100%; margin: 0; padding: 0;"></div>

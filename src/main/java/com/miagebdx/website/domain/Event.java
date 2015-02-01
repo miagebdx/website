@@ -50,6 +50,9 @@ public class Event implements Serializable {
     @Column(name = "location")
     private String location;
 
+    @Column(name = "locationComplete")
+    private String locationComplete;
+
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<People> peoples = new HashSet<>();
@@ -130,6 +133,15 @@ public class Event implements Serializable {
         this.partners = partners;
     }
 
+    public String getLocationComplete() {
+        return locationComplete;
+    }
+
+    public void setLocationComplete(String locationComplete) {
+        this.locationComplete = locationComplete;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -161,6 +173,7 @@ public class Event implements Serializable {
                 ", endDate='" + endDate + "'" +
                 ", pinned='" + pinned + "'" +
                 ", location='" + location + "'" +
+                ", location='" + locationComplete + "'" +
                 '}';
     }
 }

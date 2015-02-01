@@ -25,12 +25,13 @@
             </column>
             <column name="pinned" type="bit"/>
             <column name="location" type="varchar(255)"/>
+            <column name="locationComplete" type="varchar(255)"/>
         </createTable>
         <dropDefaultValue tableName="T_EVENT" columnName="begin_date" columnDataType="datetime"/>
 
         <dropDefaultValue tableName="T_EVENT" columnName="end_date" columnDataType="datetime"/>
 
-        
+
         <createTable tableName="T_EVENT_T_PEOPLE">
             <column name="peoples_id" type="bigint">
                 <constraints nullable="false"/>
@@ -53,7 +54,7 @@
                                  constraintName="fk_people_event_id"
                                  referencedColumnNames="id"
                                  referencedTableName="T_EVENT"/>
-        
+
         <createTable tableName="T_EVENT_T_PARTNER">
             <column name="partners_id" type="bigint">
                 <constraints nullable="false"/>
@@ -76,6 +77,6 @@
                                  constraintName="fk_partner_event_id"
                                  referencedColumnNames="id"
                                  referencedTableName="T_EVENT"/>
-        
+
     </changeSet>
 </databaseChangeLog>
