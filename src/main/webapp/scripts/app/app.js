@@ -2,7 +2,7 @@
 
 angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
     'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate',
-    'ngCacheBuster','ui.bootstrap','ngSanitize','angular.filter'])
+    'ngCacheBuster','ui.bootstrap','ngSanitize','angular.filter', 'ngAnimate'])
 
     .run(function ($rootScope, $location, $http, $state, $translate, Auth, Principal, Language) {
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {

@@ -1,6 +1,7 @@
 {
     "miagebdxApp": {
         "article" : {
+            "search": "Recherche un article",
             "home": {
                 "title": "Articles",
                 "createLabel": "Créer un nouveau Article",

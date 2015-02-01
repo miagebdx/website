@@ -8046,3 +8046,1265 @@ button.close {
     display: none !important;
   }
 }
+/* ------------------------------------------- */
+/* Mixins
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* Toggle Fade
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000364}}
+.toggle {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000366}}
+.toggle.ng-enter {
+  opacity: 0;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000371}}
+.toggle.ng-enter-active {
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000375}}
+.toggle.ng-leave {
+  opacity: 1;
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000380}}
+.toggle.ng-leave-active {
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000385}}
+.toggle.ng-hide-add {
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000389}}
+.toggle.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000394}}
+.toggle.ng-hide-remove {
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\0000399}}
+.toggle.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Top
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003109}}
+.slide-top {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003111}}
+.slide-top.ng-enter {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003117}}
+.slide-top.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003122}}
+.slide-top.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003128}}
+.slide-top.ng-leave-active {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003134}}
+.slide-top.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003139}}
+.slide-top.ng-hide-add.ng-hide-add-active {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003145}}
+.slide-top.ng-hide-remove {
+  transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003151}}
+.slide-top.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Rigth
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003163}}
+.slide-right {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003165}}
+.slide-right.ng-enter {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003171}}
+.slide-right.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003176}}
+.slide-right.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003182}}
+.slide-right.ng-leave-active {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003188}}
+.slide-right.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003193}}
+.slide-right.ng-hide-add.ng-hide-add-active {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003199}}
+.slide-right.ng-hide-remove {
+  transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -webkit-transform: translateX(60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003205}}
+.slide-right.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Left
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003217}}
+.slide-left {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003219}}
+.slide-left.ng-enter {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003225}}
+.slide-left.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003230}}
+.slide-left.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003236}}
+.slide-left.ng-leave-active {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003242}}
+.slide-left.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003247}}
+.slide-left.ng-hide-add.ng-hide-add-active {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003253}}
+.slide-left.ng-hide-remove {
+  transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -webkit-transform: translateX(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003259}}
+.slide-left.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Slide Down
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003270}}
+.slide-down {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003273}}
+.slide-down.ng-enter {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003279}}
+.slide-down.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003284}}
+.slide-down.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003290}}
+.slide-down.ng-leave-active {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003296}}
+.slide-down.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003301}}
+.slide-down.ng-hide-add.ng-hide-add-active {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003307}}
+.slide-down.ng-hide-remove {
+  transform: translateY(-60px);
+  -ms-transform: translateY(-60px);
+  -webkit-transform: translateY(-60px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003313}}
+.slide-down.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Top
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003325}}
+.bouncy-slide-top {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003328}}
+.bouncy-slide-top.ng-enter {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003334}}
+.bouncy-slide-top.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003339}}
+.bouncy-slide-top.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003345}}
+.bouncy-slide-top.ng-leave-active {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003351}}
+.bouncy-slide-top.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003356}}
+.bouncy-slide-top.ng-hide-add.ng-hide-add-active {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003362}}
+.bouncy-slide-top.ng-hide-remove {
+  transform: translateY(240px);
+  -ms-transform: translateY(240px);
+  -webkit-transform: translateY(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003368}}
+.bouncy-slide-top.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Rigth
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003379}}
+.bouncy-slide-right {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003382}}
+.bouncy-slide-right.ng-enter {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003388}}
+.bouncy-slide-right.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003393}}
+.bouncy-slide-right.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003399}}
+.bouncy-slide-right.ng-leave-active {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003405}}
+.bouncy-slide-right.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003410}}
+.bouncy-slide-right.ng-hide-add.ng-hide-add-active {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003416}}
+.bouncy-slide-right.ng-hide-remove {
+  transform: translateX(240px);
+  -ms-transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003422}}
+.bouncy-slide-right.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Left
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003434}}
+.bouncy-slide-left {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003437}}
+.bouncy-slide-left.ng-enter {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003443}}
+.bouncy-slide-left.ng-enter-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003448}}
+.bouncy-slide-left.ng-leave {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003454}}
+.bouncy-slide-left.ng-leave-active {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003460}}
+.bouncy-slide-left.ng-hide-add {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003465}}
+.bouncy-slide-left.ng-hide-add.ng-hide-add-active {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003471}}
+.bouncy-slide-left.ng-hide-remove {
+  transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003477}}
+.bouncy-slide-left.ng-hide-remove.ng-hide-remove-active {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Slide Down
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003488}}
+.bouncy-slide-down {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003491}}
+.bouncy-slide-down.ng-enter {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003497}}
+.bouncy-slide-down.ng-enter-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003502}}
+.bouncy-slide-down.ng-leave {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003508}}
+.bouncy-slide-down.ng-leave-active {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003514}}
+.bouncy-slide-down.ng-hide-add {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003519}}
+.bouncy-slide-down.ng-hide-add.ng-hide-add-active {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003525}}
+.bouncy-slide-down.ng-hide-remove {
+  transform: translateY(-240px);
+  -ms-transform: translateY(-240px);
+  -webkit-transform: translateY(-240px);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003531}}
+.bouncy-slide-down.ng-hide-remove.ng-hide-remove-active {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Scale Fade
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003544}}
+.scale-fade {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003547}}
+.scale-fade.ng-enter {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003553}}
+.scale-fade.ng-enter-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003558}}
+.scale-fade.ng-leave {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003564}}
+.scale-fade.ng-leave-active {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003570}}
+.scale-fade.ng-hide-add {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003575}}
+.scale-fade.ng-hide-add.ng-hide-add-active {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003581}}
+.scale-fade.ng-hide-remove {
+  transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003587}}
+.scale-fade.ng-hide-remove.ng-hide-remove-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Spin Fade
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003598}}
+.spin-toggle {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003601}}
+.spin-toggle.ng-enter {
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003607}}
+.spin-toggle.ng-enter-active {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003612}}
+.spin-toggle.ng-leave {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003618}}
+.spin-toggle.ng-leave-active {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003624}}
+.spin-toggle.ng-hide-add {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003629}}
+.spin-toggle.ng-hide-add.ng-hide-add-active {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003635}}
+.spin-toggle.ng-hide-remove {
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003641}}
+.spin-toggle.ng-hide-remove.ng-hide-remove-active {
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Scale in Fade
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003653}}
+.scale-fade-in {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003656}}
+.scale-fade-in.ng-enter {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003662}}
+.scale-fade-in.ng-enter-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003667}}
+.scale-fade-in.ng-leave {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003673}}
+.scale-fade-in.ng-leave-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003679}}
+.scale-fade-in.ng-hide-add {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003684}}
+.scale-fade-in.ng-hide-add.ng-hide-add-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003690}}
+.scale-fade-in.ng-hide-remove {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 250ms;
+  -webkit-transition-duration: 250ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003696}}
+.scale-fade-in.ng-hide-remove.ng-hide-remove-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Bouncy Scale in Fade
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003708}}
+.bouncy-scale-in {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003711}}
+.bouncy-scale-in.ng-enter {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003717}}
+.bouncy-scale-in.ng-enter-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003722}}
+.bouncy-scale-in.ng-leave {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003728}}
+.bouncy-scale-in.ng-leave-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003734}}
+.bouncy-scale-in.ng-hide-add {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003739}}
+.bouncy-scale-in.ng-hide-add.ng-hide-add-active {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003745}}
+.bouncy-scale-in.ng-hide-remove {
+  transform: scale(3);
+  -ms-transform: scale(3);
+  -webkit-transform: scale(3);
+  transition-duration: 450ms;
+  -webkit-transition-duration: 450ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003751}}
+.bouncy-scale-in.ng-hide-remove.ng-hide-remove-active {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Flip In
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003763}}
+.flip-in {
+  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* easeOutQuad */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003766}}
+.flip-in.ng-enter {
+  transform: perspective(300px) rotateX(90deg);
+  -ms-transform: perspective(300px) rotateX(90deg);
+  -webkit-transform: perspective(300px) rotateX(90deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 0.7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003772}}
+.flip-in.ng-enter-active {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003777}}
+.flip-in.ng-leave {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003783}}
+.flip-in.ng-leave-active {
+  transform: perspective(300px) rotateX(135deg);
+  -ms-transform: perspective(300px) rotateX(135deg);
+  -webkit-transform: perspective(300px) rotateX(135deg);
+  opacity: 0.7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003789}}
+.flip-in.ng-hide-add {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003794}}
+.flip-in.ng-hide-add.ng-hide-add-active {
+  transform: perspective(300px) rotateX(135deg);
+  -ms-transform: perspective(300px) rotateX(135deg);
+  -webkit-transform: perspective(300px) rotateX(135deg);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003800}}
+.flip-in.ng-hide-remove {
+  transform: perspective(300px) rotateX(90deg);
+  -ms-transform: perspective(300px) rotateX(90deg);
+  -webkit-transform: perspective(300px) rotateX(90deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003806}}
+.flip-in.ng-hide-remove.ng-hide-remove-active {
+  transform: perspective(300px) rotateX(0deg);
+  -ms-transform: perspective(300px) rotateX(0deg);
+  -webkit-transform: perspective(300px) rotateX(0deg);
+  opacity: 1;
+}
+
+/* ------------------------------------------- */
+/* Rotate In
+/* ------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003817}}
+.rotate-in {
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* older webkit */
+  -webkit-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* easeOutBack */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.45, 1.595);
+  /* custom */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003820}}
+.rotate-in.ng-enter {
+  transform: perspective(300px) rotateY(40deg);
+  -ms-transform: perspective(300px) rotateY(40deg);
+  -webkit-transform: perspective(300px) rotateY(40deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 0.7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003826}}
+.rotate-in.ng-enter-active {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003831}}
+.rotate-in.ng-leave {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003837}}
+.rotate-in.ng-leave-active {
+  transform: perspective(300px) rotateY(-40deg);
+  -ms-transform: perspective(300px) rotateY(-40deg);
+  -webkit-transform: perspective(300px) rotateY(-40deg);
+  opacity: 0.7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003843}}
+.rotate-in.ng-hide-add {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003848}}
+.rotate-in.ng-hide-add.ng-hide-add-active {
+  transform: perspective(300px) rotateY(-40deg);
+  -ms-transform: perspective(300px) rotateY(-40deg);
+  -webkit-transform: perspective(300px) rotateY(-40deg);
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003854}}
+.rotate-in.ng-hide-remove {
+  transform: perspective(300px) rotateY(40deg);
+  -ms-transform: perspective(300px) rotateY(40deg);
+  -webkit-transform: perspective(300px) rotateY(40deg);
+  transition-duration: 550ms;
+  -webkit-transition-duration: 550ms;
+  display: block !important;
+  opacity: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/jermorin\/Workspace\/website\/src\/main\/scss\/ng-animation\.scss}line{font-family:\00003860}}
+.rotate-in.ng-hide-remove.ng-hide-remove-active {
+  transform: perspective(300px) rotateY(0deg);
+  -ms-transform: perspective(300px) rotateY(0deg);
+  -webkit-transform: perspective(300px) rotateY(0deg);
+  opacity: 1;
+}

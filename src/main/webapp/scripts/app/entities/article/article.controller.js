@@ -3,6 +3,7 @@
 angular.module('miagebdxApp')
     .controller('ArticleController', function ($scope, Article, People, Hashtag, Principal) {
         $scope.articles = [];
+        $scope.animation = "bouncy-scale-in";
         $scope.peoples = People.query();
         $scope.hashtags = Hashtag.query();
 

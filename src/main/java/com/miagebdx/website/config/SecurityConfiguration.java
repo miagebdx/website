@@ -101,10 +101,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .frameOptions()
             .disable()
             .authorizeRequests()
-                .antMatchers(org.springframework.http.HttpMethod.GET, "/api/**").permitAll()
                 .antMatchers(org.springframework.http.HttpMethod.POST, "/api/**").hasAuthority(AuthoritiesConstants.ADMIN)
                 .antMatchers(org.springframework.http.HttpMethod.DELETE, "/api/**").hasAuthority(AuthoritiesConstants.ADMIN)
                 .antMatchers(org.springframework.http.HttpMethod.PUT, "/api/**").hasAuthority(AuthoritiesConstants.ADMIN)
+
+                .antMatchers(org.springframework.http.HttpMethod.GET, "/api/**").permitAll()
                 .antMatchers("/api/register").permitAll()
                 .antMatchers("/api/activate").permitAll()
                 .antMatchers("/api/authenticate").permitAll()

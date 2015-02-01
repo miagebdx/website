@@ -80,7 +80,7 @@ public class ArticleResource {
     }
 
     /**
-     * GET  /articles/:id -> get all articles by hashtag id
+     * GET  /articles/:id -> get all articles by people id
      */
     @RequestMapping(value = "/articles/people/{id}",
         method = RequestMethod.GET,

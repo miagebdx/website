@@ -6,6 +6,18 @@
 </header>
 <br>
 <div class="container">
+    <div class="col-md-12">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="searchEventTitle">
+                    <span translate="miagebdxApp.article.search">Search artcile</span>
+                </label>
+                <input type="text" class="form-control input-lg" id="searchEventTitle" ng-model="search">
+            </div>
+        </form>
+        <hr>
+    </div>
+
 
     <div class="col-md-4">
         <aside id="article">
@@ -31,7 +43,7 @@
         </aside>
     </div>
     <div class="col-md-8">
-        <section id="content" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned">
+        <section id="content" ng-repeat="article in articles | unique: 'id' | filter:search" ng-show="article.pinned" ng-class="animation">
             <article>
                 <header>
                     <h2>
