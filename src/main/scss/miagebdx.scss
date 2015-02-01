@@ -1,0 +1,168 @@
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+/*.development {
+    position: absolute;
+    width: 149px;
+    height: 149px;
+    top: 0;
+    left: 0;
+    border: 0;
+    z-index: 1000;
+    background-image: url("../images/development_ribbon.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+}*/
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.error {
+    color: white;
+    background-color: red;
+}
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+    .hipster {
+        background: url("../images/hipster2x.png") no-repeat center top;
+        background-size: contain;
+    }
+}
+
+/* make sure browsers use the pointer cursor for anchors, even with no href */
+a:hover {
+    cursor: pointer;
+}
+
+
+/* start Password strength bar style */
+ul#strength {
+    display:inline;
+    list-style:none;
+    margin:0;
+    margin-left:15px;
+    padding:0;
+    vertical-align:2px;
+}
+
+.point:last {
+    margin:0 !important;
+}
+.point {
+    background:#DDD;
+    border-radius:2px;
+    display:inline-block;
+    height:5px;
+    margin-right:1px;
+    width:20px;
+}
+/* end Password strength bar style */
+
+.thing-form {
+    margin: 20px 0;
+}
+
+#banner {
+    border-bottom: none;
+    margin-top: -20px;
+}
+
+#banner h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.hero-unit {
+    position: relative;
+    padding: 30px 15px;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background: #2a8bb9;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 70px;
+    border-top: 1px solid #E5E5E5;
+}
+
+.carousel{
+    overflow:hidden;
+    height:270px;
+}
+
+
+aside#article, section#content, .block {
+    background-color: #f7f7f7;
+    padding: 10px 12px 20px;
+    margin-bottom: 30px;
+    border-top: 5px solid #2a8bb9;
+    word-wrap: break-word
+}
+
+
+aside#article .well, section#content .well, .block .well, .well {
+    background-color: #fcfcfc
+}
+
+
+aside#article h1, aside#article h2, section#content h1, section#content h2,
+.block h1, .block h2 {
+    color: #2a8bb9
+}
+
+
+aside#article h2, section#content h2, .block h2 {
+    font-size: 1.6em
+}
+
+aside#article h3, section#content h3, .block h3 {
+    font-size: 1.3em
+}
+
+aside#article h3 {
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid darkgrey
+}
+
+.textInput-borderless {
+    border: 0;
+}
+.textInput-jumbo {
+    font-size: 32px;
+    height: 70px;
+    padding: 0;
+    width: 100%;
+    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 300;
+    font-style: normal;
+}
+.textInput {
+    outline: none;
+    background: #fafafa;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
+

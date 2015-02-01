@@ -7,14 +7,10 @@
 <br>
 <div class="container">
     <div class="col-md-12">
-        <form class="form-inline">
-            <div class="form-group">
-                <label for="searchEventTitle">
-                    <span translate="miagebdxApp.article.search">Search artcile</span>
-                </label>
-                <input type="text" class="form-control input-lg" id="searchEventTitle" ng-model="search">
-            </div>
+        <form>
+            <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
         </form>
+
         <hr>
     </div>
 
@@ -26,8 +22,13 @@
                     <span translate="miagebdxApp.article.hashtag"></span>
                 </h3>
                 <ul class="list-inline">
-                    <li ng-repeat="hashtag in hashtags">
-                        <span ui-sref="hashtagDetail({id: hashtag.id})" class="label label-primary">{{hashtag.name}}</span>
+                    <li ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
+                        <span ng-click="isSelect=!isSelect; addFilter(hashtag,'hashtag')"
+                              class="label"
+                              ng-class="{'label-default' : isSelect==false,
+                                         'label-primary': isSelect==true}">
+                            {{hashtag.name}}
+                        </span>
                     </li>
                 </ul>
 
@@ -36,14 +37,20 @@
                 <span translate="miagebdxApp.article.people"></span>
             </h3>
             <ul class="list-inline">
-                <li ng-repeat="people in peoples">
-                    <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
+                <li ng-repeat="people in peoples" ng-init="isSelect=false">
+                    <span ng-click="isSelect=!isSelect; addFilter(people,'people')"
+                          class="label" ng-class="{'label-default' : isSelect==false,
+                                                   'label-primary': isSelect==true}">
+                        {{people.name}}
+                    </span>
                 </li>
             </ul>
         </aside>
     </div>
     <div class="col-md-8">
-        <section id="content" ng-repeat="article in articles | unique: 'id' | filter:search" ng-show="article.pinned" ng-class="animation">
+        <section id="content" ng-repeat="article in articles
+                    | filter:search |filter: filteredItems"
+                 ng-class="animation">
             <article>
                 <header>
                     <h2>
