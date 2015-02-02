@@ -21,7 +21,7 @@ angular.module('miagebdxApp')
             $scope.isAuthenticated = Principal.isAuthenticated;
         });
 
-        $scope.myInterval = 4000;
+        $scope.myInterval = 2000;
 
         $scope.slides = [
             {
