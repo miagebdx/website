@@ -35,30 +35,16 @@
                     </h2>
                 </header>
                 <div class="row">
-                    <div class="col-md-6">
-                        {{ event.description }}
-                    </div>
-                    <div class="col-md-6">
                         <div class="button-bar pull-right">
                             <button type="submit"
                                     ui-sref="eventDetail({id:event.id})"
                                     class="btn btn-link">
                                 <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
                             </button>
-                            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                    ng-click="updateEvent(event.id)"
-                                    class="btn btn-link">
-                                <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                            </button>
-                            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                    ng-click="deleteEvent(event.id)"
-                                    class="btn btn-link">
-                                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                            </button>
                         </div>
 
                     </div>
-                </div>
+
         </aside>
     </div>
     </div>

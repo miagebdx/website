@@ -16,13 +16,13 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="title" type="varchar(255)"/>
-            <column name="body" type="varchar(255)"/>
+            <column name="body" type="varchar(20000)"/>
             <column name="date" type="date">
                 <constraints nullable="false" />
             </column>
             <column name="pinned" type="bit"/>
         </createTable>
-        
+
         <createTable tableName="T_ARTICLE_T_PEOPLE">
             <column name="peoples_id" type="bigint">
                 <constraints nullable="false"/>
@@ -45,7 +45,7 @@
                                  constraintName="fk_people_article_id"
                                  referencedColumnNames="id"
                                  referencedTableName="T_ARTICLE"/>
-        
+
         <createTable tableName="T_ARTICLE_T_HASHTAG">
             <column name="hashtags_id" type="bigint">
                 <constraints nullable="false"/>
@@ -68,6 +68,6 @@
                                  constraintName="fk_hashtag_article_id"
                                  referencedColumnNames="id"
                                  referencedTableName="T_ARTICLE"/>
-        
+
     </changeSet>
 </databaseChangeLog>
