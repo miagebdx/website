@@ -174,11 +174,8 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
         User user = (User) o;
 
-        if (!login.equals(user.login)) {
-            return false;
-        }
+        return login.equals(user.login);
 
-        return true;
     }
 
     @Override

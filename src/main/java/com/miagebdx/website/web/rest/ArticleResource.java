@@ -10,7 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.Optional;

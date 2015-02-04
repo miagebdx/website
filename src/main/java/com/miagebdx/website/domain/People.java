@@ -132,9 +132,8 @@ public class People implements Serializable {
 
         People people = (People) o;
 
-        if (id != null ? !id.equals(people.id) : people.id != null) return false;
+        return !(id != null ? !id.equals(people.id) : people.id != null);
 
-        return true;
     }
 
     @Override

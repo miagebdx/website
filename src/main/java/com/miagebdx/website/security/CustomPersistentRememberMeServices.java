@@ -1,7 +1,6 @@
 package com.miagebdx.website.security;
 
 import com.miagebdx.website.domain.PersistentToken;
-import com.miagebdx.website.domain.User;
 import com.miagebdx.website.repository.PersistentTokenRepository;
 import com.miagebdx.website.repository.UserRepository;
 import org.joda.time.LocalDate;

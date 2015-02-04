@@ -116,9 +116,8 @@ public class Article implements Serializable {
 
         Article article = (Article) o;
 
-        if (id != null ? !id.equals(article.id) : article.id != null) return false;
+        return !(id != null ? !id.equals(article.id) : article.id != null);
 
-        return true;
     }
 
     @Override

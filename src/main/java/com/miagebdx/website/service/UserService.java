@@ -1,7 +1,6 @@
 package com.miagebdx.website.service;
 
 import com.miagebdx.website.domain.Authority;
-import com.miagebdx.website.domain.PersistentToken;
 import com.miagebdx.website.domain.User;
 import com.miagebdx.website.repository.AuthorityRepository;
 import com.miagebdx.website.repository.PersistentTokenRepository;

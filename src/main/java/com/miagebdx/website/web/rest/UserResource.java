@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
-import java.util.Optional;
 
 /**
  * REST controller for managing users.

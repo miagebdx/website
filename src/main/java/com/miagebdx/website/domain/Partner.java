@@ -130,9 +130,8 @@ public class Partner implements Serializable {
 
         Partner partner = (Partner) o;
 
-        if (id != null ? !id.equals(partner.id) : partner.id != null) return false;
+        return !(id != null ? !id.equals(partner.id) : partner.id != null);
 
-        return true;
     }
 
     @Override

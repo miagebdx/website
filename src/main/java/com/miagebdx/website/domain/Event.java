@@ -17,6 +17,7 @@ import java.util.Set;
 /**
  * A Event.
  */
+@SuppressWarnings("RedundantIfStatement")
 @Entity
 @Table(name = "T_EVENT")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)

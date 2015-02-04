@@ -1,6 +1,5 @@
 package com.miagebdx.website.security;
 
-import com.miagebdx.website.domain.Authority;
 import com.miagebdx.website.domain.User;
 import com.miagebdx.website.repository.UserRepository;
 import org.slf4j.Logger;
@@ -13,11 +12,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.Collections;
 import java.util.List;
 
 /**

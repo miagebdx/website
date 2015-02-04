@@ -75,9 +75,8 @@ public class Hashtag implements Serializable {
 
         Hashtag hashtag = (Hashtag) o;
 
-        if (id != null ? !id.equals(hashtag.id) : hashtag.id != null) return false;
+        return !(id != null ? !id.equals(hashtag.id) : hashtag.id != null);
 
-        return true;
     }
 
     @Override
