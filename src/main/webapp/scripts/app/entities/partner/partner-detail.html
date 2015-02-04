@@ -9,7 +9,15 @@
         </form>
         <hr/>
     </div>
-<div class="col-md-4 list-group">
+    <div class="col-md-12">
+        <button type="submit"
+                onClick="javascript:window.history.go(-1)"
+                class="btn btn-link">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+        </button>
+    </div>
+
+    <div class="col-md-4 list-group">
     <aside class="list-group-item">
         <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
         <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>

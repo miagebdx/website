@@ -13,6 +13,14 @@
         </form>
         <hr/>
     </div>
+    <div class="col-md-12">
+        <button type="submit"
+                onClick="javascript:window.history.go(-1)"
+                class="btn btn-link">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+        </button>
+    </div>
+
     <div class="list-group">
         <aside class="col-md-6 list-group-item"  id="article" ng-repeat="partner in partners|filter:search" ng-class="animation">
             <h2 ui-sref="partnerDetail({id:partner.id})"><i class="glyphicon glyphicon-user" ></i> {{partner.name}}</h2>

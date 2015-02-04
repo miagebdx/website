@@ -14,6 +14,9 @@ module.exports = function (config) {
             'main/webapp/bower_components/modernizr/modernizr.js',
             'main/webapp/bower_components/jquery/dist/jquery.js',
             'main/webapp/bower_components/angular/angular.js',
+            'main/webapp/bower_components/angular-bootstrap/ui-bootstrap.js',
+            'main/webapp/bower_components/angular-animate/angular-animate.js',
+            'main/webapp/bower_components/angular-filter/dist/angular-filter.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             'main/webapp/bower_components/angular-ui-router/release/angular-ui-router.js',
             'main/webapp/bower_components/angular-resource/angular-resource.js',
@@ -57,6 +60,6 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
-        singleRun: false
+        singleRun: true
     });
 };
