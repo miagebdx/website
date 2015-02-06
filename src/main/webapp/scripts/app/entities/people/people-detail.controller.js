@@ -1,15 +1,22 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('PeopleDetailController', function ($scope, Animations,$stateParams, People, Event, ArticlePeople, EventPeople) {
+    .controller('PeopleDetailController', function ($scope,
+                                                    Animations,
+                                                    $stateParams,
+                                                    People,
+                                                    ArticlePeople,
+                                                    EventPeople) {
         $scope.people = {};
-        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
+        $scope.events = [];
+        $scope.articles = [];
+
         $scope.load = function (id) {
-            People.get({id: id}, function(result) {
-              $scope.people = result;
-            });
-            $scope.articles = ArticlePeople.get({id: id});
-            $scope.events = EventPeople.get({id :id});
+            $scope.animation = Animations.getAnimation();
+            People.get({id: id}, function(result) {$scope.people = result;});
+            ArticlePeople.get({id: id}, function(result){$scope.articles = result;});
+            EventPeople.get({id :id}, function(result){$scope.events = result;});
         };
+
         $scope.load($stateParams.id);
     });

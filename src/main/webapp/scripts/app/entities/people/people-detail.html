@@ -3,34 +3,29 @@
 </header>
 
 <div class="container">
-
-    <div class="row">
         <div class="col-md-12">
             <form>
                 <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
             </form>
             <hr/>
             <button type="submit"
-                    onClick="javascript:window.history.go(-1)"
+                    onClick="window.history.go(-1)"
                     class="btn btn-link">
                 <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
             </button>
         </div>
-
-
-
-    <div class="col-md-4 list-group">
-        <aside id="content" class="list-group-item">
-            <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
-            <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
-            <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
-            <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
-            <hr>
-            <b>{{people.details}}</b>
-        </aside>
-    </div>
-    <div class="col-md-8 list-group ">
-        <aside id="article" class="list-group-item" ng-repeat="article in articles |filter:search| unique: 'id'" ng-class="animation">
+        <div class="col-md-4 well">
+            <aside id="content">
+                <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
+                <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
+                <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
+                <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
+                <hr>
+                <b>{{people.details}}</b>
+            </aside>
+        </div>
+        <div class="col-md-8">
+            <aside id="article" ng-repeat="article in articles |filter:search| unique: 'id'" ng-class="animation">
                 <header>
                     <h2>
                         <span><a class="title" ui-sref="articleDetail({id:article.id})">{{article.title}}</a></span>
@@ -67,7 +62,7 @@
                     </li>
                 </ul>
             </aside>
-            <aside  id="article" class="list-group-item"
+            <aside  id="article"
                     ng-repeat="event in events | filter:search"  ng-class="animation">
                 <header>
                     <h2>
@@ -82,16 +77,15 @@
                     </h2>
                 </header>
                 <div class="row">
-                        <div class="button-bar pull-right">
-                            <button type="submit"
-                                    ui-sref="eventDetail({id:event.id})"
-                                    class="btn btn-link">
-                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                            </button>
+                    <div class="button-bar pull-right">
+                        <button type="submit"
+                                ui-sref="eventDetail({id:event.id})"
+                                class="btn btn-link">
+                            <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
                     </div>
                 </div>
-            </article>
-        </aside>
+            </aside>
+        </div>
     </div>
-</div>
-</div>
+

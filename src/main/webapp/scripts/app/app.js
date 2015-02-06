@@ -76,7 +76,23 @@ angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
 
         tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
-    }).constant('Animations', ["scale-fade", "scale-fade-in", 	"bouncy-scale-in",
-        "flip-in", "slide-left", "slide-right", "slide-top", "slide-down",
-        "bouncy-slide-left", 	"bouncy-slide-right", "bouncy-slide-top",
-        "bouncy-slide-down", "rotate-in"]);
+    }).service('Animations', function(){
+        this.animations = [
+            "scale-fade",
+            "scale-fade-in",
+            "bouncy-scale-in",
+            "flip-in",
+            "slide-left",
+            "slide-right",
+            "slide-top",
+            "slide-down",
+            "bouncy-slide-left",
+            "bouncy-slide-right",
+            "bouncy-slide-top",
+            "bouncy-slide-down",
+            "rotate-in"];
+        this.getAnimation = function(){
+            return this.animations[Math.floor((Math.random() * this.animations.length) + 1)];
+        }
+
+    } );

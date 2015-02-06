@@ -1,43 +1,41 @@
 <header class="hero-unit" id="banner">
     <h1>{{article.title}}</h1>
 </header>
-
 <br>
 <div class="container">
     <button type="submit"
-            onClick="javascript:window.history.go(-1)"
+            onClick="window.history.go(-1)"
             class="btn btn-link">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
     </button>
-    <div class="list-group">
-        <aside id="content" ng-class="animation">
-            <article class="list-group-item" >
-                <header>
-                    <ul class="list-inline">
-                        <li><i class="glyphicon glyphicon-tags"></i> </li>
-                        <li type="submit"
-                            ui-sref="hashtagDetail({id:hashtag.id})"
-                            ng-repeat="hashtag in article.hashtags">
-                            <span class="label label-default">{{hashtag.name}}</span>
-                        </li>
-                    </ul>
-                    <ul class="list-inline">
-                        <li class="glyphicon glyphicon-user"></li>
-                        <li  type="submit"
-                             ui-sref="peopleDetail({id:people.id})"
-                             ng-repeat="people in article.peoples">
-                            <span class="label label-primary">{{people.name}}</span> </li>
-                    </ul>
-                    <hr>
-                </header>
-                <div markdown="article.body"></div>
-                <hr>
-                <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
-                <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
-                <b>{{article.date}}</b>
-            </article>
-        </aside>
-    </div>
+    <aside id="article" ng-class="animation">
+        <header>
+            <ul class="list-inline">
+                <li><i class="glyphicon glyphicon-tags"></i> </li>
+                <li type="submit"
+                    ui-sref="hashtagDetail({id:hashtag.id})"
+                    ng-repeat="hashtag in article.hashtags">
+                    <span class="label label-default">{{hashtag.name}}</span>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li class="glyphicon glyphicon-user"></li>
+                <li  type="submit"
+                     ui-sref="peopleDetail({id:people.id})"
+                     ng-repeat="people in article.peoples">
+                    <span class="label label-primary">{{people.name}}</span> </li>
+            </ul>
+            <hr>
+        </header>
+        <div markdown="article.body"></div>
+        <hr>
+        <div class="pull-right">
+            <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
+            <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
+            <b>{{article.date}}</b>
+        </div>
 
+
+    </aside>
 </div>
 

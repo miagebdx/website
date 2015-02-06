@@ -3,13 +3,6 @@
     <carousel interval="myInterval" id="banner">
         <slide ng-repeat="slide in slides" active="slide.active">
             <img ng-src="{{slide.image}}" height="300px" style="margin:auto;">
-            <div class="carousel-caption">
-
-
-
-
-
-            </div>
         </slide>
     </carousel>
 </div>
@@ -27,8 +20,8 @@
 
 </hr>
 <div class="container">
-    <div class="col-md-12 list-group">
-        <aside id="article" class="list-group-item" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned" ng-class="animation">
+    <div class="col-md-12">
+        <aside id="article" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned" ng-class="animation">
 
             <header>
                 <h2>
@@ -67,13 +60,12 @@
             </ul>
         </aside>
 
-        <aside id="article" ng-class="animation" class="list-group-item" ng-repeat="event in events | unique : 'id'" ng-show="event.pinned">
+        <aside id="article" ng-class="animation" ng-repeat="event in events | unique : 'id'" ng-show="event.pinned">
             <header>
                 <h2>
                             <span>
                                 <a class="title" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
                             </span>
-
                     <small class="pull-right">
                         <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
                         <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
@@ -83,8 +75,7 @@
                 </h2>
             </header>
             <br>
-            <hR>
-
+            <hr>
             <div class="button-bar pull-right">
                 <button type="submit"
                         ui-sref="eventDetail({id:event.id})"
@@ -104,10 +95,6 @@
                     <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
                 </li>
             </ul>
-
-
-
-
         </aside>
     </div>
 </div>

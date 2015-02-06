@@ -2,7 +2,7 @@
 
 angular.module('miagebdxApp')
     .factory('Principal', function Principal($q, Account) {
-        var _identity,
+        var _identity = null,
             _authenticated = false;
 
         return {

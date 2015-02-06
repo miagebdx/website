@@ -1,18 +1,23 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('HashtagController', function (Animations,$scope, Hashtag, Article, Principal) {
+    .controller('HashtagController', function (Animations,
+                                               $scope,
+                                               Hashtag,
+                                               Article,
+                                               Principal) {
         $scope.hashtags = [];
-        $scope.articles = Article.query();
-        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
-        $scope.loadAll = function() {
-            Hashtag.query(function(result) {
-               $scope.hashtags = result;
-            });
-        };
-        $scope.loadAll();
+        $scope.articles = [];
 
-        $scope.isInRole = Principal.isInRole;
+
+        $scope.loadAll = function() {
+            $scope.isInRole = Principal.isInRole;
+            $scope.animation = Animations.getAnimation();
+            Article.query(function(result){$scope.articles = result;});
+            Hashtag.query(function(result){$scope.hashtags = result;});
+        };
+
+        $scope.loadAll();
 
         $scope.create = function () {
             Hashtag.save($scope.hashtag,

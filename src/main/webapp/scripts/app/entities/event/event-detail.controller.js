@@ -46,7 +46,9 @@ function initialize(id, position, title) {
 
 
 angular.module('miagebdxApp')
-    .controller('EventDetailController', function ($scope, $stateParams, Event, People, Partner) {
+    .controller('EventDetailController', function ($scope,
+                                                   $stateParams,
+                                                   Event){
         $scope.event = {};
         $scope.load = function (id) {
             Event.get({id: id}, function(result) {

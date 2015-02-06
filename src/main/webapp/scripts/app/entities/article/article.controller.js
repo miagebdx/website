@@ -3,23 +3,31 @@
 
 
 angular.module('miagebdxApp')
-    .controller('ArticleController', function ($scope, Animations,Article, People, Hashtag, Principal) {
+    .controller('ArticleController', function ($scope,
+                                               Animations,
+                                               Article,
+                                               People,
+                                               Hashtag,
+                                               Principal){
 
 
         $scope.articles = [];
-        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
-        $scope.peoples = People.query();
-        $scope.hashtags = Hashtag.query();
+        $scope.peoples = [];
+        $scope.hashtags = [];
+
 
 
         $scope.loadAll = function() {
-            Article.query(function(result) {
-                $scope.articles = result;
-            });
+            $scope.isInRole = Principal.isInRole;
+            $scope.animation = Animations.getAnimation();
+            People.query(function(result){$scope.peoples = result;});
+            Hashtag.query(function(result){$scope.hashtags = result;});
+            Article.query(function(result){$scope.articles = result;});
         };
+
         $scope.loadAll();
 
-        $scope.isInRole = Principal.isInRole;
+
 
         $scope.create = function () {
             Article.save($scope.article,

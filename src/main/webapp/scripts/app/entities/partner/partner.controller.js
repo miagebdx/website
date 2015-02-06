@@ -1,17 +1,22 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('PartnerController', function ($scope, Animations, Partner, Event, Principal) {
+    .controller('PartnerController', function ($scope,
+                                               Animations,
+                                               Partner,
+                                               Event,
+                                               Principal) {
         $scope.partners = [];
-        $scope.events = Event.query();
-        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
+        $scope.events = [];
+
         $scope.loadAll = function() {
-            Partner.query(function(result) {
-               $scope.partners = result;
-            });
+            $scope.isInRole = Principal.isInRole;
+            $scope.animation = Animations.getAnimation();
+            Event.query(function(result){$scope.events = result;});
+            Partner.query(function(result){$scope.partners = result;});
         };
+
         $scope.loadAll();
-        $scope.isInRole = Principal.isInRole;
 
         $scope.create = function () {
             Partner.save($scope.partner,

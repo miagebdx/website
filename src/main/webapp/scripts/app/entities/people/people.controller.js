@@ -1,21 +1,20 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('PeopleController', function ($scope, Animations, People, Event, Article, Principal) {
+    .controller('PeopleController', function ($scope,
+                                              Animations,
+                                              People,
+                                              Principal) {
         $scope.peoples = [];
-        $scope.events = Event.query();
-        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
-        $scope.articles = Article.query();
+
         $scope.loadAll = function() {
-            People.query(function(result) {
-               $scope.peoples = result;
-            });
+            $scope.isInRole = Principal.isInRole;
+            $scope.animation = Animations.getAnimation();
+            People.query(function(result){$scope.peoples = result;});
         };
 
 
         $scope.loadAll();
-
-        $scope.isInRole = Principal.isInRole;
 
         $scope.create = function () {
             People.save($scope.people,

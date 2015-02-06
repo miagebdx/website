@@ -11,14 +11,14 @@
     </div>
     <div class="col-md-12">
         <button type="submit"
-                onClick="javascript:window.history.go(-1)"
+                onClick="window.history.go(-1)"
                 class="btn btn-link">
             <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
         </button>
     </div>
 
-    <div class="col-md-4 list-group">
-    <aside class="list-group-item">
+    <div class="col-md-4 well">
+    <aside>
         <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
         <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
         <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
@@ -28,7 +28,7 @@
     </aside>
 </div>
     <div class="col-md-8">
-        <aside id="article" class="list-group-item" ng-repeat="event in events | filter:search" ng-class="animation">
+        <aside id="article" ng-repeat="event in events | filter:search" ng-class="animation">
 
                 <header>
                     <h2>

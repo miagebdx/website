@@ -1,18 +1,20 @@
 'use strict';
 
 angular.module('miagebdxApp')
-    .controller('MainController', function (Animations, $scope, Principal, Article, Event) {
+    .controller('MainController', function (Animations,
+                                            $scope,
+                                            Principal,
+                                            Article,
+                                            Event) {
 
         $scope.articles = [];
-        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
+        $scope.events = [];
+
 
         $scope.loadAll = function() {
-            Article.query(function(result) {
-                $scope.articles = result;
-            });
-            Event.query(function(result) {
-                $scope.events = result;
-            });
+            $scope.animation = Animations.getAnimation();
+            Article.query(function(result){$scope.articles = result;});
+            Event.query(function(result){$scope.events = result;});
         };
         $scope.loadAll();
 

@@ -58,26 +58,25 @@ function createAutocompleteInput(id) {
 
 
 angular.module('miagebdxApp')
-    .controller('EventController', function ($scope,Animations, $timeout, Event, People, Partner, Principal) {
+    .controller('EventController', function ($scope,
+                                             Animations,
+                                             $timeout,
+                                             Event,
+                                             Principal) {
 
 
         /* When the modal is shown */
         setLocationOnOpend($scope);
 
         $scope.events = [];
-        $scope.peoples = People.query();
-        $scope.partners = Partner.query();
-
-        $scope.animation = Animations[Math.floor((Math.random() * 14) + 1)];
 
         $scope.loadAll = function() {
-            Event.query(function(result) {
-               $scope.events = result;
-            });
+            $scope.isInRole = Principal.isInRole;
+            $scope.animation = Animations.getAnimation();
+            Event.query(function(result){$scope.events = result;});
         };
-        $scope.loadAll();
 
-        $scope.isInRole = Principal.isInRole;
+        $scope.loadAll();
 
         $scope.create = function () {
             /*

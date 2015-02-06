@@ -14,14 +14,12 @@
     </div>
     <div class="col-md-12">
         <button type="submit"
-                onClick="javascript:window.history.go(-1)"
+                onClick="window.history.go(-1)"
                 class="btn btn-link">
             <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
         </button>
     </div>
-
-    <div class="list-group" >
-        <aside class="col-md-6 list-group-item" id="article" ng-repeat="people in peoples | filter:search" ng-class="animation">
+        <aside class="col-md-6" id="article" ng-repeat="people in peoples | filter:search" ng-class="animation">
            <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
             <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
             <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
@@ -49,7 +47,6 @@
             </div>
         </aside>
     </div>
-</div>
 
 <div class="modal fade" id="savePeopleModal" tabindex="-1" role="dialog" aria-labelledby="myPeopleLabel"
      aria-hidden="true">

@@ -8,15 +8,13 @@
         <small class="label">{{ event.location }}</small>
     </h3>
 </header>
-
 <div class="container">
     <button type="submit"
-            onclick="javascript:window.history.go(-1)"
+            onclick="window.history.go(-1)"
             class="btn btn-link">
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
     </button>
-
-        <section id="content" class="list-group">
+        <section id="content">
             <article>
                 <div class="row">
                     <div class="col-md-6">
@@ -38,14 +36,6 @@
                         <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
                     </li>
                 </ul>
-
-
-
-
-
-
-
             </article>
         </section>
     </div>
-</div>
