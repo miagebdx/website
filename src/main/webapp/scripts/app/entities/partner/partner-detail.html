@@ -18,41 +18,16 @@
     </div>
 
     <div class="col-md-4 well">
-    <aside>
-        <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
-        <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
-        <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
-        <p><i class="glyphicon glyphicon-globe"></i> {{partner.website}}</p>
-        <hr>
-        <b>{{partner.description}}</b>
-    </aside>
-</div>
-    <div class="col-md-8">
-        <aside id="article" ng-repeat="event in events | filter:search" ng-class="animation">
-
-                <header>
-                    <h2>
-                            <span>
-                                <a class="title" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
-                            </span>
-
-                        <small class="pull-right">
-                            <span translate="miagebdxApp.event.createdAt"></span>
-                            {{ event.beginDate }}
-                        </small>
-                    </h2>
-                </header>
-                <div class="row">
-                        <div class="button-bar pull-right">
-                            <button type="submit"
-                                    ui-sref="eventDetail({id:event.id})"
-                                    class="btn btn-link">
-                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                            </button>
-                        </div>
-
-                    </div>
-
+        <aside>
+            <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
+            <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
+            <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
+            <p><i class="glyphicon glyphicon-globe"></i> {{partner.website}}</p>
+            <hr>
+            <b>{{partner.description}}</b>
         </aside>
     </div>
+    <div class="col-md-8">
+        <listevents anim="animation" search="search" events="events"></listevents>
     </div>
+</div>

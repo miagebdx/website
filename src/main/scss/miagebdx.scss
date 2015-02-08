@@ -1,6 +1,9 @@
+$bleu-univ-color: #009DE0;
+$marron-univ-color: #443A31;
+$background-color: #fafafa;
 
 body {
-    background: #fafafa;
+    background: $background-color;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
@@ -20,7 +23,7 @@ body {
 
 .browserupgrade {
     margin: 0.2em 0;
-    background: #ccc;
+    background: $background-color;
     color: #000;
     padding: 0.2em 0;
 }
@@ -86,22 +89,24 @@ ul#strength {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+    color: $marron-univ-color;
 }
 
 .hero-unit {
     position: relative;
     padding: 30px 15px;
-    color: #F5F5F5;
+    color: $background-color;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #009DE0;
+    background: $bleu-univ-color;
 }
 
 .footer {
     text-align: center;
     padding: 30px 0;
     margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+    border-top: 1px solid $bleu-univ-color;
+    background-color: $marron-univ-color;
 }
 
 .carousel{

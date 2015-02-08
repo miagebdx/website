@@ -21,85 +21,32 @@
         </button>
     </div>
     <div class="col-md-4 well">
-            <h3>
-                <i class="glyphicon glyphicon-tags"> </i>
-                <span translate="miagebdxApp.article.hashtag"></span>
-            </h3>
-            <ul class="list-inline ">
-                <li ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
+        <h3>
+            <i class="glyphicon glyphicon-tags"> </i>
+            <span translate="miagebdxApp.article.hashtag"></span>
+        </h3>
+        <ul class="list-inline ">
+            <li ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
                         <span class="label label-default" ui-sref="hashtagDetail({id:hashtag.id})">
                             {{hashtag.name}}
                         </span>
-                </li>
-            </ul>
+            </li>
+        </ul>
 
-            <h3>
-                <i class="glyphicon glyphicon-user"> </i>
-                <span translate="miagebdxApp.article.people"></span>
-            </h3>
-            <ul class="list-inline">
-                <li ng-repeat="people in peoples" ng-init="isSelect=false">
+        <h3>
+            <i class="glyphicon glyphicon-user"> </i>
+            <span translate="miagebdxApp.article.people"></span>
+        </h3>
+        <ul class="list-inline">
+            <li ng-repeat="people in peoples" ng-init="isSelect=false">
                     <span class="label label-primary" ui-sref="peopleDetail({id:people.id})">
                         {{people.name}}
                     </span>
-                </li>
-            </ul>
+            </li>
+        </ul>
     </div>
     <div class="col-md-8">
-        <div class="list-group" id="content">
-            <aside id="article" ng-repeat="article in articles
-                    | filter:search"
-                   ng-class="animation">
-                <header>
-                    <ul class="list-inline">
-                        <li>
-
-                            <span class="h2"><a class="title" ui-sref="articleDetail({id:article.id})">(#{{article.id}}) {{article.title}}</a></span>
-
-                        </li>
-
-                        <li class=" pull-right glyphicon glyphicon-user"></li>
-                        <li class="pull-right" type="submit"
-                            ui-sref="peopleDetail({id:people.id})"
-                            ng-repeat="people in article.peoples" >
-                            <span class="label label-primary">{{people.name}}</span> </li>
-
-                    </ul>
-                    <hr>
-                </header>
-
-                <ul class="list-inline">
-                    <li>
-                        <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
-                        <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
-                    </li>
-
-                    <li><b>{{article.date}}</b></li><li>
-                    <i class="glyphicon glyphicon-tags"></i>
-                </li>
-                    <li type="submit"
-                        ui-sref="hashtagDetail({id:hashtag.id})"
-                        ng-repeat="hashtag in article.hashtags">
-                        <span class="label label-default">{{hashtag.name}}</span>
-                    </li>
-                    <li type="submit"
-                        ui-sref="articleDetail({id:article.id})"
-                        class="btn btn-link pull-right">
-                        <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                    </li>
-                    <li ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                        ng-click="update(article.id)"
-                        class="btn btn-link pull-right">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                    </li>
-                    <li ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                        ng-click="delete(article.id)"
-                        class="btn btn-link pull-right">
-                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                    </li>
-                </ul>
-            </aside>
-        </div>
+        <listarticle role="isInRole" search="search" anim="animation" articles="articles"></listarticle>
     </div>
 </div>
 <div class="modal fade" id="saveArticleModal" tabindex="-1" role="dialog" aria-labelledby="myArticleLabel"

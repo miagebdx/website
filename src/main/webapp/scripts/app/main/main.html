@@ -6,96 +6,11 @@
         </slide>
     </carousel>
 </div>
-
-<BR>
-
-<div class="container">
-    <div class="col-md-6" align="center">
-        <img class="img-responsive" src="../assets/images/miage-logo.png">
-    </div>
-    <div class="col-md-6" align="center">
-        <img class="img-responsive" src="../assets/images/logo_fr.svg">
-    </div>
-</div>
-
-</hr>
+<br>
 <div class="container">
     <div class="col-md-12">
-        <aside id="article" ng-repeat="article in articles | unique: 'id'" ng-show="article.pinned" ng-class="animation">
-
-            <header>
-                <h2>
-                    <span><a class="title" ui-sref="articleDetail({id:article.id})">{{article.title}}</a></span>
-                    <span>(#{{article.id}})</span>
-                </h2>
-                <ul class="list-inline">
-                    <li class="glyphicon glyphicon-user"></li>
-                    <li  type="submit"
-                         ui-sref="peopleDetail({id:people.id})"
-                         ng-repeat="people in article.peoples">
-                        <span class="label label-primary">{{people.name}}</span> </li>
-                    <li><b>{{article.date}}</b></li>
-                </ul>
-                <hr>
-            </header>
-
-            <ul class="list-inline">
-                <li>
-                    <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
-                    <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
-                </li>
-                <li>
-                    <i class="glyphicon glyphicon-tags"></i>
-                </li>
-                <li type="submit"
-                    ui-sref="hashtagDetail({id:hashtag.id})"
-                    ng-repeat="hashtag in article.hashtags">
-                    <span class="label label-default">{{hashtag.name}}</span>
-                </li>
-                <li type="submit"
-                    ui-sref="articleDetail({id:article.id})"
-                    class="btn btn-link pull-right">
-                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                </li>
-            </ul>
-        </aside>
-
-        <aside id="article" ng-class="animation" ng-repeat="event in events | unique : 'id'" ng-show="event.pinned">
-            <header>
-                <h2>
-                            <span>
-                                <a class="title" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
-                            </span>
-                    <small class="pull-right">
-                        <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
-                        <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
-                        <span translate="miagebdxApp.event.createdAt"></span>
-                        {{ event.beginDate }}
-                    </small>
-                </h2>
-            </header>
-            <br>
-            <hr>
-            <div class="button-bar pull-right">
-                <button type="submit"
-                        ui-sref="eventDetail({id:event.id})"
-                        class="btn btn-link">
-                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                </button>
-            </div>
-            <ul class="list-inline">
-                <li><i class="glyphicon glyphicon-user"></i></li>
-                <li ng-repeat="people in event.peoples">
-                    <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
-                </li>
-            </ul>
-            <ul class="list-inline">
-                <li><i class="glyphicon glyphicon-briefcase"></i></li>
-                <li ng-repeat="partner in event.partners">
-                    <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
-                </li>
-            </ul>
-        </aside>
+        <listarticle anim="animation" articles="articles" search="article.pinned=true"></listarticle>
+        <listevents anim="animation" events="events" search="event.pinned=true"></listevents>
     </div>
 </div>
 

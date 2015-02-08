@@ -24,7 +24,12 @@
 <div ui-view="content"></div>
 
 <div class="footer">
-    <p translate="footer">This is your footer</p>
+    <div class="row">
+        <div class="col-md-4 pull-right">
+            <p translate="footer">This is your footer</p>
+        </div>
+    </div>
+
 </div>
 
 <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
@@ -142,11 +147,13 @@
 <script src="scripts/app/entities/article/article.controller.js"></script>
 <script src="scripts/app/entities/article/article-detail.controller.js"></script>
 <script src="scripts/components/entities/article/article.service.js"></script>
+<script src="scripts/components/entities/article/article.directive.js"></script>
 <script src="scripts/components/entities/article/articleHashtag.service.js"></script>
 <script src="scripts/components/entities/article/articlePeople.service.js"></script>
 <script src="scripts/app/entities/event/event.js"></script>
 <script src="scripts/app/entities/event/event.controller.js"></script>
 <script src="scripts/app/entities/event/event-detail.controller.js"></script>
+<script src="scripts/components/entities/event/event.directive.js"></script>
 <script src="scripts/components/entities/event/event.service.js"></script>
 <script src="scripts/components/entities/event/eventPeople.service.js"></script>
 <script src="scripts/components/entities/event/eventPartner.service.js"></script>

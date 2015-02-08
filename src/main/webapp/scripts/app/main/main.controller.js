@@ -7,8 +7,14 @@ angular.module('miagebdxApp')
                                             Article,
                                             Event) {
 
+        Principal.identity().then(function(account) {
+            $scope.account = account;
+            $scope.isAuthenticated = Principal.isAuthenticated;
+        });
+
         $scope.articles = [];
         $scope.events = [];
+
 
 
         $scope.loadAll = function() {
@@ -18,10 +24,7 @@ angular.module('miagebdxApp')
         };
         $scope.loadAll();
 
-        Principal.identity().then(function(account) {
-            $scope.account = account;
-            $scope.isAuthenticated = Principal.isAuthenticated;
-        });
+
 
         $scope.myInterval = 2000;
 
