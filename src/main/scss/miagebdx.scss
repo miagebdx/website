@@ -184,5 +184,19 @@ aside#article h3 {
 }
 /* end */
 
+.footer-cnil {
+    opacity: .95;
+    background-color: $marron-univ-color;
+    bottom: 0;
+    color: $bleu-univ-color;
+    font-size: 13px;
+    left: 0;
+    padding: 10px 40px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 99;
+}
+
 
 
