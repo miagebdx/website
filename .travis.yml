@@ -1,7 +1,18 @@
 #.travis.yml
 # Jérémy Morin <jer.morin@free.fr>
 
-language: java
+language: java node_js
+node_js: 
+  - '0.10'
+  - '0.11'
 jdk: oraclejdk8
 install: mvn install -DskipTests=true
-script: mvn test 
+before_script:
+  - gem update 
+  - gem install sass 
+  - gem install compass 
+  - npm install -g grunt-cli
+script: 
+  - mvn test 
+  - grunt test
+

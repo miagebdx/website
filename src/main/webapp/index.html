@@ -21,20 +21,25 @@
 <!--[if lt IE 10]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+
 <div class="development"></div>
 <div ui-view="navbar"></div>
+
+
 
 <div ui-view="content"></div>
 
 
-<cnil ng-show="cnil" class="footer-cnil"></cnil>
+
 <div class="footer">
+
     <div class="row">
 
         <div class="col-md-4 pull-right">
             <p translate="footer">This is your footer</p>
         </div>
     </div>
+    <cnil ng-show="cnil"></cnil>
 </div>
 
 
