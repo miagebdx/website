@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/miagebdx/website.svg?branch=master)](https://travis-ci.org/miagebdx/website)
+
 Copyright [2015] [miagebdx]
 
 Licensed under the Apache License, Version 2.0 (the "License");

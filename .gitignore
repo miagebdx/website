@@ -16,3 +16,4 @@ src/main/webapp/bower_components
 .gradle
 build
 *.css
+deploy
