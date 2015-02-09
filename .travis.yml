@@ -8,9 +8,12 @@ node_js:
 jdk: oraclejdk8
 install: mvn install -DskipTests=true
 before_script:
-  - npm install -g grunt-cli
-  - gem install sass
+  - 'gem update --system'
+  - 'gem install sass --version "=3.2.12"'
+  - 'gem install compass --version "=0.12.2"'
+  - 'npm install -g bower grunt-cli'
+  - 'bower install'
 script: 
-  - mvn test 
-  - grunt test
+  - 'mvn test' 
+  - 'grunt test'
 
