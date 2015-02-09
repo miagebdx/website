@@ -1,0 +1,7 @@
+#.travis.yml
+# Jérémy Morin <jer.morin@free.fr>
+
+language: java
+jdk: oraclejdk8
+install: mvn install -DskipTests=true
+script: mvn test 
