@@ -9,7 +9,6 @@ jdk: oraclejdk8
 install: mvn install -DskipTests=true
 before_script:
   - npm install -g bower grunt-cli
-  - gem install sass
-  - bower install
-script: mvn test 
-
+script: 
+  - mvn test
+  - grunt test
