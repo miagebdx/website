@@ -11,8 +11,7 @@ before_script:
   - gem update 
   - gem install sass 
   - gem install compass 
-  - npm install -g bower grunt-cli
-  - bower install
+  - npm install -g grunt-cli
 script: 
   - mvn test 
   - grunt test
