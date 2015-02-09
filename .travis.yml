@@ -8,7 +8,9 @@ node_js:
 jdk: oraclejdk8
 install: mvn install -DskipTests=true
 before_script:
-  - npm install -g bower grunt-cli
+  - npm install -g grunt-cli
+  - gem install sass
 script: 
-  - mvn test
+  - mvn test 
   - grunt test
+
