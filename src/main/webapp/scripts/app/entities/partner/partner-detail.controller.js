@@ -8,11 +8,15 @@ angular.module('miagebdxApp')
                                                      EventPartner) {
         $scope.partner = {};
         $scope.events = [];
+        $scope.partners = [];
+
 
         $scope.load = function (id) {
             $scope.animation = Animations.getAnimation();
             EventPartner.get({id: id}, function(result){$scope.events = result;});
             Partner.get({id: id}, function(result){$scope.partner = result;});
+            Partner.query(function(result){$scope.partners = result;});
+
         };
 
 

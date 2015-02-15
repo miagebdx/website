@@ -13,38 +13,36 @@
         </form>
         <hr/>
     </div>
-    <div class="col-md-12">
-        <button type="submit"
-                onClick="window.history.go(-1)"
-                class="btn btn-link">
-            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-        </button>
-    </div>
-        <aside class="col-md-6"  id="article" ng-repeat="partner in partners|filter:search" ng-class="animation">
-            <h2 ui-sref="partnerDetail({id:partner.id})"><i class="glyphicon glyphicon-user" ></i> {{partner.name}}</h2>
-            <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
-            <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
-            <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
-            <p><i class="glyphicon glyphicon-globe"></i> {{partner.website}}</p>
-            <hr>
-            <b>{{partner.description}}</b>
-            <hr>
-            <div class="button-bar">
-                <button type="submit"
-                        ui-sref="partnerDetail({id:partner.id})"
-                        class="btn btn-link">
-                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-                </button>
+        <aside class="col-md-12"  id="article" ng-repeat="partner in partners|filter:search" ng-class="animation">
+            <div class="button-bar pull-right">
                 <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
                         ng-click="update(partner.id)"
-                        class="btn btn-link">
+                        class="btn btn-sm btn-info">
                     <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
                 </button>
                 <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
                         ng-click="delete(partner.id)"
-                        class="btn btn-link">
+                        class="btn btn-sm btn-danger">
                     <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
                 </button>
+                <button type="submit"
+                        ui-sref="partnerDetail({id:partner.id})"
+                        class="btn btn-sm btn-primary">
+                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                </button>
+            </div>
+            <h2 ui-sref="partnerDetail({id:partner.id})"><i class="glyphicon glyphicon-user" ></i> {{partner.name}}</h2>
+            <div class="col-md-6">
+                <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
+                <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
+            </div>
+            <div class="col-md-6">
+                <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
+                <p><i class="glyphicon glyphicon-globe"></i> {{partner.website}}</p>
+            </div>
+            <div class="col-md-12">
+                <hr>
+                <b>{{partner.description}}</b>
             </div>
         </aside>
     </div>
@@ -143,3 +141,4 @@
         </div>
     </div>
 </div>
+

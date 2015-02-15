@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>miagebdx</title>
+    <title>MIAGE de Bordeaux</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -21,26 +21,31 @@
 <!--[if lt IE 10]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-
-<div class="development"></div>
-<div ui-view="navbar"></div>
-
-
-
-<div ui-view="content" class="wrapper"></div>
-
-
-<cnil></cnil>
-<div class="footer">
-    <div class="row">
-        <div class="col-md-4 pull-right">
-            <p translate="footer">This is your footer</p>
-        </div>
-    </div>
+<div class="wrapper">
+    <div class="development"></div>
+    <div ui-view="navbar"></div>
+    <div ui-view="content"></div>
 </div>
 
 
+<div class="footer">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <span translate="footer">This is your footer</span> -
+            <span ui-sref-active="active"><a ui-sref="login"><span translate="global.menu.account.login">Authenticate</span></a></span>
+        </div>
 
+    </div>
+    <p class="small">MIAGE de Bordeaux - Université Bordeaux I - 351, cours de la Libération 33404 Talence Cedex miage@labri.fr</p>
+</div>
+
+<div backbutton></div>
+
+
+
+
+<cnil></cnil>
 
 <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
 <script>
@@ -169,7 +174,7 @@
 <script src="scripts/components/entities/event/eventPartner.service.js"></script>
 <script src="scripts/components/cnil/cnil.directive.js"></script>
 <script src="scripts/components/backbtn/back-btn.directive.js"></script>
-
+<script src="scripts/components/backbtn/scrollto.directive.js"></script>
 <!-- endbuild -->
 </body>
 </html>

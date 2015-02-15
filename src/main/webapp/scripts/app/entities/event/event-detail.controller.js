@@ -50,7 +50,10 @@ angular.module('miagebdxApp')
                                                    $stateParams,
                                                    Event){
         $scope.event = {};
+        $scope.events = [];
+
         $scope.load = function (id) {
+            Event.query(function(result){$scope.events = result;});
             Event.get({id: id}, function(result) {
                 $scope.event = result;
 

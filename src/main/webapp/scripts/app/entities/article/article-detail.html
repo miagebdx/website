@@ -1,16 +1,25 @@
 <header class="hero-unit" id="banner">
     <h1>{{article.title}}</h1>
+        <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="article.id > 1"
+           ui-sref="articleDetail({id:(article.id) -1})">
+            <span translate="entity.action.previous"></span> </a>
+        <a type="submit" class="pull-right btn btn-sm btn-primary"
+           ng-if="articles.length > article.id"
+           ui-sref="articleDetail({id:(article.id) +1})">
+            <span translate="entity.action.next"></span> </a>
+        <br>
 </header>
+
 <br>
+
+
 <div class="container">
-    <button type="submit"
-            onClick="window.history.go(-1)"
-            class="btn btn-link">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-    </button>
-    <aside id="article" ng-class="animation">
+
+
+
+    <aside id="article">
         <header>
-            <ul class="list-inline">
+            <ul class="list-inline" ng-if="article.hashtags.length > 0">
                 <li><i class="glyphicon glyphicon-tags"></i> </li>
                 <li type="submit"
                     ui-sref="hashtagDetail({id:hashtag.id})"
@@ -18,14 +27,14 @@
                     <span class="label label-default">{{hashtag.name}}</span>
                 </li>
             </ul>
-            <ul class="list-inline">
+            <ul class="list-inline" ng-if="article.peoples.length > 0">
                 <li class="glyphicon glyphicon-user"></li>
                 <li  type="submit"
                      ui-sref="peopleDetail({id:people.id})"
                      ng-repeat="people in article.peoples">
                     <span class="label label-primary">{{people.name}}</span> </li>
             </ul>
-            <hr>
+            <hr ng-if="article.hashtags.length > 0 || article.peoples.length > 0">
         </header>
         <div markdown="article.body"></div>
         <hr>
@@ -38,4 +47,5 @@
         </ul>
     </aside>
 </div>
+
 

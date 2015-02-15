@@ -2,6 +2,7 @@ angular.module('miagebdxApp')
     .directive('cnil', function($cookieStore) {
         return {
             restrict: 'AE',
+            templateUrl: 'scripts/components/cnil/cnil.html',
             controller: function($scope){
                 var cnil = $cookieStore.get('cnil');
                 if(cnil!=='hidden') {
@@ -11,7 +12,7 @@ angular.module('miagebdxApp')
                     $scope.hide = false;
                     $cookieStore.put('cnil','hidden');
                 }
-            },
-            templateUrl: 'scripts/components/cnil/cnil.html'
+            }
+
         };
     });

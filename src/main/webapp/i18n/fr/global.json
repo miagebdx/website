@@ -73,12 +73,15 @@
     },
     "entity": {
         "action": {
+            "top" : "Haut de page",
             "back": "Retour",
             "cancel": "Annuler",
             "edit": "Editer",
-            "delete": "Suppriner",
+            "delete": "Supprimer",
             "save": "Sauvegarder",
-            "view": "Voir"
+            "view": "Voir",
+            "previous": "Précédent",
+            "next": "Suivant"
         },
         "detail": {
             "field": "Champ",

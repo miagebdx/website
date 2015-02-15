@@ -1,5 +1,13 @@
 <header class="hero-unit" id="banner">
     <h1>{{partner.name}}</h1>
+    <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="partner.id > 1"
+       ui-sref="partnerDetail({id:(partner.id) -1})">
+        <span translate="entity.action.previous"></span> </a>
+    <a type="submit" class="pull-right btn btn-sm btn-primary"
+       ng-if="partners.length > partner.id"
+       ui-sref="partnerDetail({id:(partner.id) +1})">
+        <span translate="entity.action.next"></span> </a>
+    <br>
 </header>
 <br>
 <div class="container">
@@ -9,14 +17,6 @@
         </form>
         <hr/>
     </div>
-    <div class="col-md-12">
-        <button type="submit"
-                onClick="window.history.go(-1)"
-                class="btn btn-link">
-            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-        </button>
-    </div>
-
     <div class="col-md-4 well">
         <aside>
             <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
@@ -31,3 +31,4 @@
         <listevents></listevents>
     </div>
 </div>
+

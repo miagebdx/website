@@ -1,55 +1,48 @@
 <aside id="article" ng-repeat="event in events | filter:search" ng-class="animation">
-    <div class="col-md-2">
-        {{event.beginDate | date: format: short}}
-    </div>
-    <div class="col-md-10">
-        <h2>
-                            <span>
-                                <a class="title" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
-                            </span>
-
-            <small class="pull-right">
+    <div class="row">
+        <div class="col-md-2">
                 <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
                 <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
-            </small>
-        </h2>
+            {{event.beginDate | date: format: short}}
+        </div>
+        <div class="col-md-10">
+            <a class="h2" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>
+            <ul class="list-inline pull-right">
 
-
-
-
-        <ul class="list-inline">
-            <li><i class="glyphicon glyphicon-user"></i></li>
-            <li ng-repeat="people in event.peoples">
-                <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
-            </li>
-        </ul>
-        <ul class="list-inline">
-            <li><i class="glyphicon glyphicon-briefcase"></i></li>
-            <li ng-repeat="partner in event.partners">
-                <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
-            </li>
-        </ul>
-    </div>
-
-    <div class="row">
-        <div class="button-bar pull-right">
-            <button type="submit"
-                    ui-sref="eventDetail({id:event.id})"
-                    class="btn btn-link">
-                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-            </button>
-            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                <li ng-show="isInRole('ROLE_ADMIN')" type="submit"
                     ng-click="updateEvent(event.id)"
-                    class="btn btn-link">
-                <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-            </button>
-            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                    class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                </li>
+                <li ng-show="isInRole('ROLE_ADMIN')" type="submit"
                     ng-click="deleteEvent(event.id)"
-                    class="btn btn-link">
-                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-            </button>
+                    class="btn btn-danger btn-sm">
+                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                </li>
+                <li type="submit"
+                    ui-sref="eventDetail({id:event.id})"
+                    class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                </li>
+            </ul>
 
+            <hr ng-if="event.partners.length > 0 || event.peoples.length > 0">
+            <ul class="list-inline" ng-if="event.peoples.length > 0">
+                <li><i class="glyphicon glyphicon-user"></i></li>
+                <li ng-repeat="people in event.peoples">
+                    <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
+                </li>
+            </ul>
+            <ul class="list-inline" ng-if="event.partners.length > 0">
+                <li><i class="glyphicon glyphicon-briefcase"></i></li>
+                <li ng-repeat="partner in event.partners">
+                    <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
+                </li>
+            </ul>
 
         </div>
     </div>
+
+
+
 </aside>

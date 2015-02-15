@@ -73,12 +73,15 @@
     },
     "entity": {
         "action": {
+            "top": "Back to top ",
             "back": "Back",
             "cancel": "Cancel",
             "delete": "Delete",
             "edit": "Edit",
             "save": "Save",
-            "view": "View"
+            "view": "View",
+            "previous": "Previous",
+            "next": "Next"
         },
         "detail": {
             "field": "Field",

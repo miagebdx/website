@@ -6,8 +6,12 @@ angular.module('miagebdxApp')
                                                      $stateParams,
                                                      Article){
         $scope.article = {};
+        $scope.articles = [];
+
+
 
         $scope.load = function (id) {
+            Article.query(function(result){$scope.articles = result;});
             $scope.animation = Animations.getAnimation();
             Article.get({id: id}, function(result){$scope.article = result;});
         };

@@ -12,41 +12,46 @@
         </form>
         <hr/>
     </div>
-    <div class="col-md-12">
-        <button type="submit"
-                onClick="window.history.go(-1)"
-                class="btn btn-link">
-            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-        </button>
-    </div>
-        <aside class="col-md-6" id="article" ng-repeat="people in peoples | filter:search" ng-class="animation">
-           <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
-            <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
-            <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
-            <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
-            <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
-            <hr>
-            <b>{{people.details}}</b>
-            <hr>
-            <div class="button-bar">
-            <button type="submit"
-                    ui-sref="peopleDetail({id:people.id})"
-                    class="btn btn-link">
-                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-            </button>
+    <aside class="col-md-12" id="article" ng-repeat="people in peoples | filter:search" ng-class="animation">
+        <div class="button-bar pull-right">
+
             <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
                     ng-click="update(people.id)"
-                    class="btn btn-link">
+                    class="btn btn-info btn-sm">
                 <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
             </button>
             <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
                     ng-click="delete(people.id)"
-                    class="btn btn-link">
+                    class="btn btn-danger btn-sm">
                 <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
             </button>
-            </div>
-        </aside>
-    </div>
+            <button type="submit"
+                    ui-sref="peopleDetail({id:people.id})"
+                    class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
+            </button>
+        </div>
+        <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
+
+        <div class="col-md-6">
+            <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
+            <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
+
+        </div>
+        <div class="col-md-6">
+            <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
+            <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
+        </div>
+
+
+        <div class="col-md-12">
+            <hr>
+            <b>{{people.details}}</b>
+
+        </div>
+
+    </aside>
+</div>
 
 <div class="modal fade" id="savePeopleModal" tabindex="-1" role="dialog" aria-labelledby="myPeopleLabel"
      aria-hidden="true">
@@ -137,3 +142,4 @@
         </div>
     </div>
 </div>
+
