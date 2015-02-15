@@ -1,11 +1,6 @@
-angular.module('miagebdxApp').directive('backButton', function(){
+angular.module('miagebdxApp').directive('backbutton', function(){
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
-            element.bind('click', function () {
-                history.back();
-                scope.$apply();
-            });
-        }
+        templateUrl : 'scripts/components/backbtn/back.html'
     }
 });

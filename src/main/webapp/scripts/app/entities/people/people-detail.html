@@ -1,5 +1,13 @@
 <header class="hero-unit" id="banner">
     <h1>{{people.name}}</h1>
+    <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="people.id > 1"
+       ui-sref="peopleDetail({id:(people.id) -1})">
+        <span translate="entity.action.previous"></span> </a>
+    <a type="submit" class="pull-right btn btn-sm btn-primary"
+       ng-if="peoples.length > people.id"
+       ui-sref="peopleDetail({id:(people.id) +1})">
+        <span translate="entity.action.next"></span> </a>
+    <br>
 </header>
 
 <div class="container">
@@ -8,11 +16,6 @@
                 <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
             </form>
             <hr/>
-            <button type="submit"
-                    onClick="window.history.go(-1)"
-                    class="btn btn-link">
-                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
-            </button>
         </div>
         <div class="col-md-4 well">
             <aside id="content">
@@ -29,4 +32,3 @@
             <listevents></listevents>
         </div>
     </div>
-

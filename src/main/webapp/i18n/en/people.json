@@ -2,7 +2,7 @@
     "miagebdxApp": {
         "people" : {
             "home": {
-                "title": "Peoples",
+                "title": "People",
                 "createLabel": "Create a new People",
                 "createOrEditLabel": "Create or edit a People"
             },

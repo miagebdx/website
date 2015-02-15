@@ -19,9 +19,7 @@ angular.module('miagebdxApp')
 
         $scope.loadAll = function() {
             $scope.isInRole = Principal.isInRole;
-
             $scope.animation = Animations.getAnimation();
-
             People.query(function(result){$scope.peoples = result;});
             Hashtag.query(function(result){$scope.hashtags = result;});
             Article.query(function(result){$scope.articles = result;});
