@@ -62,15 +62,21 @@ angular.module('miagebdxApp')
                                              Animations,
                                              $timeout,
                                              Event,
-                                             Principal) {
+                                             Principal,
+                                             People,
+                                             Partner) {
 
 
         /* When the modal is shown */
         setLocationOnOpend($scope);
 
         $scope.events = [];
+        $scope.partners = [];
+        $scope.peoples = [];
 
         $scope.loadAll = function() {
+            People.query(function(result){$scope.peoples = result;});
+            Partner.query(function(result){$scope.partners = result;});
             $scope.isInRole = Principal.isInRole;
             $scope.animation = Animations.getAnimation();
             Event.query(function(result){$scope.events = result;});
