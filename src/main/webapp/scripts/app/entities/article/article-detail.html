@@ -29,13 +29,13 @@
         </header>
         <div markdown="article.body"></div>
         <hr>
-        <div class="pull-right">
-            <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
-            <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
-            <b>{{article.date}}</b>
-        </div>
-
-
+        <ul class="list-inline">
+            <li class="pull-right">
+                <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
+                <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
+                <b>{{article.date}}</b>
+            </li>
+        </ul>
     </aside>
 </div>
 

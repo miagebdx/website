@@ -13,4 +13,5 @@ angular.module('miagebdxApp')
         };
 
         $scope.load($stateParams.id);
+
     });

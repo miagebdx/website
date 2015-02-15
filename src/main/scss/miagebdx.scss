@@ -1,11 +1,15 @@
 $bleu-univ-color: #009DE0;
 $marron-univ-color: #443A31;
 $background-color: #fafafa;
+html{
+    height: 100%;
+}
 
 body {
     background: $background-color;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+    height: 100%;
 }
 
 /*.development {
@@ -185,6 +189,18 @@ aside#article h3 {
 /* end */
 
 .footer{
+    background-color: $marron-univ-color;
+    color: $bleu-univ-color;
+    bottom: 0px;
+    height: 100px;
+}
+
+.wrapper {
+    min-height: 90%;
+    margin: 0 auto -110px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.cnil{
     opacity: .95;
     background-color: $marron-univ-color;
     bottom: 0;

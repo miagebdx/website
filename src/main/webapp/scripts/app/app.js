@@ -19,12 +19,7 @@ angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
             });
         });
 
-        $rootScope.cnil = true;
-        $rootScope.closeCnil=function(){
-            $rootScope.cnil = false;
-
-
-        };
+        
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
             $rootScope.previousStateName = fromState.name;

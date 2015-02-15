@@ -19,24 +19,15 @@ angular.module('miagebdxApp')
 
         $scope.loadAll = function() {
             $scope.isInRole = Principal.isInRole;
+
             $scope.animation = Animations.getAnimation();
+
             People.query(function(result){$scope.peoples = result;});
             Hashtag.query(function(result){$scope.hashtags = result;});
             Article.query(function(result){$scope.articles = result;});
         };
 
         $scope.loadAll();
-
-
-
-        $scope.create = function () {
-            Article.save($scope.article,
-                function () {
-                    $scope.loadAll();
-                    $('#saveArticleModal').modal('hide');
-                    $scope.clear();
-                });
-        };
 
         $scope.update = function (id) {
             $scope.article = Article.get({id: id});
@@ -56,6 +47,17 @@ angular.module('miagebdxApp')
                     $scope.clear();
                 });
         };
+
+
+        $scope.create = function () {
+            Article.save($scope.article,
+                function () {
+                    $scope.loadAll();
+                    $('#saveArticleModal').modal('hide');
+                    $scope.clear();
+                });
+        };
+
 
         $scope.clear = function () {
             $scope.article = {title: null, body: null, date: null, pinned: null, id: null};
