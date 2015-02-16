@@ -28,11 +28,6 @@ RUN apt-get install nodejs -y
 RUN apt-get -y install mysql-server
 RUN dpkg-divert --local --rename --add /sbin/initctl
 
-# configure the "miagebdx" and "root" users
-RUN echo 'root:miagebdx' |chpasswd
-RUN groupadd miagebdx && useradd miagebdx -s /bin/bash -m -g miagebdx -G miagebdx && adduser miagebdx sudo
-RUN echo 'miagebdx:miagebdx' |chpasswd
-
 #Install nodejs and dependencies
 RUN npm install npm -g
 RUN npm install yo -g
@@ -40,15 +35,10 @@ RUN npm install bower -g
 RUN npm --unsafe-perm install generator-jhipster -g
 
 #Clone context in image context
-RUN cd /home && mkdir website 
+RUN cd /home && mkdir website
 ADD . /home/website
 RUN cd /home/website && npm install
-RUN cd /home && chown -R miagebdx:miagebdx /home/website
-RUN cd /home/website && sudo -u miagebdx mvn dependency:go-offline
-
-#Launch database
-CMD ["/usr/bin/mysqld_safe"]
-RUN mvn -Pprod spring-boot:run
+RUN cd /home/website && mvn install
 
 # expose the working directory, the Tomcat port, the Grunt server port, the SSHD port, and run SSHD
 VOLUME ["/miagebdx"]
