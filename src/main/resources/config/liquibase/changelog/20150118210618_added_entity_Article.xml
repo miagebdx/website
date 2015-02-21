@@ -18,7 +18,7 @@
             <column name="title" type="varchar(255)"/>
             <column name="body" type="varchar(20000)"/>
             <column name="date" type="date">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
             <column name="pinned" type="bit"/>
         </createTable>
@@ -69,5 +69,10 @@
                                  referencedColumnNames="id"
                                  referencedTableName="T_ARTICLE"/>
 
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/miagebdx.csv"
+                  separator=","
+                  tableName="T_ARTICLE">
+        </loadData>
     </changeSet>
 </databaseChangeLog>

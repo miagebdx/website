@@ -30,7 +30,7 @@ spring:
 swagger:
     title: miagebdx API
     description: miagebdx applications and beyond!
-    termsOfServiceUrl: http://jhipster.github.io/
-    contact:
+    termsOfServiceUrl: https://github.com/miagebdx/website
+    contact: https://github.com/miagebdx/website
     license: Apache 2.0
     licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html

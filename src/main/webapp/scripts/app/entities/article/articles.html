@@ -7,36 +7,52 @@
 <br>
 <div class="container">
     <div class="col-md-12">
-        <form>
-            <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
-        </form>
-
-        <hr>
+        <div class="form-control-wrapper">
+            <div class="form-control-wrapper">
+                <input class="form-control empty ng-pristine ng-valid ng-touched" id="searchInput" placeholder="Search" ng-model="search">
+                <span class="material-input"></span>
+            </div>
+        </div>
+        <br>
     </div>
-    <div class="col-md-4 well">
-        <h3>
-            <i class="glyphicon glyphicon-tags"> </i>&nbsp;
-            <span translate="miagebdxApp.article.hashtag"></span>
-        </h3>
-        <ul class="list-inline ">
-            <li ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
+    <div class="col-md-4 well list-group">
+        <div class="list-group-item">
+            <div class="row-action-primary">
+                <i class="glyphicon glyphicon-tags"> </i>
+            </div>
+            <div class="row-content">
+                <div class="least-content">{{hashtags.length}}</div>
+                <h4 class="list-group-item-heading"><span translate="miagebdxApp.article.hashtag"></span></h4>
+                <div class="list-group-item-text">
+                    <ul class="list-inline ">
+                    <li ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
                         <span class="label label-default" ui-sref="hashtagDetail({id:hashtag.id})">
                             {{hashtag.name}}
                         </span>
-            </li>
-        </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
 
-        <h3>
-            <i class="glyphicon glyphicon-user"> </i>&nbsp;
-            <span translate="miagebdxApp.article.people"></span>
-        </h3>
-        <ul class="list-inline">
-            <li ng-repeat="people in peoples" ng-init="isSelect=false">
+        <div class="list-group-item">
+            <div class="row-action-primary">
+                <i class="glyphicon glyphicon-user"> </i>
+            </div>
+            <div class="row-content">
+                <div class="least-content">{{peoples.length}}</div>
+                <h4 class="list-group-item-heading"><span translate="miagebdxApp.article.people"></span></h4>
+                <div class="list-group-item-text">
+                    <ul class="list-inline">
+                    <li ng-repeat="people in peoples" ng-init="isSelect=false">
                     <span class="label label-primary" ui-sref="peopleDetail({id:people.id})">
                         {{people.name}}
                     </span>
-            </li>
-        </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-8">
         <listarticle></listarticle>

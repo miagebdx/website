@@ -1,15 +1,11 @@
 $bleu-univ-color: #009DE0;
 $marron-univ-color: #443A31;
 $background-color: #fafafa;
-html{
-    height: 100%;
-}
 
 body {
     background: $background-color;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
-    height: 100%;
 }
 
 /*.development {
@@ -119,60 +115,6 @@ ul#strength {
 }
 
 
-aside#article, section#content, .block {
-    background-color: #f7f7f7;
-    padding: 10px 12px 20px;
-    margin-bottom: 30px;
-    border-top: 5px solid #443A31;
-    word-wrap: break-word
-}
-
-
-aside#article .well, section#content .well, .block .well, .well {
-    background-color: #fcfcfc
-}
-
-
-aside#article h1, aside#article h2, section#content h1, section#content h2,
-.block h1, .block h2 {
-    color: #443A31
-}
-
-
-aside#article h2, section#content h2, .block h2 {
-    font-size: 1.6em
-}
-
-aside#article h3, section#content h3, .block h3 {
-    font-size: 1.3em
-}
-
-aside#article h3 {
-    padding-bottom: 0.6em;
-    border-bottom: 1px solid darkgrey
-}
-
-.textInput-borderless {
-    border: 0;
-}
-.textInput-jumbo {
-    font-size: 32px;
-    height: 70px;
-    padding: 0;
-    width: 100%;
-    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-    letter-spacing: -0.02em;
-    font-weight: 300;
-    font-style: normal;
-}
-.textInput {
-    outline: none;
-    background: #fafafa;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    box-sizing: border-box;
-    border-radius: 4px;
-}
-
 .carousel-caption {
     max-width: 550px;
     padding: 0 20px;
@@ -192,12 +134,7 @@ aside#article h3 {
     background-color: $marron-univ-color;
     color: $bleu-univ-color;
     bottom: 0;
-    height: 18%;
-}
-
-.wrapper {
-    min-height: 92%;
-    margin: 0 auto -100px;
+    height: 250px;
 }
 
 .cnil{
@@ -224,7 +161,75 @@ aside#article h3 {
     vertical-align: middle;
 }
 
+/**Little hack to have sticky footer**/
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
 
+.site-content {
+    flex: 1;
+}
 
-
+$bgHighlight    : #6b5c4d;
+$dropDown       : false;
+.navbar-default {
+    background-color: $marron-univ-color;
+    border-color: $bgHighlight;
+    .navbar-brand {
+        color: $background-color;
+        &:hover, &:focus {
+            color: $bleu-univ-color; }}
+    .navbar-text {
+        color: $background-color; }
+    .navbar-nav {
+        > li {
+            > a {
+                color: $background-color;
+                &:hover,  &:focus {
+                    color: $bleu-univ-color; }}
+            @if $dropDown {
+                > .dropdown-menu {
+                    background-color: $marron-univ-color;
+                    > li > a {
+                        color: $background-color;
+                        &:hover,  &:focus {
+                            color: $bleu-univ-color;
+                            background-color: $bgHighlight; }}
+                    .divider {
+                        background-color: $bgHighlight;}}}
+        }
+        > .active {
+            > a, > a:hover, > a:focus {
+                color: $bleu-univ-color;
+                background-color: $bgHighlight; }}
+        > .open {
+            > a, > a:hover, > a:focus {
+                color: $bleu-univ-color;
+                background-color: $bgHighlight; }}}
+    .navbar-toggle {
+        border-color: $bgHighlight;
+        &:hover, &:focus {
+            background-color: $bgHighlight; }
+        .icon-bar {
+            background-color: $background-color; }}
+    .navbar-collapse,
+    .navbar-form {
+        border-color: $background-color; }
+    .navbar-link {
+        color: $background-color;
+        &:hover {
+            color: $bleu-univ-color; }}}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu {
+        > li > a {
+            color: $background-color;
+            &:hover, &:focus {
+                color: $bleu-univ-color; }}
+        > .active {
+            > a, > a:hover, > a:focus, {
+                color: $bleu-univ-color;
+                background-color: $bgHighlight; }}}
+}
 

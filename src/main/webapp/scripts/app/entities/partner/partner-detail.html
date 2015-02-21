@@ -1,9 +1,9 @@
 <header class="hero-unit" id="banner">
     <h1>{{partner.name}}</h1>
-    <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="partner.id > 1"
+    <a class="btn btn-sm btn-default pull-left" type="submit" ng-if="partner.id > 1"
        ui-sref="partnerDetail({id:(partner.id) -1})">
         <span translate="entity.action.previous"></span> </a>
-    <a type="submit" class="pull-right btn btn-sm btn-primary"
+    <a type="submit" class="pull-right btn btn-sm btn-default"
        ng-if="partners.length > partner.id"
        ui-sref="partnerDetail({id:(partner.id) +1})">
         <span translate="entity.action.next"></span> </a>
@@ -12,20 +12,22 @@
 <br>
 <div class="container">
     <div class="col-md-12">
-        <form>
-            <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
-        </form>
-        <hr/>
+        <div class="form-control-wrapper">
+            <div class="form-control-wrapper">
+                <input class="form-control empty ng-pristine ng-valid ng-touched" id="searchInput" placeholder="Search" ng-model="search.name">
+                <span class="material-input"></span>
+            </div>
+        </div>
+        <br>
     </div>
     <div class="col-md-4 well">
-        <aside>
             <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
             <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
             <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
             <p><i class="glyphicon glyphicon-globe"></i> {{partner.website}}</p>
             <hr>
-            <b>{{partner.description}}</b>
-        </aside>
+            <p><b>{{partner.description}}</b></p>
+
     </div>
     <div class="col-md-8">
         <listevents></listevents>

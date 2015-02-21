@@ -5,9 +5,12 @@ angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
     'ngCacheBuster','ui.bootstrap','ngSanitize','angular.filter', 'ngAnimate'])
 
     .run(function ($rootScope, $location, $http, $state, $translate, Auth, Principal, Language) {
+
+
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
             $rootScope.toState = toState;
             $rootScope.toStateParams = toStateParams;
+
 
             if (Principal.isIdentityResolved()) {
                 Auth.authorize();
@@ -19,11 +22,15 @@ angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
             });
         });
 
-        
+
+
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
             $rootScope.previousStateName = fromState.name;
             $rootScope.previousStateParams = fromParams;
+
+
+
         });
 
         $rootScope.back = function() {

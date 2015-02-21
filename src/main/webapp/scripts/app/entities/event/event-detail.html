@@ -7,10 +7,10 @@
         <small class="label">{{ event.endDate }}</small>
         <small class="label">{{ event.location }}</small>
     </h3>
-    <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="event.id > 1"
+    <a class="btn btn-sm btn-default pull-left" type="submit" ng-if="event.id > 1"
        ui-sref="eventDetail({id:(event.id) -1})">
         <span translate="entity.action.previous"></span> </a>
-    <a type="submit" class="pull-right btn btn-sm btn-primary"
+    <a type="submit" class="pull-right btn btn-sm btn-default"
        ng-if="events.length > event.id"
        ui-sref="eventDetail({id:(event.id) +1})">
         <span translate="entity.action.next"></span> </a>
@@ -18,29 +18,23 @@
 </header>
 <br>
 <div class="container">
-        <section id="content">
-            <article>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div markdown="event.description"></div>
-                    </div>
-                    <div class="col-md-6">
-                        <div id="map-canvas" style="height: 300px; width:100%; margin: 0; padding: 0;"></div>
-                    </div>
-                    </div>
-                <ul class="list-inline" ng-if="event.peoples.length > 0">
-                    <li><i class="glyphicon glyphicon-user"></i></li>
-                    <li ng-repeat="people in event.peoples">
-                        <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
-                    </li>
-                </ul>
-                <ul class="list-inline" ng-if="event.partners.length > 0">
-                    <li><i class="glyphicon glyphicon-briefcase"></i></li>
-                    <li ng-repeat="partner in event.partners">
-                        <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
-                    </li>
-                </ul>
-            </article>
-        </section>
+    <div class="well">
+        <div markdown="event.description"></div>
+        <hr>
+        <div class="well" id="map-canvas" style="height: 300px; width:100%; margin: 0; padding: 0;"></div>
+        <hr ng-if="event.partners.length > 0 || event.peoples.length > 0">
+        <ul class="list-inline" ng-if="event.peoples.length > 0">
+            <li><i class="glyphicon glyphicon-user"></i></li>
+            <li ng-repeat="people in event.peoples">
+                <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
+            </li>
+        </ul>
+        <ul class="list-inline" ng-if="event.partners.length > 0">
+            <li><i class="glyphicon glyphicon-briefcase"></i></li>
+            <li ng-repeat="partner in event.partners">
+                <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
+            </li>
+        </ul>
     </div>
+</div>
 

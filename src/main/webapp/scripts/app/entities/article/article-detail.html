@@ -1,23 +1,17 @@
 <header class="hero-unit" id="banner">
-    <h1>{{article.title}}</h1>
-        <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="article.id > 1"
+    <h2>{{article.title}}</h2>
+        <a class="btn btn-sm btn-default pull-left" type="submit" ng-if="article.id > 1"
            ui-sref="articleDetail({id:(article.id) -1})">
             <span translate="entity.action.previous"></span> </a>
-        <a type="submit" class="pull-right btn btn-sm btn-primary"
+        <a type="submit" class="pull-right btn btn-sm btn-default"
            ng-if="articles.length > article.id"
            ui-sref="articleDetail({id:(article.id) +1})">
             <span translate="entity.action.next"></span> </a>
         <br>
 </header>
-
 <br>
-
-
 <div class="container">
-
-
-
-    <aside id="article">
+    <div class="well">
         <header>
             <ul class="list-inline" ng-if="article.hashtags.length > 0">
                 <li><i class="glyphicon glyphicon-tags"></i> </li>
@@ -42,10 +36,10 @@
             <li class="pull-right">
                 <i class="glyphicon glyphicon-check" ng-show="article.pinned"></i>
                 <i class="glyphicon glyphicon-unchecked" ng-show="!article.pinned"></i>
-                <b>{{article.date}}</b>
             </li>
+            <li><b>{{article.date}}</b></li>
         </ul>
-    </aside>
+    </div>
 </div>
 
 

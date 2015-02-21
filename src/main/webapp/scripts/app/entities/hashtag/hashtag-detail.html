@@ -1,16 +1,25 @@
 <header class="hero-unit" id="banner">
     <h1>{{hashtag.name}}</h1>
-    <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="hashtag.id > 1"
+    <a class="btn btn-sm btn-default pull-left" type="submit" ng-if="hashtag.id > 1"
        ui-sref="hashtagDetail({id:(hashtag.id) -1})">
         <span translate="entity.action.previous"></span> </a>
-    <a type="submit" class="pull-right btn btn-sm btn-primary"
+    <a type="submit" class="btn pull-right btn btn-sm btn-default"
        ng-if="hashtags.length > hashtag.id"
        ui-sref="hashtagDetail({id:(hashtag.id) +1})">
         <span translate="entity.action.next"></span> </a>
     <br>
 </header>
-<br>
+
 <div class="container">
+    <div class="col-md-12">
+        <div class="form-control-wrapper">
+            <div class="form-control-wrapper">
+                <input class="form-control empty ng-pristine ng-valid ng-touched" id="searchInput" placeholder="Search" ng-model="search">
+                <span class="material-input"></span>
+            </div>
+        </div>
+        <br>
+    </div>
     <div class="col-md-4 well">
         {{hashtag.description}}
     </div>

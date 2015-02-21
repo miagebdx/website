@@ -1,9 +1,9 @@
 <header class="hero-unit" id="banner">
     <h1>{{people.name}}</h1>
-    <a class="btn btn-sm btn-primary pull-left" type="submit" ng-if="people.id > 1"
+    <a class="btn btn-sm btn-default pull-left" type="submit" ng-if="people.id > 1"
        ui-sref="peopleDetail({id:(people.id) -1})">
         <span translate="entity.action.previous"></span> </a>
-    <a type="submit" class="pull-right btn btn-sm btn-primary"
+    <a type="submit" class="pull-right btn btn-sm btn-default"
        ng-if="peoples.length > people.id"
        ui-sref="peopleDetail({id:(people.id) +1})">
         <span translate="entity.action.next"></span> </a>
@@ -11,24 +11,25 @@
 </header>
 
 <div class="container">
-        <div class="col-md-12">
-            <form>
-                <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
-            </form>
-            <hr/>
+    <div class="col-md-12">
+        <div class="form-control-wrapper">
+            <div class="form-control-wrapper">
+                <input class="form-control empty ng-pristine ng-valid ng-touched" id="searchInput" placeholder="Search" ng-model="search">
+                <span class="material-input"></span>
+            </div>
         </div>
-        <div class="col-md-4 well">
-            <aside id="content">
-                <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
-                <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
-                <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
-                <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
-                <hr>
-                <b>{{people.details}}</b>
-            </aside>
-        </div>
-        <div class="col-md-8">
-            <listarticle></listarticle>
-            <listevents></listevents>
-        </div>
+        <br>
     </div>
+    <div class="col-md-4 well">
+        <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
+        <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
+        <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
+        <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
+        <hr>
+        <p><b>{{people.details}}</b></p>
+    </div>
+    <div class="col-md-8">
+        <listarticle></listarticle>
+        <listevents></listevents>
+    </div>
+</div>

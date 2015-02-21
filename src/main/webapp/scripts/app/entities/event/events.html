@@ -6,19 +6,20 @@
 </header>
 <br>
 <div class="container">
-    <div class="row" >
-        <div class="col-md-12">
-            <form>
-                <input class="textInput textInput-borderless textInput-jumbo" type="search" ng-model="search" placeholder="Type to search">
-            </form>
-            <hr/>
+    <div class="col-md-12">
+        <div class="form-control-wrapper">
+            <div class="form-control-wrapper">
+                <input class="form-control empty ng-pristine ng-valid ng-touched" id="searchInput" placeholder="Search" ng-model="search">
+                <span class="material-input"></span>
+            </div>
         </div>
-        <div class="col-md-12">
-            <listevents></listevents>
-        </div>
+        <br>
     </div>
-
+    <div class="col-md-12">
+        <listevents></listevents>
+    </div>
 </div>
+
 
 <!-- Popup de saving -->
 <div class="modal fade" id="saveEventModal" tabindex="-1" role="dialog" aria-labelledby="myEventLabel"

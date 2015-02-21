@@ -5,6 +5,8 @@ angular.module('miagebdxApp')
         $scope.isAuthenticated = Principal.isAuthenticated;
         $scope.isInRole = Principal.isInRole('ROLE_ADMIN');
 
+
+
         $scope.$state = $state;
 
         $scope.logout = function () {

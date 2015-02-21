@@ -7,50 +7,41 @@
 <br>
 <div class="container">
     <div class="col-md-12">
-        <form>
-            <input class="textInput textInput-borderless textInput-jumbo" type="search.name" ng-model="search.name" placeholder="Type to search">
-        </form>
-        <hr/>
+        <div class="form-control-wrapper">
+            <div class="form-control-wrapper">
+                <input class="form-control empty ng-pristine ng-valid ng-touched" id="searchInput" placeholder="Search" ng-model="search.name">
+                <span class="material-input"></span>
+            </div>
+        </div>
+        <br>
     </div>
-    <aside class="col-md-12" id="article" ng-repeat="people in peoples | filter:search" ng-class="animation">
-        <div class="button-bar pull-right">
-
-            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                    ng-click="update(people.id)"
-                    class="btn btn-info btn-sm">
-                <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-            </button>
-            <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                    ng-click="delete(people.id)"
-                    class="btn btn-danger btn-sm">
-                <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-            </button>
-            <button type="submit"
-                    ui-sref="peopleDetail({id:people.id})"
-                    class="btn btn-primary btn-sm">
-                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span translate="entity.action.view"> View</span>
-            </button>
+    <div class="list-group">
+        <div class="list-group-item well"  ng-repeat="people in peoples|filter:search" ng-class="animation">
+            <br>
+            <div class="row-action-primary">
+                <i class="glyphicon glyphicon-user"></i>
+            </div>
+            <div class="row-content">
+                <div class="least-content"><br></div>
+                <a class="list-group-item-heading h4" ui-sref="peopleDetail({id:people.id})">{{people.name}}</a>
+                <div class="list-group-item-text">
+                    {{people.details}}
+                    <div class="button-bar pull-right">
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="update(people.id)"
+                                class="btn btn-sm btn-info">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="delete(people.id)"
+                                class="btn btn-sm btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h2 ui-sref="peopleDetail({id:people.id})"><i class="glyphicon glyphicon-user" ></i> {{people.name}}</h2>
-
-        <div class="col-md-6">
-            <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
-            <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
-
-        </div>
-        <div class="col-md-6">
-            <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
-            <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
-        </div>
-
-
-        <div class="col-md-12">
-            <hr>
-            <b>{{people.details}}</b>
-
-        </div>
-
-    </aside>
+    </div>
 </div>
 
 <div class="modal fade" id="savePeopleModal" tabindex="-1" role="dialog" aria-labelledby="myPeopleLabel"
