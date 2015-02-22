@@ -13,8 +13,8 @@
             </div>
             <div class="list-group-item-heading">
                 <a class="h4" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>&nbsp;
-                <span class="small">{{event.beginDate | date: format: short}}</span>
-                <span class="small">{{event.endDate | date: format: short}}</span>
+                <span class="small">{{event.beginDate | date:'dd/MM/yy H:mm'}}</span> -
+                <span class="small">{{event.endDate |  date:'dd/MM/yy H:mm'}}</span>
             </div>
 
             <div class="list-group-item-text">

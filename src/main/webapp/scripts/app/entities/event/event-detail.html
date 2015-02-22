@@ -3,9 +3,9 @@
         {{event.title}}
     </h2>
     <h3>
-        <small class="label">{{ event.beginDate }}</small>
-        <small class="label">{{ event.endDate }}</small>
-        <small class="label">{{ event.location }}</small>
+        <small class="label">{{ event.beginDate | date:'dd/MM/yy H:mm'}}</small> -
+        <small class="label">{{ event.endDate | date:'dd/MM/yy H:mm' }}</small>
+        <small class="label">{{ event.location}}</small>
     </h3>
     <a class="btn btn-sm btn-default pull-left" type="submit" ng-if="event.id > 1"
        ui-sref="eventDetail({id:(event.id) -1})">

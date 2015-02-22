@@ -80,8 +80,8 @@
             "delete": "Supprimer",
             "save": "Sauvegarder",
             "view": "Voir",
-            "previous": "Précédent",
-            "next": "Suivant"
+            "previous": "<i class='glyphicon glyphicon-arrow-left'></i>",
+            "next": "<i class='glyphicon glyphicon-arrow-right'></i>"
         },
         "detail": {
             "field": "Champ",

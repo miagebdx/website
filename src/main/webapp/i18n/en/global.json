@@ -80,8 +80,8 @@
             "edit": "Edit",
             "save": "Save",
             "view": "View",
-            "previous": "Previous",
-            "next": "Next"
+            "previous": "<i class='glyphicon glyphicon-arrow-left'></i>",
+            "next": "<i class='glyphicon glyphicon-arrow-right'></i>"
         },
         "detail": {
             "field": "Field",
