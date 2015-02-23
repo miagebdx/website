@@ -172,64 +172,39 @@ ul#strength {
     flex: 1;
 }
 
-$bgHighlight    : #6b5c4d;
-$dropDown       : false;
-.navbar-default {
-    background-color: $marron-univ-color;
-    border-color: $bgHighlight;
-    .navbar-brand {
-        color: $background-color;
-        &:hover, &:focus {
-            color: $bleu-univ-color; }}
-    .navbar-text {
-        color: $background-color; }
-    .navbar-nav {
-        > li {
-            > a {
-                color: $background-color;
-                &:hover,  &:focus {
-                    color: $bleu-univ-color; }}
-            @if $dropDown {
-                > .dropdown-menu {
-                    background-color: $marron-univ-color;
-                    > li > a {
-                        color: $background-color;
-                        &:hover,  &:focus {
-                            color: $bleu-univ-color;
-                            background-color: $bgHighlight; }}
-                    .divider {
-                        background-color: $bgHighlight;}}}
-        }
-        > .active {
-            > a, > a:hover, > a:focus {
-                color: $bleu-univ-color;
-                background-color: $bgHighlight; }}
-        > .open {
-            > a, > a:hover, > a:focus {
-                color: $bleu-univ-color;
-                background-color: $bgHighlight; }}}
-    .navbar-toggle {
-        border-color: $bgHighlight;
-        &:hover, &:focus {
-            background-color: $bgHighlight; }
-        .icon-bar {
-            background-color: $background-color; }}
-    .navbar-collapse,
-    .navbar-form {
-        border-color: $background-color; }
-    .navbar-link {
-        color: $background-color;
-        &:hover {
-            color: $bleu-univ-color; }}}
-@media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu {
-        > li > a {
-            color: $background-color;
-            &:hover, &:focus {
-                color: $bleu-univ-color; }}
-        > .active {
-            > a, > a:hover, > a:focus, {
-                color: $bleu-univ-color;
-                background-color: $bgHighlight; }}}
+.scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    background-color: #777777;
+    color: #eeeeee;
+    width: 50px;
+    height: 48px;
+    line-height: 48px;
+    left: 30px;
+    bottom: 30px;
+    padding-top: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
-
+.scroll-top-wrapper:hover {
+    background-color: #888888;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+    opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+    line-height: inherit;
+}
