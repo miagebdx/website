@@ -6,7 +6,6 @@ angular.module('miagebdxApp')
             'query': { method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
-                ignoreLoadingBar: true,
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
                     if(data.date!==null){
