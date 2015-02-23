@@ -13,6 +13,8 @@ module.exports = function (config) {
         files: [
             'main/webapp/bower_components/modernizr/modernizr.js',
             'main/webapp/bower_components/jquery/dist/jquery.js',
+            'main/webapp/bower_components/bootstrap-material-design/dist/js/material.min.js',
+            'main/webapp/bower_components/bootstrap-material-design/dist/js/ripples.min.js',
             'main/webapp/bower_components/angular/angular.js',
             'main/webapp/bower_components/angular-bootstrap/ui-bootstrap.js',
             'main/webapp/bower_components/angular-animate/angular-animate.js',
@@ -28,6 +30,7 @@ module.exports = function (config) {
             'main/webapp/bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js',
             'main/webapp/bower_components/angular-local-storage/dist/angular-local-storage.min.js',
             'main/webapp/bower_components/angular-cache-buster/angular-cache-buster.js',
+            'main/webapp/bower_components/angular-loading-bar/build/loading-bar.min.js',
             'main/webapp/scripts/app/app.js',
             'main/webapp/scripts/app/**/*.js',
             'main/webapp/scripts/components/**/*.js',
