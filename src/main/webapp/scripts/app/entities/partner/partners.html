@@ -16,33 +16,38 @@
         </div>
         <br>
     </div>
-    <div class="list-group">
-        <div class="list-group-item well"  ng-repeat="partner in partners|filter:search" ng-class="animation">
-            <br>
-            <div class="row-action-primary">
-                <i class="glyphicon glyphicon-briefcase" ></i>
-            </div>
-            <div class="row-content">
-                <div class="least-content"><br></div>
-                <a class="list-group-item-heading h4" ui-sref="partnerDetail({id:partner.id})">{{partner.name}}</a>
-                <div class="list-group-item-text">
-                    {{partner.description}}
-                    <div class="button-bar pull-right">
-                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                ng-click="update(partner.id)"
-                                class="btn btn-sm btn-info">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                        </button>
-                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                ng-click="delete(partner.id)"
-                                class="btn btn-sm btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                        </button>
+    <div class="col-md-12">
+        <div class="list-group">
+            <div class="well" ng-repeat="partner in partners | filter:search" ng-class="animation">
+                <div class="list-group-item">
+                    <br>
+                    <div class="row-action-primary">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="least-content"><br></div>
+                        <a class="list-group-item-heading h4" ui-sref="partnerDetail({id:partner.id})">{{partner.name}}</a>
+                        <div class="list-group-item-text">
+                            {{partner.description}}
+                            <div class="button-bar pull-right">
+                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                        ng-click="update(partner.id)"
+                                        class="btn btn-sm btn-info">
+                                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                                </button>
+                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                        ng-click="delete(partner.id)"
+                                        class="btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="modal fade" id="savePartnerModal" tabindex="-1" role="dialog" aria-labelledby="myPartnerLabel"
          aria-hidden="true">

@@ -1,47 +1,48 @@
-<div class="list-group" ng-repeat="event in events | filter:search" ng-class="animation">
-
-    <div class="well list-group-item">
-        <br>
-        <div class="row-action-primary">
-            <i class="glyphicon glyphicon-calendar"></i>
-        </div>
-        <div class="row-content">
-            <div class="least-content">
-                <br>
-                <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
-                <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
+<div class="list-group">
+    <div class="well" ng-repeat="event in events | filter:search" ng-class="animation">
+        <div class="list-group-item">
+            <br>
+            <div class="row-action-primary">
+                <i class="glyphicon glyphicon-calendar"></i>
             </div>
-            <div class="list-group-item-heading">
-                <a class="h4" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>&nbsp;
-                <span class="small">{{event.beginDate | date:'dd/MM/yy H:mm'}}</span> -
-                <span class="small">{{event.endDate |  date:'dd/MM/yy H:mm'}}</span>
-            </div>
+            <div class="row-content">
+                <div class="least-content">
+                    <br>
+                    <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
+                    <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
+                </div>
+                <div class="list-group-item-heading">
+                    <a class="h4" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>&nbsp;
+                    <span class="small">{{event.beginDate | date:'dd/MM/yy H:mm'}}</span> -
+                    <span class="small">{{event.endDate |  date:'dd/MM/yy H:mm'}}</span>
+                </div>
 
-            <div class="list-group-item-text">
-                <ul class="list-inline" ng-if="event.peoples.length > 0">
-                    <li><i class="glyphicon glyphicon-user"></i></li>
-                    <li ng-repeat="people in event.peoples">
-                        <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
-                    </li>
-                </ul>
-                <ul class="list-inline" ng-if="event.partners.length > 0">
-                    <li><i class="glyphicon glyphicon-briefcase"></i></li>
-                    <li ng-repeat="partner in event.partners">
-                        <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
-                    </li>
-                </ul>
-                <div class="pull-right">
+                <div class="list-group-item-text">
+                    <ul class="list-inline" ng-if="event.peoples.length > 0">
+                        <li><i class="glyphicon glyphicon-user"></i></li>
+                        <li ng-repeat="people in event.peoples">
+                            <span ui-sref="peopleDetail({id: people.id})" class="label label-primary">{{people.name}}</span>
+                        </li>
+                    </ul>
+                    <ul class="list-inline" ng-if="event.partners.length > 0">
+                        <li><i class="glyphicon glyphicon-briefcase"></i></li>
+                        <li ng-repeat="partner in event.partners">
+                            <span ui-sref="partnerDetail({id: partner.id})" class="label label-primary">{{partner.name}}</span>
+                        </li>
+                    </ul>
+                    <div class="pull-right">
 
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                        ng-click="updateEvent(event.id)"
-                        class="btn btn-info btn-sm">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                    </button>
-                    <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                        ng-click="deleteEvent(event.id)"
-                        class="btn btn-danger btn-sm">
-                        <span class="glyphicon glyphicon-remove-circle"></span>
-                    </button>
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="updateEvent(event.id)"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                ng-click="deleteEvent(event.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

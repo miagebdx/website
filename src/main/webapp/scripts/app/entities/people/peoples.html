@@ -5,6 +5,7 @@
     </button>
 </header>
 <br>
+
 <div class="container">
     <div class="col-md-12">
         <div class="form-control-wrapper">
@@ -15,35 +16,38 @@
         </div>
         <br>
     </div>
-    <div class="list-group">
-        <div class="list-group-item well"  ng-repeat="people in peoples|filter:search" ng-class="animation">
-            <br>
-            <div class="row-action-primary">
-                <i class="glyphicon glyphicon-user"></i>
-            </div>
-            <div class="row-content">
-                <div class="least-content"><br></div>
-                <a class="list-group-item-heading h4" ui-sref="peopleDetail({id:people.id})">{{people.name}}</a>
-                <div class="list-group-item-text">
-                    {{people.details}}
-                    <div class="button-bar pull-right">
-                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                ng-click="update(people.id)"
-                                class="btn btn-sm btn-info">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
-                        </button>
-                        <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
-                                ng-click="delete(people.id)"
-                                class="btn btn-sm btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
-                        </button>
+    <div class="col-md-12">
+        <div class="list-group">
+            <div class="well" ng-repeat="people in peoples|filter:search" ng-class="animation">
+                <div class="list-group-item">
+                    <br>
+                    <div class="row-action-primary">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="least-content"><br></div>
+                        <a class="list-group-item-heading h4" ui-sref="peopleDetail({id:people.id})">{{people.name}}</a>
+                        <div class="list-group-item-text">
+                            {{people.details}}
+                            <div class="button-bar pull-right">
+                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                        ng-click="update(people.id)"
+                                        class="btn btn-sm btn-info">
+                                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                                </button>
+                                <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
+                                        ng-click="delete(people.id)"
+                                        class="btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="savePeopleModal" tabindex="-1" role="dialog" aria-labelledby="myPeopleLabel"
      aria-hidden="true">
     <div class="modal-dialog">
