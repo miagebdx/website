@@ -2,7 +2,7 @@
 
 angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
     'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate',
-    'ngCacheBuster','ui.bootstrap','ngSanitize','angular.filter', 'ngAnimate'])
+    'ngCacheBuster','ui.bootstrap','ngSanitize','angular.filter', 'ngAnimate','angular-loading-bar'])
 
     .run(function ($rootScope, $location, $http, $state, $translate, Auth, Principal, Language) {
 
@@ -104,4 +104,7 @@ angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
             return this.animations[Math.floor((Math.random() * this.animations.length) + 1)];
         }
 
-    } );
+    }).config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+        cfpLoadingBarProvider.includeSpinner = true;
+        cfpLoadingBarProvider.includeBar = true;
+    }])
