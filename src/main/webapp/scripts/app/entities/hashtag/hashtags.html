@@ -8,7 +8,6 @@
 <br>
 <div class="container">
     <div class="list-inline">
-
         <li ng-repeat="hashtag in hashtags" ng-class="animation">
             <h1 ui-sref="hashtagDetail({id:hashtag.id})"><a class="label label-primary">#&nbsp;{{hashtag.name}}</a></h1>
             <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
@@ -23,7 +22,7 @@
             </button>
         </li>
     </div>
-
+</div>
     <div class="modal fade" id="saveHashtagModal" tabindex="-1" role="dialog" aria-labelledby="myHashtagLabel"
          aria-hidden="true">
         <div class="modal-dialog">

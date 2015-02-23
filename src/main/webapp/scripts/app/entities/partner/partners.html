@@ -20,12 +20,11 @@
         <div class="list-group">
             <div class="well" ng-repeat="partner in partners | filter:search" ng-class="animation">
                 <div class="list-group-item">
-                    <br>
                     <div class="row-action-primary">
                         <i class="glyphicon glyphicon-briefcase"></i>
                     </div>
                     <div class="row-content">
-                        <div class="least-content"><br></div>
+                        <div class="least-content"></div>
                         <a class="list-group-item-heading h4" ui-sref="partnerDetail({id:partner.id})">{{partner.name}}</a>
                         <div class="list-group-item-text">
                             {{partner.description}}
@@ -48,99 +47,99 @@
         </div>
     </div>
 
+</div>
+<div class="modal fade" id="savePartnerModal" tabindex="-1" role="dialog" aria-labelledby="myPartnerLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" role="form" novalidate
+                  class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                  ng-submit="create()">
 
-    <div class="modal fade" id="savePartnerModal" tabindex="-1" role="dialog" aria-labelledby="myPartnerLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" role="form" novalidate
-                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
-                      ng-submit="create()">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" id="myPartnerLabel" translate="miagebdxApp.partner.home.createOrEditLabel">Create or edit a Partner</h4>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" id="myPartnerLabel" translate="miagebdxApp.partner.home.createOrEditLabel">Create or edit a Partner</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control" name="id"
+                               ng-model="partner.id" readonly>
                     </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>ID</label>
-                            <input type="text" class="form-control" name="id"
-                                   ng-model="partner.id" readonly>
-                        </div>
 
-                        <div class="form-group">
-                            <label translate="miagebdxApp.partner.name">Name</label>
-                            <input type="text" class="form-control"
-                                   ng-model="partner.name">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.partner.location">Location</label>
-                            <input type="text" class="form-control"
-                                   ng-model="partner.location">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.partner.description">Description</label>
-                            <input type="text" class="form-control"
-                                   ng-model="partner.description">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.partner.website">Website</label>
-                            <input type="text" class="form-control"
-                                   ng-model="partner.website">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.partner.email">Email</label>
-                            <input type="text" class="form-control"
-                                   ng-model="partner.email">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.partner.logo">Logo</label>
-                            <input type="text" class="form-control"
-                                   ng-model="partner.logo">
-                        </div>
-                        <div class="form-group">
-                            <label translate="miagebdxApp.partner.telephone">Telephone</label>
-                            <input type="text" class="form-control"
-                                   ng-model="partner.telephone">
-                        </div>
-
-
+                    <div class="form-group">
+                        <label translate="miagebdxApp.partner.name">Name</label>
+                        <input type="text" class="form-control"
+                               ng-model="partner.name">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
-                        </button>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.partner.location">Location</label>
+                        <input type="text" class="form-control"
+                               ng-model="partner.location">
                     </div>
-                </form>
-            </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.partner.description">Description</label>
+                        <input type="text" class="form-control"
+                               ng-model="partner.description">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.partner.website">Website</label>
+                        <input type="text" class="form-control"
+                               ng-model="partner.website">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.partner.email">Email</label>
+                        <input type="text" class="form-control"
+                               ng-model="partner.email">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.partner.logo">Logo</label>
+                        <input type="text" class="form-control"
+                               ng-model="partner.logo">
+                    </div>
+                    <div class="form-group">
+                        <label translate="miagebdxApp.partner.telephone">Telephone</label>
+                        <input type="text" class="form-control"
+                               ng-model="partner.telephone">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="modal fade" id="deletePartnerConfirmation">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form name="form" ng-submit="confirmDelete(partner.id)">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                                ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p translate="miagebdxApp.partner.delete.question" translate-values="{id: '{{partner.id}}'}">Are you sure you want to delete Partner {{partner.id}}?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
-                        </button>
-                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
+</div>
+<div class="modal fade" id="deletePartnerConfirmation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="form" ng-submit="confirmDelete(partner.id)">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="clear()">&times;</button>
+                    <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                </div>
+                <div class="modal-body">
+                    <p translate="miagebdxApp.partner.delete.question" translate-values="{id: '{{partner.id}}'}">Are you sure you want to delete Partner {{partner.id}}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="form.$invalid" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 

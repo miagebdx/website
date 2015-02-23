@@ -1,13 +1,11 @@
 <div class="list-group">
     <div class="well" ng-repeat="event in events | filter:search" ng-class="animation">
         <div class="list-group-item">
-            <br>
             <div class="row-action-primary">
                 <i class="glyphicon glyphicon-calendar"></i>
             </div>
             <div class="row-content">
                 <div class="least-content">
-                    <br>
                     <i class="glyphicon glyphicon-unchecked" ng-show="!event.pinned"></i>
                     <i class="glyphicon glyphicon-check" ng-show="event.pinned"></i>
                 </div>
@@ -31,7 +29,6 @@
                         </li>
                     </ul>
                     <div class="pull-right">
-
                         <button ng-show="isInRole('ROLE_ADMIN')" type="submit"
                                 ng-click="updateEvent(event.id)"
                                 class="btn btn-info btn-sm">

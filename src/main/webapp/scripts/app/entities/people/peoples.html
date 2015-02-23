@@ -20,12 +20,11 @@
         <div class="list-group">
             <div class="well" ng-repeat="people in peoples|filter:search" ng-class="animation">
                 <div class="list-group-item">
-                    <br>
                     <div class="row-action-primary">
                         <i class="glyphicon glyphicon-user"></i>
                     </div>
                     <div class="row-content">
-                        <div class="least-content"><br></div>
+                        <div class="least-content"></div>
                         <a class="list-group-item-heading h4" ui-sref="peopleDetail({id:people.id})">{{people.name}}</a>
                         <div class="list-group-item-text">
                             {{people.details}}
