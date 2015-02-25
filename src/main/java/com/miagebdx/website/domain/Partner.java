@@ -36,8 +36,9 @@ public class Partner implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "logo")
-    private String logo;
+    @Lob
+    @Column(name = "logo", length=100000)
+    private byte[] logo;
 
     @Column(name = "telephone")
     private String telephone;
@@ -95,11 +96,11 @@ public class Partner implements Serializable {
         this.email = email;
     }
 
-    public String getLogo() {
+    public byte[] getLogo() {
         return logo;
     }
 
-    public void setLogo(String logo) {
+    public void setLogo(byte[] logo) {
         this.logo = logo;
     }
 

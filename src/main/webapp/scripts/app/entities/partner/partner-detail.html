@@ -21,6 +21,7 @@
         <br>
     </div>
     <div class="col-md-4 well">
+            <img ng-if="partner.logo!==null" data-ng-src="data:image/png;base64, {{partner.logo}}">
             <p><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
             <p><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
             <p><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>

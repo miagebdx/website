@@ -47,8 +47,8 @@ public class PartnerResourceTest {
     private static final String UPDATED_WEBSITE = "UPDATED_TEXT";
     private static final String DEFAULT_EMAIL = "SAMPLE_TEXT";
     private static final String UPDATED_EMAIL = "UPDATED_TEXT";
-    private static final String DEFAULT_LOGO = "SAMPLE_TEXT";
-    private static final String UPDATED_LOGO = "UPDATED_TEXT";
+    private static final byte[] DEFAULT_LOGO = new byte[1];
+    private static final byte[] UPDATED_LOGO = new byte[2];
     private static final String DEFAULT_TELEPHONE = "SAMPLE_TEXT";
     private static final String UPDATED_TELEPHONE = "UPDATED_TEXT";
 
