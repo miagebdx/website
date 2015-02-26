@@ -25,18 +25,9 @@ angular.module('miagebdxApp')
         $scope.loadAll();
 
 
-
-        $scope.myInterval = 2000;
-
         $scope.slides = [
-            {
-                image: '../../assets/images/001.jpg'
-            },
-            {
-                image: '../../assets/images/002.jpg'
-            },
-            {
-                image: '../../assets/images/003.jpg'
-            }
+            '../../assets/images/001.jpg',
+            '../../assets/images/002.jpg',
+            '../../assets/images/003.jpg'
         ];
     });

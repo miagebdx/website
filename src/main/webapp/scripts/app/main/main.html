@@ -1,11 +1,8 @@
-
-<div ng-cloak>
-    <carousel interval="myInterval" id="banner">
-        <slide ng-repeat="slide in slides" active="slide.active">
-            <img ng-src="{{slide.image}}" height="300px" style="margin:auto;">
-        </slide>
-    </carousel>
-</div>
+<ul class="rslides carousel" id="banner">
+    <li><img src="../../assets/images/003.jpg" style="margin:auto;"></li>
+    <li><img src="../../assets/images/001.jpg" style="margin:auto;"></li>
+    <li><img src="../../assets/images/002.jpg" style="margin:auto;"></li>
+</ul>
 <br>
 <div class="container" ng-init="search.pinned=true">
     <div class="col-md-12">
@@ -13,6 +10,15 @@
         <listevents></listevents>
     </div>
 </div>
+
+
+<script>
+    $(function() {
+        $(".rslides").responsiveSlides(
+        );
+    });
+</script>
+
 
 
 
