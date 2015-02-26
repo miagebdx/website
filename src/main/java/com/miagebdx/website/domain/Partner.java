@@ -37,6 +37,7 @@ public class Partner implements Serializable {
     private String email;
 
     @Column(name = "logo")
+    @Lob
     private String logo;
 
     @Column(name = "telephone")
