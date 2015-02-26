@@ -31,6 +31,7 @@ public class Event implements Serializable {
     private String title;
 
     @Column(name = "description")
+    @Lob
     private String description;
 
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")

@@ -30,6 +30,7 @@ public class Article implements Serializable {
     private String title;
 
     @Column(name = "body")
+    @Lob
     private String body;
 
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")

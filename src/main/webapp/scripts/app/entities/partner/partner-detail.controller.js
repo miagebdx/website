@@ -9,7 +9,6 @@ angular.module('miagebdxApp')
         $scope.partner = {};
         $scope.events = [];
         $scope.partners = [];
-        $scope.image = {};
 
 
         $scope.load = function (id) {

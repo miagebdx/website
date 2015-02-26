@@ -21,6 +21,8 @@
         <br>
     </div>
     <div class="col-md-4 well">
+        <img class="img-responsive img-thumbnail" ng-if="people.image != null" data-ng-src="data:{{people.image.filetype}} ;base64, {{people.image.base64}}">
+        <hr ng-if="people.image != null">
         <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
         <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
         <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>

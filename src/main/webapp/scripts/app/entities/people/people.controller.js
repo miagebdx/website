@@ -13,6 +13,9 @@ angular.module('miagebdxApp')
             People.query(function(result){$scope.peoples = result;});
         };
 
+        $scope.getImage = function(people){
+            return JSON.parse(people.logo);
+        };
 
         $scope.loadAll();
 

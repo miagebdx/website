@@ -49,6 +49,8 @@ public class PeopleResourceTest {
     private static final String UPDATED_WEBSITE = "UPDATED_TEXT";
     private static final String DEFAULT_DETAILS = "SAMPLE_TEXT";
     private static final String UPDATED_DETAILS = "UPDATED_TEXT";
+    private static final String DEFAULT_LOGO = "SAMPLE_TEXT";
+    private static final String UPDATED_LOGO = "UPDATED_TEXT";
 
     @Inject
     private PeopleRepository peopleRepository;
@@ -74,6 +76,7 @@ public class PeopleResourceTest {
         people.setLocation(DEFAULT_LOCATION);
         people.setWebsite(DEFAULT_WEBSITE);
         people.setDetails(DEFAULT_DETAILS);
+        people.setLogo(DEFAULT_LOGO);
     }
 
     @Test
@@ -98,6 +101,8 @@ public class PeopleResourceTest {
         assertThat(testPeople.getLocation()).isEqualTo(DEFAULT_LOCATION);
         assertThat(testPeople.getWebsite()).isEqualTo(DEFAULT_WEBSITE);
         assertThat(testPeople.getDetails()).isEqualTo(DEFAULT_DETAILS);
+        assertThat(testPeople.getLogo()).isEqualTo(DEFAULT_LOGO);
+
     }
 
     @Test
@@ -116,7 +121,8 @@ public class PeopleResourceTest {
                 .andExpect(jsonPath("$.[0].telephone").value(DEFAULT_TELEPHONE.toString()))
                 .andExpect(jsonPath("$.[0].location").value(DEFAULT_LOCATION.toString()))
                 .andExpect(jsonPath("$.[0].website").value(DEFAULT_WEBSITE.toString()))
-                .andExpect(jsonPath("$.[0].details").value(DEFAULT_DETAILS.toString()));
+                .andExpect(jsonPath("$.[0].details").value(DEFAULT_DETAILS.toString()))
+                .andExpect(jsonPath("$.[0].logo").value(DEFAULT_LOGO.toString()));
     }
 
     @Test
@@ -135,7 +141,8 @@ public class PeopleResourceTest {
             .andExpect(jsonPath("$.telephone").value(DEFAULT_TELEPHONE.toString()))
             .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()))
             .andExpect(jsonPath("$.website").value(DEFAULT_WEBSITE.toString()))
-            .andExpect(jsonPath("$.details").value(DEFAULT_DETAILS.toString()));
+            .andExpect(jsonPath("$.details").value(DEFAULT_DETAILS.toString()))
+            .andExpect(jsonPath("$.logo").value(DEFAULT_LOGO.toString()));
     }
 
     @Test
@@ -159,6 +166,7 @@ public class PeopleResourceTest {
         people.setLocation(UPDATED_LOCATION);
         people.setWebsite(UPDATED_WEBSITE);
         people.setDetails(UPDATED_DETAILS);
+        people.setLogo(UPDATED_LOGO);
         restPeopleMockMvc.perform(post("/api/peoples")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(people)))
@@ -174,6 +182,7 @@ public class PeopleResourceTest {
         assertThat(testPeople.getLocation()).isEqualTo(UPDATED_LOCATION);
         assertThat(testPeople.getWebsite()).isEqualTo(UPDATED_WEBSITE);
         assertThat(testPeople.getDetails()).isEqualTo(UPDATED_DETAILS);
+        assertThat(testPeople.getLogo()).isEqualTo(UPDATED_LOGO);
     }
 
     @Test

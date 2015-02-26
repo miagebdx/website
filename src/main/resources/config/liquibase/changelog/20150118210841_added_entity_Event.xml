@@ -16,7 +16,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="title" type="varchar(255)"/>
-            <column name="description" type="varchar(20000)"/>
+            <column name="description" type="text"/>
             <column name="begin_date" type="timestamp">
                 <constraints nullable="false" />
             </column>

@@ -39,6 +39,10 @@ public class People implements Serializable {
     @Column(name = "details")
     private String details;
 
+    @Column(name = "logo")
+    @Lob
+    private String logo;
+
     @ManyToMany(mappedBy = "peoples")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -119,6 +123,14 @@ public class People implements Serializable {
 
     public void setArticles(Set<Article> articles) {
         this.articles = articles;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     @Override
