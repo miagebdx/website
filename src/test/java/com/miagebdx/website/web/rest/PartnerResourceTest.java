@@ -48,8 +48,8 @@ public class PartnerResourceTest {
     private static final String UPDATED_WEBSITE = "UPDATED_TEXT";
     private static final String DEFAULT_EMAIL = "SAMPLE_TEXT";
     private static final String UPDATED_EMAIL = "UPDATED_TEXT";
-    private static final byte[] DEFAULT_LOGO = new byte[1];
-    private static final byte[] UPDATED_LOGO = new byte[2];
+    private static final String DEFAULT_LOGO = "SAMPLE_TEXT";
+    private static final String UPDATED_LOGO = "UPDATED_TEXT";
     private static final String DEFAULT_TELEPHONE = "SAMPLE_TEXT";
     private static final String UPDATED_TELEPHONE = "UPDATED_TEXT";
 
@@ -121,7 +121,7 @@ public class PartnerResourceTest {
                 .andExpect(jsonPath("$.[0].description").value(DEFAULT_DESCRIPTION.toString()))
                 .andExpect(jsonPath("$.[0].website").value(DEFAULT_WEBSITE.toString()))
                 .andExpect(jsonPath("$.[0].email").value(DEFAULT_EMAIL.toString()))
-                //.andExpect(jsonPath("$.[0].logo").value(DEFAULT_LOGO))
+                .andExpect(jsonPath("$.[0].logo").value(DEFAULT_LOGO))
                 .andExpect(jsonPath("$.[0].telephone").value(DEFAULT_TELEPHONE.toString()));
     }
 
@@ -141,7 +141,7 @@ public class PartnerResourceTest {
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
             .andExpect(jsonPath("$.website").value(DEFAULT_WEBSITE.toString()))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
-            //.andExpect(jsonPath("$.logo").value(DEFAULT_LOGO))
+            .andExpect(jsonPath("$.logo").value(DEFAULT_LOGO))
             .andExpect(jsonPath("$.telephone").value(DEFAULT_TELEPHONE.toString()));
     }
 

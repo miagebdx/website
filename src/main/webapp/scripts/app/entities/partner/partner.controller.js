@@ -16,6 +16,10 @@ angular.module('miagebdxApp')
             Partner.query(function(result){$scope.partners = result;});
         };
 
+        $scope.getImage = function(partner){
+            return JSON.parse(partner.logo);
+        };
+
         $scope.loadAll();
 
         $scope.create = function () {

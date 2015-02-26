@@ -9,6 +9,7 @@ angular.module('miagebdxApp')
         $scope.partner = {};
         $scope.events = [];
         $scope.partners = [];
+        $scope.image = {};
 
 
         $scope.load = function (id) {
@@ -16,9 +17,9 @@ angular.module('miagebdxApp')
             EventPartner.get({id: id}, function(result){$scope.events = result;});
             Partner.get({id: id}, function(result){$scope.partner = result;});
             Partner.query(function(result){$scope.partners = result;});
-
         };
 
-
         $scope.load($stateParams.id);
+
+
     });

@@ -34,7 +34,7 @@ function setLocationOnOpend($scope){
         var ac = createAutocompleteInput('autocomplete');
         onPlaceChanged(ac, function (complete, formated) {
             $scope.$apply(function () {
-                $scope.event.location = JSON.stringify(formated);
+                $scope.event.location = formated;
                 $scope.event.locationComplete = JSON.stringify(complete);
             })
         });
