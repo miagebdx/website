@@ -21,8 +21,8 @@
             <div class="well" ng-repeat="people in peoples|filter:search" ng-class="animation">
                 <div class="list-group-item">
                     <div class="row-action-primary">
-                        <img class="img-circle" ng-init="image = getImage(people)" ng-if="people.logo !== null" data-ng-src="data:{{image.filetype}};base64, {{image.base64}}">
-                        <i ng-if="people.logo == null" class="glyphicon glyphicon-user"></i>
+                        <img class="img-circle" ng-init="image = getImage(people)" ng-if="people.logo" data-ng-src="data:{{image.filetype}};base64, {{image.base64}}">
+                        <i ng-if="!people.logo" class="glyphicon glyphicon-user"></i>
                     </div>
                     <div class="row-content">
                         <div class="least-content"></div>

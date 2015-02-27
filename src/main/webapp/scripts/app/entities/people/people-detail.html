@@ -22,14 +22,14 @@
         <br>
     </div>
     <div class="col-md-4 well">
-        <img class="img-responsive img-thumbnail" ng-if="people.image != null" data-ng-src="data:{{people.image.filetype}} ;base64, {{people.image.base64}}">
-        <hr ng-if="people.image != null">
-        <p ng-if="people.email != null"><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
-        <p ng-if="people.telephone != null"><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
-        <p ng-if="people.location != null"><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
-        <p ng-if="people.website != null"><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
-        <hr ng-if="people.details != null">
-        <p ng-if="people.details != null"><b>{{people.details}}</b></p>
+        <img class="img-responsive img-thumbnail" ng-if="people.image" data-ng-src="data:{{people.image.filetype}} ;base64, {{people.image.base64}}">
+        <hr ng-if="people.image">
+        <p ng-if="people.email"><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
+        <p ng-if="people.telephone"><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
+        <p ng-if="people.location"><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
+        <p ng-if="people.website"><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
+        <hr ng-if="people.details">
+        <p ng-if="people.details"><b>{{people.details}}</b></p>
     </div>
     <div class="col-md-8">
         <listarticle></listarticle>

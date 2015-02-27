@@ -21,8 +21,8 @@
             <div class="well" ng-repeat="partner in partners | filter:search" ng-class="animation">
                 <div class="list-group-item">
                     <div class="row-action-primary">
-                        <img class="img-circle" ng-init="image = getImage(partner)" ng-if="partner.logo !== null" data-ng-src="data:{{image.filetype}};base64, {{image.base64}}">
-                        <i ng-if="partner.logo == null" class="glyphicon glyphicon-briefcase"></i>
+                        <img class="img-circle" ng-init="image = getImage(partner)" ng-if="partner.logo" data-ng-src="data:{{image.filetype}};base64, {{image.base64}}">
+                        <i ng-if="!partner.logo" class="glyphicon glyphicon-briefcase"></i>
 
 
 
