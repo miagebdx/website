@@ -24,10 +24,7 @@ angular.module('miagebdxApp')
         };
         $scope.loadAll();
 
-
-        $scope.slides = [
-            '../../assets/images/001.jpg',
-            '../../assets/images/002.jpg',
-            '../../assets/images/003.jpg'
-        ];
+        $(function() {
+            $(".rslides").responsiveSlides();
+        });
     });

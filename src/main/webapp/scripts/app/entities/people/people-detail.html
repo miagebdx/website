@@ -11,6 +11,7 @@
 </header>
 
 <div class="container">
+    <br>
     <div class="col-md-12">
         <div class="form-control-wrapper">
             <div class="form-control-wrapper">
@@ -23,12 +24,12 @@
     <div class="col-md-4 well">
         <img class="img-responsive img-thumbnail" ng-if="people.image != null" data-ng-src="data:{{people.image.filetype}} ;base64, {{people.image.base64}}">
         <hr ng-if="people.image != null">
-        <p><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
-        <p><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
-        <p><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
-        <p><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
-        <hr>
-        <p><b>{{people.details}}</b></p>
+        <p ng-if="people.email != null"><i class="glyphicon glyphicon-envelope"></i> {{people.email}}</p>
+        <p ng-if="people.telephone != null"><i class="glyphicon glyphicon-earphone"></i> {{people.telephone}}</p>
+        <p ng-if="people.location != null"><i class="glyphicon glyphicon-pushpin"></i> {{people.location}}</p>
+        <p ng-if="people.website != null"><i class="glyphicon glyphicon-globe"></i> {{people.website}}</p>
+        <hr ng-if="people.details != null">
+        <p ng-if="people.details != null"><b>{{people.details}}</b></p>
     </div>
     <div class="col-md-8">
         <listarticle></listarticle>

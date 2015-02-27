@@ -107,4 +107,8 @@ angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
     }).config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = true;
         cfpLoadingBarProvider.includeBar = true;
-    }])
+    }]);
+
+$(function(){
+    $.material.init();
+});
