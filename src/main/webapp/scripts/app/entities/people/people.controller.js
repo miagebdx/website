@@ -4,7 +4,13 @@ angular.module('miagebdxApp')
     .controller('PeopleController', function ($scope,
                                               Animations,
                                               People,
-                                              Principal) {
+                                              Principal,
+                                              gMapsAutoC) {
+
+
+        /* When the modal is shown, trigger autocomplete input creation. */
+        gMapsAutoC.setLocationOnOpend($scope, 'people');
+
         $scope.peoples = [];
 
         $scope.loadAll = function() {
@@ -20,6 +26,9 @@ angular.module('miagebdxApp')
         $scope.loadAll();
 
         $scope.create = function () {
+
+            gMapsAutoC.getLocationComplete();
+
             People.save($scope.people,
                 function () {
                     $scope.loadAll();
@@ -48,6 +57,6 @@ angular.module('miagebdxApp')
         };
 
         $scope.clear = function () {
-            $scope.people = {name: null, email: null, telephone: null, location: null, website: null, details: null, id: null};
+            $scope.people = {name: null, email: null, telephone: null, location: null, locationComplete:null,  website: null, details: null, id: null};
         };
     });

@@ -6,7 +6,8 @@ angular.module('miagebdxApp')
                                                     $stateParams,
                                                     People,
                                                     ArticlePeople,
-                                                    EventPeople) {
+                                                    EventPeople,
+                                                    gMapsAutoC) {
         $scope.people = {};
         $scope.events = [];
         $scope.articles = [];
@@ -14,7 +15,16 @@ angular.module('miagebdxApp')
 
         $scope.load = function (id) {
             $scope.animation = Animations.getAnimation();
-            People.get({id: id}, function(result) {$scope.people = result;});
+            People.get({id: id}, function(result) {
+                $scope.people = result;
+
+                var loc = JSON.parse($scope.people.locationComplete);
+
+                if(loc){
+                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.people.title);
+                }
+
+            });
             ArticlePeople.get({id: id}, function(result){$scope.articles = result;});
             EventPeople.get({id :id}, function(result){$scope.events = result;});
             People.query(function(result){$scope.peoples = result;});

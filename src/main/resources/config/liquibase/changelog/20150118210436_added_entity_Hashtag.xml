@@ -18,6 +18,5 @@
             <column name="name" type="varchar(255)"/>
             <column name="description" type="varchar(255)"/>
         </createTable>
-        
     </changeSet>
 </databaseChangeLog>

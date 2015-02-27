@@ -23,9 +23,6 @@
                     <div class="row-action-primary">
                         <img class="img-circle" ng-init="image = getImage(partner)" ng-if="partner.logo" data-ng-src="data:{{image.filetype}};base64, {{image.base64}}">
                         <i ng-if="!partner.logo" class="glyphicon glyphicon-briefcase"></i>
-
-
-
                     </div>
                     <div class="row-content">
                         <div class="least-content"></div>
@@ -80,8 +77,10 @@
                     <div class="form-group">
                         <label translate="miagebdxApp.partner.location">Location</label>
                         <input type="text" class="form-control"
-                               ng-model="partner.location">
+                               ng-model="partner.location" id="autocomplete">
                     </div>
+                    <input type="hidden" ng-model="partner.locationComplete"/>
+
                     <div class="form-group">
                         <label translate="miagebdxApp.partner.description">Description</label>
                         <input type="text" class="form-control"

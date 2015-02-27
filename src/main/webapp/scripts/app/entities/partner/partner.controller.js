@@ -5,7 +5,13 @@ angular.module('miagebdxApp')
                                                Animations,
                                                Partner,
                                                Event,
-                                               Principal) {
+                                               Principal,
+                                               gMapsAutoC) {
+
+
+        /* When the modal is shown, trigger autocomplete input creation. */
+        gMapsAutoC.setLocationOnOpend($scope, 'partner');
+
         $scope.partners = [];
         $scope.events = [];
 
@@ -23,6 +29,9 @@ angular.module('miagebdxApp')
         $scope.loadAll();
 
         $scope.create = function () {
+
+            gMapsAutoC.getLocationComplete();
+
             Partner.save($scope.partner,
                 function () {
                     $scope.loadAll();
@@ -51,6 +60,6 @@ angular.module('miagebdxApp')
         };
 
         $scope.clear = function () {
-            $scope.partner = {name: null, location: null, description: null, website: null, email: null, logo: null, telephone: null, id: null};
+            $scope.partner = {name: null, location: null, locationComplete:null,  description: null, website: null, email: null, logo: null, telephone: null, id: null};
         };
     });

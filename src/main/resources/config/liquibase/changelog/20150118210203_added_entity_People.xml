@@ -19,9 +19,10 @@
             <column name="email" type="varchar(255)"/>
             <column name="logo" type="text"/>
             <column name="telephone" type="varchar(255)"/>
-            <column name="location" type="varchar(255)"/>
             <column name="website" type="varchar(255)"/>
             <column name="details" type="varchar(255)"/>
+            <column name="location" type="varchar(255)"/>
+            <column name="locationComplete" type="varchar(255)"/>
         </createTable>
 
     </changeSet>

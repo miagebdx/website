@@ -43,6 +43,9 @@ public class People implements Serializable {
     @Lob
     private String logo;
 
+    @Column(name = "locationComplete")
+    private String locationComplete;
+
     @ManyToMany(mappedBy = "peoples")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -146,6 +149,14 @@ public class People implements Serializable {
 
         return !(id != null ? !id.equals(people.id) : people.id != null);
 
+    }
+
+    public String getLocationComplete() {
+        return locationComplete;
+    }
+
+    public void setLocationComplete(String locationComplete) {
+        this.locationComplete = locationComplete;
     }
 
     @Override

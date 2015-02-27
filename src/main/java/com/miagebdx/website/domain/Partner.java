@@ -43,6 +43,9 @@ public class Partner implements Serializable {
     @Column(name = "telephone")
     private String telephone;
 
+    @Column(name = "locationComplete")
+    private String locationComplete;
+
     @ManyToMany(mappedBy = "partners")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -134,6 +137,16 @@ public class Partner implements Serializable {
         return !(id != null ? !id.equals(partner.id) : partner.id != null);
 
     }
+
+
+    public String getLocationComplete() {
+        return locationComplete;
+    }
+
+    public void setLocationComplete(String locationComplete) {
+        this.locationComplete = locationComplete;
+    }
+
 
     @Override
     public int hashCode() {

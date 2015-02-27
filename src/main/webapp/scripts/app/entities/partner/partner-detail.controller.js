@@ -5,7 +5,8 @@ angular.module('miagebdxApp')
                                                      Animations,
                                                      $stateParams,
                                                      Partner,
-                                                     EventPartner) {
+                                                     EventPartner,
+                                                     gMapsAutoC) {
         $scope.partner = {};
         $scope.events = [];
         $scope.partners = [];
@@ -14,7 +15,15 @@ angular.module('miagebdxApp')
         $scope.load = function (id) {
             $scope.animation = Animations.getAnimation();
             EventPartner.get({id: id}, function(result){$scope.events = result;});
-            Partner.get({id: id}, function(result){$scope.partner = result;});
+            Partner.get({id: id}, function(result){
+                $scope.partner = result;
+
+                var loc = JSON.parse($scope.partner.locationComplete);
+
+                if(loc){
+                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.partner.title);
+                }
+            });
             Partner.query(function(result){$scope.partners = result;});
         };
 

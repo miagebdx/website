@@ -86,8 +86,9 @@
                     <div class="form-group">
                         <label translate="miagebdxApp.people.location">Location</label>
                         <input type="text" class="form-control"
-                               ng-model="people.location">
+                               ng-model="people.location" id="autocomplete">
                     </div>
+                    <input type="hidden" ng-model="people.locationComplete"/>
                     <div class="form-group">
                         <label>Logo</label>
                         <input type='file' ng-model='people.logo' base-sixty-four-input/>
