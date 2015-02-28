@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group" ng-if="events.length > 0">
     <div class="well" ng-repeat="event in events | filter:search" ng-class="animation">
         <div class="list-group-item">
             <div class="row-action-primary">
@@ -11,11 +11,14 @@
                 </div>
                 <div class="list-group-item-heading">
                     <a class="h4" ui-sref="eventDetail({id:event.id})">{{ event.title }}</a>&nbsp;
-                    <span class="small">{{event.beginDate | date:'dd/MM/yy H:mm'}}</span> -
-                    <span class="small">{{event.endDate |  date:'dd/MM/yy H:mm'}}</span>
                 </div>
 
                 <div class="list-group-item-text">
+                    <ul class="list-inline" ng-if="event.beginDate && event.endDate">
+                        <li><i class="glyphicon glyphicon-calendar"></i></li>
+                        <li><span class="label label-danger">{{event.beginDate | date:'dd/MM/yy H:mm'}}</span></li>
+                        <li><span class="label label-danger">{{event.endDate | date:'dd/MM/yy H:mm'}}</span></li>
+                    </ul>
                     <ul class="list-inline" ng-if="event.peoples.length > 0">
                         <li><i class="glyphicon glyphicon-user"></i></li>
                         <li ng-repeat="people in event.peoples">

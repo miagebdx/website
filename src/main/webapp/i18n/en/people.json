@@ -2,7 +2,7 @@
     "miagebdxApp": {
         "people" : {
             "home": {
-                "title": "People",
+                "title": "Directory",
                 "createLabel": "Create a new People",
                 "createOrEditLabel": "Create or edit a People"
             },
@@ -10,7 +10,7 @@
                 "question": "Are you sure you want to delete People {{ id }}?"
             },
             "detail": {
-                "title": "People"
+                "title": "Directory"
             },
             "name": "Name",
             "email": "Email",

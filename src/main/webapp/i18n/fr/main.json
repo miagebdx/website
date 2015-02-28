@@ -1,7 +1,10 @@
 {
     "main": {
-        "title": "Bienvenue, Java Hipster !",
-        "subtitle": "Ceci est votre page d'accueil",
+        "title": "Bienvenue sur le site de la <br> MIAGE de Bordeaux !",
+        "title1": "Découvrir nos partenaires",
+        "title2": "Contacter un membre de l'équipe pédagogique <br> ou de l'administration universitaire",
+        "title3": "Nous rencontrer durant nos evènements",
+        "title4": "S'informer sur la formation MIAGE à Bordeaux",
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
         },

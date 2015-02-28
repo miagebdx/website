@@ -2,11 +2,60 @@ $bleu-univ-color: #009DE0;
 $marron-univ-color: #443A31;
 $background-color: #fafafa;
 
+$fontTitle: 'Jura', sans-serif;
+$fontBody: 'Muli', sans-serif;
+
 body {
     background: $background-color;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:  $fontBody, Helvetica, Arial, sans-serif;
+    font-size: 16px;
     color: #333;
 }
+
+h1{
+    font-size: 40px;
+    text-transform : uppercase;
+    font-family: $fontTitle;
+}
+
+.h1{
+    font-size: 40px;
+    text-transform : uppercase;
+    font-family: $fontTitle;
+}
+
+h2{
+    font-size: 32px;
+    text-transform : uppercase;
+    font-family: $fontTitle;
+}
+
+.h2{
+    font-size: 32px;
+    text-transform : uppercase;
+    font-family: $fontTitle;
+}
+
+h3{
+    font-size: 26px;
+    font-family: $fontTitle;
+}
+
+.h3{
+    font-size: 26px;
+    font-family: $fontTitle;
+}
+
+h4{
+    font-family: $fontTitle;
+    font-size: 22px;
+}
+
+.h4{
+    font-size: 22px;
+    font-family: $fontTitle;
+}
+
 
 /*.development {
     position: absolute;
@@ -90,6 +139,15 @@ ul#strength {
     line-height: 1;
     letter-spacing: -1px;
     color: $marron-univ-color;
+    text-transform : uppercase;
+}
+
+#banner h2 {
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: $marron-univ-color;
+    text-transform : uppercase;
 }
 
 .hero-unit {

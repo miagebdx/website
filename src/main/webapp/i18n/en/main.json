@@ -1,7 +1,10 @@
 {
     "main": {
-        "title": "Welcome, Java Hipster!",
-        "subtitle": "This is your homepage",
+        "title": "Welcome to <br> MIAGE Bordeaux wbesite",
+        "title1": "Know our partners",
+        "title2": "Contact teachers and administration",
+        "title3": "Meet us",
+        "title4": "What's MIAGE Bordeaux ?",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
