@@ -19,7 +19,7 @@ angular.module('miagebdxApp')
                 $scope.partner = result;
                 var loc = JSON.parse($scope.partner.locationComplete);
                 if(loc && $scope.partner.location){
-                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.partner.title);
+                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, 'partner');
                 }
 
             });

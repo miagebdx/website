@@ -16,7 +16,7 @@ angular.module('miagebdxApp')
                 var loc = JSON.parse($scope.event.locationComplete);
 
                 if(loc && $scope.event.location){
-                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.event.title);
+                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, 'event');
                 }
             });
         };

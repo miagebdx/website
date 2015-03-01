@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIainVxMmIsAwZVbmCDMOMU3jD3cCRzsw"></script>
     <!-- build:css assets/styles/main.css -->
     <link href='http://fonts.googleapis.com/css?family=Muli:300|Jura:600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/styles/main.css">
@@ -25,7 +26,6 @@
 
 <div ui-view="navbar"></div>
 <div class="site-content" ui-view="content"></div>
-
 
 <div class="footer">
     <div class="col-md-12">
@@ -49,9 +49,6 @@
 	</span>
 </div>
 
-
-
-
 <cnil></cnil>
 
 <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
@@ -63,8 +60,6 @@
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>-->
-
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 
 <!-- build:js scripts/vendor.js -->
 <script src="bower_components/modernizr/modernizr.js"></script>
@@ -183,13 +178,31 @@
 <script src="scripts/components/entities/event/eventPeople.service.js"></script>
 <script src="scripts/components/entities/event/eventPartner.service.js"></script>
 <script src="scripts/components/cnil/cnil.directive.js"></script>
-<script src="scripts/components/back-top-btn/back.js"></script>
 <script src="scripts/components/base64-upload/upload.directive.js"></script>
 <script src="scripts/components/googleMaps/gMapsAutoComplete.js"></script>
-
 <!-- endbuild -->
 
+<script type="text/javascript">
+    $(function(){
+    $(document).on( 'scroll', function(){
+        if ($(window).scrollTop() > 100) {
+            $('.scroll-top-wrapper').addClass('show');
+        } else {
+            $('.scroll-top-wrapper').removeClass('show');
+        }
+    });
 
+    $('.scroll-top-wrapper').on('click', scrollToTop);
+});
+
+function scrollToTop() {
+    verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+    element = $('body');
+    offset = element.offset();
+    offsetTop = offset.top;
+    $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+}
+</script>
 
 </body>
 </html>

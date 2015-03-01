@@ -17,13 +17,10 @@ angular.module('miagebdxApp')
             $scope.animation = Animations.getAnimation();
             People.get({id: id}, function(result) {
                 $scope.people = result;
-
                 var loc = JSON.parse($scope.people.locationComplete);
-
                 if(loc && $scope.people.location){
-                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.people.title);
+                    gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, 'people');
                 }
-
             });
             ArticlePeople.get({id: id}, function(result){$scope.articles = result;});
             EventPeople.get({id :id}, function(result){$scope.events = result;});

@@ -106,7 +106,7 @@ angular.module('miagebdxApp')
 
                 var infowindow = new google.maps.InfoWindow({
                     content: '<div class="container">' +
-                    '<h1>' + title + '</h1>' +
+                    '<h5>' + title + '</h5>' +
                     '</div>'
                 });
 
