@@ -7,7 +7,7 @@ angular.module('miagebdxApp')
             'get': {
                 method: 'GET',
                 transformResponse: function (data) {
-                    if(data.beginDate!==null && data.endDate!==null){
+                    if(data.beginDate && data.endDate){
                         data = angular.fromJson(data);
                         data.beginDate = new Date(data.beginDate);
                         data.endDate = new Date(data.endDate);

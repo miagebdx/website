@@ -8,7 +8,7 @@ angular.module('miagebdxApp')
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
-                    if( data.logo !== null ){ data.image = JSON.parse(data.logo); }
+                    if( data.logo ){ data.image = JSON.parse(data.logo); }
                     return data;
                 }
             }

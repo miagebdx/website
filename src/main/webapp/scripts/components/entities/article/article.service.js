@@ -8,7 +8,7 @@ angular.module('miagebdxApp')
                 method: 'GET',
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
-                    if(data.date!==null){
+                    if( data.date ){
                         var data2form = data.date.split("-");
                         data.date = new Date(new Date(data2form[0], data2form[1] - 1, data2form[2]));
 
