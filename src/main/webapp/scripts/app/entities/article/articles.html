@@ -24,13 +24,12 @@
                 <div class="least-content">{{hashtags.length}}</div>
                 <h4 class="list-group-item-heading"><span translate="miagebdxApp.article.hashtag"></span></h4>
                 <div class="list-group-item-text">
-                    <ul class="list-inline ">
-                    <li ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
+                        <p ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
                         <span class="label label-default" ui-sref="hashtagDetail({id:hashtag.id})">
                             {{hashtag.name}}
                         </span>
-                    </li>
-                </ul>
+                        </p>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -43,13 +42,11 @@
                 <div class="least-content">{{peoples.length}}</div>
                 <h4 class="list-group-item-heading"><span translate="miagebdxApp.article.people"></span></h4>
                 <div class="list-group-item-text">
-                    <ul class="list-inline">
-                    <li ng-repeat="people in peoples" ng-init="isSelect=false">
+                    <p ng-repeat="people in peoples" ng-init="isSelect=false">
                     <span class="label label-primary" ui-sref="peopleDetail({id:people.id})">
                         {{people.name}}
                     </span>
-                    </li>
-                </ul>
+                    </p>
                 </div>
             </div>
         </div>

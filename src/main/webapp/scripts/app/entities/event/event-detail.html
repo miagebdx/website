@@ -20,8 +20,8 @@
 <div class="container">
     <div class="well">
         <div markdown="event.description"></div>
-        <hr>
-        <div class="well" id="map-canvas" ></div>
+        <hr ng-if="event.location && event.locationComplete">
+        <div ng-hide="!event.location || !event.locationComplete" class="well" id="map-canvas" ></div>
         <hr ng-if="event.partners.length > 0 || event.peoples.length > 0">
         <ul class="list-inline" ng-if="event.peoples.length > 0">
             <li><i class="glyphicon glyphicon-user"></i></li>

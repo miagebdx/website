@@ -8,9 +8,9 @@
                 "main": "Entités",
                 "people": "Annuaire",
                 "partner": "Partenaires",
-                "hashtag": "Dossier",
+                "hashtag": "Hashtags",
                 "article": "Articles",
-                "event": "Evenements",
+                "event": "Evénements",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

@@ -7,10 +7,10 @@
             "entities": {
                 "main": "Entities",
                 "people": "Directory",
-                "partner": "Partner",
-                "hashtag": "Hashtag",
-                "article": "Article",
-                "event": "Event",
+                "partner": "Partners",
+                "hashtag": "Hashtags",
+                "article": "Articles",
+                "event": "Events",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

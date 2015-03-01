@@ -23,14 +23,14 @@
     <div class="col-md-4 well">
         <img class="img-responsive img-thumbnail" ng-if="partner.image" data-ng-src="data:{{partner.image.filetype}} ;base64, {{partner.image.base64}}">
         <hr ng-if="partner.image">
-        <p ng-if="partner.email"><i class="glyphicon glyphicon-envelope"></i> {{partner.email}}</p>
-        <p ng-if="partner.telephone"><i class="glyphicon glyphicon-earphone"></i> {{partner.telephone}}</p>
-        <p ng-if="partner.location"><i class="glyphicon glyphicon-pushpin"></i> {{partner.location}}</p>
-        <p ng-if="partner.website"><i class="glyphicon glyphicon-globe"></i> {{partner.website}}</p>
+        <p ng-if="partner.email"><i class="glyphicon glyphicon-envelope"></i>&nbsp;<a href="mailto:{{partner.email}}">{{partner.email}}</a></p>
+        <p ng-if="partner.telephone"><i class="glyphicon glyphicon-earphone"></i>&nbsp;{{partner.telephone}}</p>
+        <p ng-if="partner.location"><i class="glyphicon glyphicon-pushpin"></i>&nbsp;{{partner.location}}</p>
+        <p ng-if="partner.website"><i class="glyphicon glyphicon-globe"></i>&nbsp;<a href="{{partner.website}}">{{partner.website}}</a> </p>
         <hr ng-if="partner.description">
         <p ng-if="partner.description"><b>{{partner.description}}</b></p>
-        <hr/>
-        <div class="well" id="map-canvas"></div>
+        <hr ng-if="partner.location && partner.locationComplete"/>
+        <div class="well" ng-hide="!partner.location || !partner.locationComplete" id="map-canvas"></div>
     </div>
     <div class="col-md-8">
         <listevents></listevents>

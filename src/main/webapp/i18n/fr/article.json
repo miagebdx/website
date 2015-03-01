@@ -17,8 +17,8 @@
             "body": "Corps",
             "date": "Date",
             "pinned": "Epinglé",
-            "people": "Référent",
-            "hashtag": "Catégories"
+            "people": "Référents",
+            "hashtag": "Hashtags"
         }
     }
 }

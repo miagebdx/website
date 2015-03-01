@@ -28,6 +28,7 @@ public class Partner implements Serializable {
     private String location;
 
     @Column(name = "description")
+    @Lob
     private String description;
 
     @Column(name = "website")

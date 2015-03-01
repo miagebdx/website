@@ -17,12 +17,11 @@ angular.module('miagebdxApp')
             EventPartner.get({id: id}, function(result){$scope.events = result;});
             Partner.get({id: id}, function(result){
                 $scope.partner = result;
-
                 var loc = JSON.parse($scope.partner.locationComplete);
-
-                if(loc){
+                if(loc && $scope.partner.location){
                     gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.partner.title);
                 }
+
             });
             Partner.query(function(result){$scope.partners = result;});
         };

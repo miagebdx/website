@@ -68,11 +68,5 @@
                                  constraintName="fk_hashtag_article_id"
                                  referencedColumnNames="id"
                                  referencedTableName="T_ARTICLE"/>
-
-        <!--<loadData encoding="UTF-8"
-                  file="config/liquibase/miagebdx.csv"
-                  separator=","
-                  tableName="T_ARTICLE">
-        </loadData>-->
     </changeSet>
 </databaseChangeLog>

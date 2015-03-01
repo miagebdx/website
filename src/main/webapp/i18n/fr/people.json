@@ -2,7 +2,7 @@
     "miagebdxApp": {
         "people" : {
             "home": {
-                "title": "Personnes",
+                "title": "Annuaire",
                 "createLabel": "Créer une nouvelle personne",
                 "createOrEditLabel": "Créer ou éditer une personne"
             },
@@ -10,7 +10,7 @@
                 "question": "Etes-vous certain de vouloir supprimer la personne {{ id }} ?"
             },
             "detail": {
-                "title": "Personnes"
+                "title": "Annuaire"
             },
             "name": "Nom",
             "email": "Email",

@@ -20,7 +20,7 @@ angular.module('miagebdxApp')
 
                 var loc = JSON.parse($scope.people.locationComplete);
 
-                if(loc){
+                if(loc && $scope.people.location){
                     gMapsAutoC.initialize('map-canvas', { lat: loc.k, lng: loc.D}, $scope.people.title);
                 }
 

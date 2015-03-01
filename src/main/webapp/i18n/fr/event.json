@@ -2,7 +2,7 @@
     "miagebdxApp": {
         "event" : {
             "home": {
-                "title": "événement",
+                "title": "événements",
                 "createLabel": "Créer un nouvel événement",
                 "createOrEditLabel": "Créer ou éditer un événement"
             },
@@ -10,7 +10,7 @@
                 "question": "Etes-vous certain de vouloir supprimer l'événement {{ id }} ?"
             },
             "detail": {
-                "title": "événement"
+                "title": "événements"
             },
             "title": "Title",
             "description": "Description",
