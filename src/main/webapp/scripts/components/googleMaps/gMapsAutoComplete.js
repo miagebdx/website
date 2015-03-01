@@ -119,7 +119,7 @@ angular.module('miagebdxApp')
                     infowindow.open(map,marker);
                 });
 
-                // Au moment du scroll, resize de la map.
+                // Au moment du render, resize de la map.
                 google.maps.event.addListenerOnce(map, 'idle', function(){
                     google.maps.event.trigger(map, 'resize');
                 });
