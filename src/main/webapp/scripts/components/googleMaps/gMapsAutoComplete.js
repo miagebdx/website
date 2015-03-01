@@ -83,15 +83,19 @@ angular.module('miagebdxApp')
          * Without controls expect for the zoom controls.
          *
          * @param id : String
+         * @param title : String
          * @param position : Object : { lat: Float, lng: Float }
          * @return void
          * @public
          */
         function initialize(id, position, title) {
             if(id && position){
+
+                var latLng = new google.maps.LatLng(position.lat, position.lng);
+
                 var mapOptions = {
-                    center: position,
-                    zoom: 6,
+                    center: latLng,
+                    zoom: 8,
                     streetViewControl: false,
                     mapTypeControl: false,
                     panControl: false,
@@ -101,8 +105,9 @@ angular.module('miagebdxApp')
                     }
                 };
 
-                var map = new google.maps.Map(document.getElementById(id),
-                    mapOptions);
+                var map = new google.maps.Map(document.getElementById(id), mapOptions);
+
+                map.setCenter(latLng);
 
                 var infowindow = new google.maps.InfoWindow({
                     content: '<div class="container">' +
@@ -122,6 +127,7 @@ angular.module('miagebdxApp')
                 // Au moment du render, resize de la map.
                 google.maps.event.addListenerOnce(map, 'idle', function(){
                     google.maps.event.trigger(map, 'resize');
+                    map.setCenter(latLng);
                 });
 
             }
