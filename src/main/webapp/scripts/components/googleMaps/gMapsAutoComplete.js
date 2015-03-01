@@ -91,7 +91,7 @@ angular.module('miagebdxApp')
             if(id && position){
                 var mapOptions = {
                     center: position,
-                    zoom: 8,
+                    zoom: 6,
                     streetViewControl: false,
                     mapTypeControl: false,
                     panControl: false,
@@ -118,8 +118,13 @@ angular.module('miagebdxApp')
                 google.maps.event.addListener(marker, 'click', function() {
                     infowindow.open(map,marker);
                 });
-            }
 
+                // Au moment du scroll, resize de la map.
+                google.maps.event.addListenerOnce(map, 'idle', function(){
+                    google.maps.event.trigger(map, 'resize');
+                });
+
+            }
         }
 
         function getLocationComplete(){
