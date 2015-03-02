@@ -22,6 +22,8 @@ describe('Services Tests ', function () {
             $httpBackend.expectGET('i18n/en/language.json').respond(200, '');
             $httpBackend.expectGET('i18n/en/main.json').respond(200, '');
             $httpBackend.expectGET('scripts/app/main/main.html').respond({});
+
+            $httpBackend.expectGET('api/account').respond({});
         }));
         //make sure no expectations were missed in your tests.
         //(e.g. expectGET or expectPOST)
