@@ -15,7 +15,7 @@ angular.module('miagebdxApp')
             }).then(function () {
                 $scope.authenticationError = false;
                 $rootScope.back();
-                location.reload();
+                //location.reload();
             }).catch(function () {
                 $scope.authenticationError = true;
             });

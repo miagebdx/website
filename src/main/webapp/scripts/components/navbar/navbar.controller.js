@@ -3,7 +3,7 @@
 angular.module('miagebdxApp')
     .controller('NavbarController', function ($log, $rootScope, $scope, $location, $state, Auth, Principal) {
         $scope.isAuthenticated = Principal.isAuthenticated;
-        $scope.isInRole = Principal.isInRole('ROLE_ADMIN');
+        $scope.isInRole = Principal.isInRole;
 
 
 
@@ -11,6 +11,6 @@ angular.module('miagebdxApp')
 
         $scope.logout = function () {
             Auth.logout();
-            location.reload();
+            //location.reload();
         };
     });
