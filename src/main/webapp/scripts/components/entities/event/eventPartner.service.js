@@ -9,8 +9,10 @@ angular.module('miagebdxApp')
                 isArray: true,
                 transformResponse: function (data) {
                     data = angular.fromJson(data);
-                    data.beginDate = new Date(data.beginDate);
-                    data.endDate = new Date(data.endDate);
+                    if(data.beginDate && data.endDate) {
+                        data.beginDate = new Date(data.beginDate);
+                        data.endDate = new Date(data.endDate);
+                    }
                     return data;
                 }
             }
