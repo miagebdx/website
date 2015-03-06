@@ -1,3 +1,4 @@
+<!-- header -->
 <header class="hero-unit" id="banner">
     <h1 translate="miagebdxApp.article.home.title">Article</h1>
     <button  ng-show="isInRole('ROLE_ADMIN')" class="btn btn-success btn-default" data-toggle="modal" data-target="#saveArticleModal" ng-click="clear()">
@@ -15,6 +16,7 @@
         </div>
         <br>
     </div>
+    <!-- hastag / people pannel -->
     <div class="col-md-4 well list-group">
         <div class="list-group-item">
             <div class="row-action-primary">
@@ -23,14 +25,15 @@
             <div class="row-content">
                 <div class="least-content">{{hashtags.length}}</div>
                 <h4 class="list-group-item-heading"><span translate="miagebdxApp.article.hashtag"></span></h4>
+                <!-- hashtag list:begin -->
                 <div class="list-group-item-text">
                         <p ng-repeat="hashtag in hashtags" ng-init="isSelect=false">
                         <span class="label label-default" ui-sref="hashtagDetail({id:hashtag.id})">
                             {{hashtag.name}}
                         </span>
                         </p>
-                    </ul>
                 </div>
+                <!-- hashtag list:end -->
             </div>
         </div>
 
@@ -42,19 +45,25 @@
                 <div class="least-content">{{peoples.length}}</div>
                 <h4 class="list-group-item-heading"><span translate="miagebdxApp.article.people"></span></h4>
                 <div class="list-group-item-text">
+                    <!-- people list:begin -->
                     <p ng-repeat="people in peoples" ng-init="isSelect=false">
                     <span class="label label-primary" ui-sref="peopleDetail({id:people.id})">
                         {{people.name}}
                     </span>
                     </p>
+                    <!-- hashtag list:end -->
                 </div>
             </div>
         </div>
     </div>
+    <!-- article pannel -->
     <div class="col-md-8">
+        <!-- article list:begin -->
         <listarticle></listarticle>
+        <!-- article list:end -->
     </div>
 </div>
+<!-- modal create/update -->
 <div class="modal fade" id="saveArticleModal" tabindex="-1" role="dialog" aria-labelledby="myArticleLabel"
      aria-hidden="true">
     <div class="modal-dialog">
@@ -120,6 +129,7 @@
         </div>
     </div>
 </div>
+<!-- modal delete -->
 <div class="modal fade" id="deleteArticleConfirmation">
     <div class="modal-dialog">
         <div class="modal-content">

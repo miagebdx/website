@@ -1,5 +1,7 @@
 'use strict';
 
+/* Init event routing and resolve the view and translate context */
+
 angular.module('miagebdxApp')
     .config(function ($stateProvider) {
         $stateProvider
