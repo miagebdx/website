@@ -4,9 +4,9 @@ angular.module('miagebdxApp', ['LocalStorageModule', 'tmh.dynamicLocale',
     'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate',
     'ngCacheBuster','ui.bootstrap','ngSanitize','angular.filter', 'ngAnimate','angular-loading-bar'])
 
-    .run(function ($rootScope, $location, $http, $state, $translate, Auth, Principal, Language) {
+    .run(function ($rootScope, $location, $http, $state, $translate, Auth, Principal, Language,$log) {
 
-
+        $log.info("Visit us on https://github.com/miagebdx/website");
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
             $rootScope.toState = toState;
             $rootScope.toStateParams = toStateParams;

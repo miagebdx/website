@@ -31,9 +31,11 @@
 <div class="footer">
     <div class="col-md-12">
         <p><h3>MIAGE de Bordeaux</h3></p>
-        <a a href="http://www.u-bordeaux.fr/">Université Bordeaux</a></br>
-        <a href="https://www.google.fr/maps/@44.8077668,-0.5967593,17z"> 351, cours de la Libération - 33404 Talence Cedex</a></br>
-        <a href="mailto:miage@labri.fr">miage@labri.fr</a>
+        <ul class="list-unstyled">
+            <li><a href="http://www.u-bordeaux.fr/">Université Bordeaux</a></li>
+            <li><a href="https://www.google.fr/maps/@44.8077668,-0.5967593,17z"> 351, cours de la Libération - 33404 Talence Cedex</a></li>
+            <li><a href="mailto:miage@labri.fr">miage@labri.fr</a></li>
+        </ul>
     </div>
     <div class="col-md-4"></div>
     <div class="col-md-4">
@@ -185,24 +187,24 @@
 
 <script type="text/javascript">
     $(function(){
-    $(document).on( 'scroll', function(){
-        if ($(window).scrollTop() > 100) {
-            $('.scroll-top-wrapper').addClass('show');
-        } else {
-            $('.scroll-top-wrapper').removeClass('show');
-        }
+        $(document).on( 'scroll', function(){
+            if ($(window).scrollTop() > 100) {
+                $('.scroll-top-wrapper').addClass('show');
+            } else {
+                $('.scroll-top-wrapper').removeClass('show');
+            }
+        });
+
+        $('.scroll-top-wrapper').on('click', scrollToTop);
     });
 
-    $('.scroll-top-wrapper').on('click', scrollToTop);
-});
-
-function scrollToTop() {
-    verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
-    element = $('body');
-    offset = element.offset();
-    offsetTop = offset.top;
-    $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
-}
+    function scrollToTop() {
+        verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
+        element = $('body');
+        offset = element.offset();
+        offsetTop = offset.top;
+        $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+    }
 </script>
 
 </body>
