@@ -191,7 +191,13 @@ ul#strength {
 .footer {
     background-color: $marron-univ-color;
     color: $bleu-univ-color;
+    clear:both;
+    position:relative;
+    width:100%;
+    height: 300px;
+    left:0;
     bottom: 0;
+    border-top: 5px $bleu-univ-color solid; // footer (height + padding + border)
 }
 
 .cnil{
@@ -223,10 +229,12 @@ ul#strength {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    justify-content: space-around;
 }
 
+
 .site-content {
-    flex: 1;
+    flex-grow: 1;
 }
 
 .scroll-top-wrapper {

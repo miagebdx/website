@@ -38,7 +38,7 @@ $bleu-univ-color: #009DE0;
     .caption-slide {
         position: absolute;
         width: 100%;
-        opacity: 0.7;
+        opacity: 0.85;
         float: left;
         height: 100%;
         vertical-align: middle;
@@ -53,7 +53,6 @@ $bleu-univ-color: #009DE0;
     }
 
     .caption-slide-text .h1 {
-        opacity: 1;
         font-size: 42px;
         color: $bleu-univ-color;
 
