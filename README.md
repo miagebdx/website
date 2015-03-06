@@ -19,24 +19,23 @@ limitations under the License.
 
 ##Client side
 
-- Responsive Web Design
-- HTML5 Boilerplate
-- Twitter Bootstrap
-- AngularJS
-- Full internationalization with Angular Translate
-- Compass / Sass
-- Bower
-- Grunt
-- Karma / PhantomJS
+- [Twitter Bootstrap](http://getbootstrap.com/)
+- [AngularJS](https://www.angularjs.org/)
+- Full internationalization with [Angular Translate](http://angular-translate.github.io/)
+- [Compass](http://compass-style.org/) / [Sass](http://sass-lang.com/)
+- [Bower](http://bower.io/)
+- [Grunt](http://gruntjs.com/)
+- [Karma](https://karma-runner.github.io/0.8/index.html) / [PhantomJS](http://phantomjs.org/)
 
 ##Server side
 
-- Spring Boot 
-- Maven for building, testing and running the application
-- Spring Security
-- Spring MVC REST
-- Spring Data JPA + Bean Validation
-- Database updates with Liquibase
+- [Spring Boot](http://projects.spring.io/spring-boot/) 
+- [Maven](https://maven.apache.org/) for building, testing and running the application
+- [Spring Security](http://projects.spring.io/spring-security/)
+- [Spring MVC REST](http://spring.io/blog/2009/03/08/rest-in-spring-3-mvc/)
+- [Spring Data JPA](http://projects.spring.io/spring-data-jpa/) + Bean Validation
+- Database updates with [Liquibase](http://www.liquibase.org/)
+- [MySQL](https://www.mysql.com/) database
 
 #Install
 
