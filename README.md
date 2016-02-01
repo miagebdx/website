@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/miagebdx/website.svg?branch=master)](https://travis-ci.org/miagebdx/website)
 
 Copyright [2015] [miagebdx]
-See LICENSE file -> [GPL](https://github.com/miagebdx/website/LICENSE)
+See LICENSE file -> [GPL](https://github.com/miagebdx/website/blob/master/LICENSE)
 
 
 #Technology
